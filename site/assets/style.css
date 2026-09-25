@@ -1,7 +1,14 @@
 /* Electrified Home – one stylesheet for every page.
-   Colours come from UK wiring: brown is live, blue is neutral, green and
-   yellow is earth. The home page's row of circuit breakers is the one
-   decorative element; everything else stays plain. */
+
+   Layout borrows from the Energy Saving Trust's site: a deep blue band at the
+   top of each page, then blocks of solid colour that each lead somewhere.
+   The colours still come from UK wiring: brown is live, blue is neutral,
+   green and yellow is earth.
+
+   Bands run the full width of the window while their content stays in
+   main's column: a box-shadow paints the colour out to the edges and
+   clip-path trims it top and bottom. Neither affects layout, so there is
+   no sideways scroll. */
 
 @font-face {
   font-family: "Atkinson Hyperlegible Next";
@@ -26,17 +33,22 @@
 }
 
 :root {
-  --plastic: #eef1f0;   /* page: the off-white of a consumer unit */
-  --panel: #ffffff;
-  --ink: #1d2733;
-  --muted: #4f5b67;
-  --rule: #cfd6d9;
-  --live: #8a4b26;      /* brown */
-  --neutral: #2458a6;   /* blue: links */
-  --earth-green: #2f7d3a;
-  --earth-yellow: #e2c21a;
-  --measure: 38rem;
-  --wide: 60rem;
+  --page: #ffffff;
+  --sky: #eef3f9;       /* light bands */
+  --ink: #16202b;
+  --muted: #4b5866;
+  --rule: #d3dbe4;
+  --navy: #14365f;      /* top of every page, footer */
+  --navy-ink: #dfe8f3;  /* text on navy */
+  --blue: #2458a6;      /* neutral: links, buttons, the widgets' brand colour */
+  --brown: #8a4b26;     /* live */
+  --green: #2f7d3a;     /* earth */
+  --yellow: #f0c63a;    /* earth */
+  --slate: #43515c;
+  --teal: #bfe3e6;
+  --measure: 42rem;
+  --wide: 72rem;
+  --radius: 6px;
 }
 
 *,
@@ -47,115 +59,393 @@ html { -webkit-text-size-adjust: 100%; }
 
 body {
   margin: 0;
-  background: var(--plastic);
+  background: var(--page);
   color: var(--ink);
   font-family: "Atkinson Hyperlegible Next", system-ui, -apple-system, "Segoe UI", sans-serif;
   font-size: 1.0625rem;
   line-height: 1.6;
 }
 
-a { color: var(--neutral); text-underline-offset: 0.15em; }
+a { color: var(--blue); text-underline-offset: 0.15em; }
 a:hover { color: var(--ink); }
 
 :focus-visible {
-  outline: 3px solid var(--earth-yellow);
+  outline: 3px solid var(--yellow);
   outline-offset: 2px;
-  box-shadow: 0 0 0 6px var(--earth-green);
+  box-shadow: 0 0 0 6px var(--ink);
 }
 
 img, svg { max-width: 100%; }
 
-/* ---------- Header and footer ---------- */
+/* ---------- Header ---------- */
 
 .site-header {
-  background: var(--panel);
+  background: var(--page);
   border-bottom: 1px solid var(--rule);
 }
 .site-header .inner {
   max-width: var(--wide);
   margin: 0 auto;
-  padding: 0.75rem 1rem;
+  padding: 0.875rem 1rem;
   display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.25rem 1.5rem;
+  align-items: center;
+  gap: 0.5rem 2rem;
 }
 .site-name {
   font-weight: 700;
-  font-size: 1.125rem;
-  color: var(--ink);
+  font-size: 1.1875rem;
+  color: var(--navy);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  white-space: nowrap;
 }
-.site-name svg { width: 1.25rem; height: 1.25rem; flex: none; }
+.site-name svg { width: 1.75rem; height: 1.75rem; flex: none; }
+.site-nav { margin-left: auto; }
 .site-nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.25rem 1rem;
+  align-items: center;
+  gap: 0.25rem 1.125rem;
 }
+.site-nav li { margin: 0; }
 .site-nav a {
-  color: var(--muted);
+  display: block;
+  color: var(--ink);
   text-decoration: none;
   font-size: 0.9375rem;
-  padding: 0.25rem 0;
-  border-bottom: 2px solid transparent;
+  padding: 0.375rem 0;
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
 }
-.site-nav a:hover { color: var(--ink); border-bottom-color: var(--rule); }
-.site-nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--live); }
+.site-nav a:hover { border-bottom-color: var(--rule); }
+.site-nav a[aria-current="page"] { border-bottom-color: var(--brown); }
+/* The last link, Tools, is a button. */
+.site-nav li:last-child a {
+  background: var(--blue);
+  color: #fff;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: 0;
+}
+.site-nav li:last-child a:hover { background: var(--navy); }
+.site-nav li:last-child a[aria-current="page"] { background: var(--navy); }
 
-.site-footer {
-  margin-top: 4rem;
-  border-top: 1px solid var(--rule);
-  background: var(--panel);
-  font-size: 0.9375rem;
-  color: var(--muted);
+/* Narrow screens: the nav becomes a strip under the name that scrolls
+   sideways by itself, with a fade to show there's more. */
+@media (max-width: 64rem) {
+  .site-header .inner { flex-wrap: wrap; padding-bottom: 0; }
+  .site-nav {
+    margin: 0 -1rem;
+    width: calc(100% + 2rem);
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-mask-image: linear-gradient(to right, #000 85%, transparent);
+    mask-image: linear-gradient(to right, #000 85%, transparent);
+  }
+  .site-nav::-webkit-scrollbar { display: none; }
+  .site-nav ul { padding: 0.25rem 3rem 0.5rem 1rem; width: max-content; }
+  /* Keep the Tools button in view, at the start of the strip. */
+  .site-nav li:last-child { order: -1; }
 }
-.site-footer .inner {
-  max-width: var(--wide);
-  margin: 0 auto;
-  padding: 1.5rem 1rem 2rem;
-}
-.site-footer p { margin: 0 0 0.5rem; max-width: var(--measure); }
-.site-footer a { color: var(--muted); }
 
 .skip {
   position: absolute;
   left: -999px;
 }
-.skip:focus { left: 1rem; top: 0.5rem; background: var(--panel); padding: 0.5rem; z-index: 10; }
+.skip:focus { left: 1rem; top: 0.5rem; background: var(--page); padding: 0.5rem; z-index: 10; }
 
 /* ---------- Page body ---------- */
 
 main {
   max-width: var(--wide);
   margin: 0 auto;
-  padding: 2.5rem 1rem 0;
+  padding: 0 1rem;
 }
 main > * { max-width: var(--measure); }
-main > .wide, main > .board { max-width: none; }
+main > :is(.wide, .page-head, .hero, .band, .cards, .split, .steps) { max-width: none; }
 
-h1, h2, h3 { line-height: 1.2; font-weight: 700; }
-h1 { font-size: clamp(2rem, 5vw, 2.75rem); margin: 0 0 1rem; letter-spacing: -0.01em; }
-h2 { font-size: 1.5rem; margin: 2.75rem 0 0.75rem; }
+h1, h2, h3 { line-height: 1.2; font-weight: 700; color: var(--navy); }
+h1 { font-size: clamp(2.125rem, 5vw, 3.25rem); margin: 0 0 1rem; letter-spacing: -0.015em; }
+h2 { font-size: clamp(1.5rem, 3vw, 1.875rem); margin: 3rem 0 0.75rem; letter-spacing: -0.01em; }
 h3 { font-size: 1.1875rem; margin: 2rem 0 0.5rem; }
 p, ul, ol { margin: 0 0 1rem; }
 li { margin-bottom: 0.375rem; }
 
-.lede { font-size: 1.25rem; line-height: 1.5; color: var(--muted); }
+.lede { font-size: 1.25rem; line-height: 1.5; }
+
+.eyebrow {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+  color: var(--yellow);
+}
+.page-head .eyebrow a { color: inherit; }
 
 .note {
-  border-left: 4px solid var(--live);
+  border-left: 4px solid var(--brown);
   padding: 0.25rem 0 0.25rem 1rem;
   color: var(--muted);
 }
 
-.sources { font-size: 0.9375rem; color: var(--muted); }
-.sources h2 { font-size: 1.0625rem; }
+.sources { font-size: 0.9375rem; color: var(--muted); margin-top: 3rem; }
+.sources h2 { font-size: 1.0625rem; color: var(--muted); }
+
+/* ---------- Bands ---------- */
+
+.page-head,
+.hero,
+.band {
+  position: relative;
+  box-shadow: 0 0 0 100vmax var(--band);
+  clip-path: inset(0 -100vmax);
+  background: var(--band);
+}
+
+/* Top of every page but the home page: h1 and lede on navy. */
+.page-head {
+  --band: var(--navy);
+  color: #fff;
+  padding: 2.75rem 0 2.5rem;
+  margin-bottom: 2.5rem;
+}
+.page-head h1 { color: #fff; max-width: 20em; }
+.page-head .lede { color: var(--navy-ink); max-width: var(--measure); margin-bottom: 0; }
+.page-head a { color: #fff; }
+
+.band {
+  --band: var(--sky);
+  padding: 1rem 0 2.5rem;
+  margin: 3rem 0;
+}
+.band > * { max-width: var(--measure); }
+.band > :is(.cards, .split, .wide) { max-width: none; }
+
+/* ---------- Home page ---------- */
+
+.hero {
+  --band: var(--navy);
+  color: #fff;
+  padding: 3rem 0 3.5rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 2rem 3rem;
+}
+.hero h1 { color: #fff; font-size: clamp(2.375rem, 6vw, 4rem); }
+.hero .lede { color: var(--navy-ink); }
+.hero-art { width: 100%; height: auto; display: block; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.75rem 0 0; }
+
+.button {
+  display: inline-block;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0.75rem 1.375rem;
+  border-radius: 999px;
+  background: var(--yellow);
+  color: var(--ink);
+  border: 2px solid var(--yellow);
+}
+.button:hover { background: #fff; border-color: #fff; color: var(--ink); }
+.button.ghost { background: transparent; color: #fff; border-color: rgba(255, 255, 255, 0.7); }
+.button.ghost:hover { background: #fff; color: var(--ink); }
+
+@media (max-width: 48rem) {
+  .hero { grid-template-columns: 1fr; padding: 2rem 0 2.5rem; }
+  .hero-art { max-width: 26rem; margin: 0 auto; }
+}
+
+/* ---------- Cards ----------
+   A list of links, each a block: <ul class="cards"><li class="i-NAME">
+   <a href>Title</a><p>Summary</p></li></ul>. The whole block is clickable
+   (the link's ::after covers it). The i- class picks an icon from
+   /assets/icons/; without one, the card gets a plain one. */
+
+.cards {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15.5rem, 1fr));
+  gap: 1rem;
+}
+.cards li {
+  --icon: url("icons/tool.svg");
+  position: relative;
+  margin: 0;
+  padding: 1.25rem 1.25rem 3.25rem;
+  border-radius: var(--radius);
+  background: var(--page);
+  border: 1px solid var(--rule);
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  transition: transform 120ms ease-out, box-shadow 120ms ease-out;
+}
+.cards li::before {
+  content: "";
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-bottom: 0.5rem;
+  background: currentColor;
+  -webkit-mask: var(--icon) center / contain no-repeat;
+  mask: var(--icon) center / contain no-repeat;
+  color: var(--blue);
+}
+/* An arrow in the bottom corner, as on the Energy Saving Trust's cards. */
+.cards li::after {
+  content: "\2192";
+  position: absolute;
+  left: 1.25rem;
+  bottom: 0.875rem;
+  font-size: 1.375rem;
+  line-height: 1;
+  font-weight: 700;
+  transition: transform 120ms ease-out;
+}
+.cards li:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(20, 54, 95, 0.14); }
+.cards li:hover::after { transform: translateX(4px); }
+.cards a {
+  font-weight: 700;
+  font-size: 1.1875rem;
+  line-height: 1.25;
+  color: inherit;
+  text-decoration: none;
+}
+.cards a::after { content: ""; position: absolute; inset: 0; border-radius: var(--radius); }
+.cards a:hover { text-decoration: underline; }
+.cards a:focus-visible { outline: none; box-shadow: none; }
+.cards li:focus-within { outline: 3px solid var(--yellow); outline-offset: 2px; }
+.cards p { margin: 0; font-size: 0.9375rem; line-height: 1.5; }
+.cards .needs { margin-top: auto; padding-top: 0.625rem; font-size: 0.875rem; font-weight: 700; }
+
+.cards.compact { grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr)); }
+.cards.compact li { padding: 1rem 1rem 2.75rem; }
+.cards.compact li::before { width: 2rem; height: 2rem; margin-bottom: 0.25rem; }
+.cards.compact li::after { left: 1rem; bottom: 0.75rem; }
+.cards.compact a { font-size: 1.0625rem; }
+
+/* On a phone, cards are rows: icon on the left, text beside it. */
+@media (max-width: 40rem) {
+  .cards, .cards.compact { grid-template-columns: 1fr; gap: 0.625rem; }
+  .cards li, .cards.compact li {
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    column-gap: 0.875rem;
+    row-gap: 0.25rem;
+    align-content: start;
+    padding: 1rem;
+  }
+  .cards li::before, .cards.compact li::before {
+    grid-row: span 2;
+    width: 2rem;
+    height: 2rem;
+    margin: 0;
+  }
+  .cards li::after { display: none; }
+  .cards li > * { grid-column: 2; }
+  .cards a, .cards.compact a { font-size: 1.0625rem; }
+  .cards .needs { padding-top: 0.25rem; }
+}
+
+/* Tool cards are solid colour, taking the next colour in turn, so a new
+   tool gets one without anyone choosing it. */
+.tool-cards li { border: 0; color: #fff; }
+.tool-cards li::before { color: currentColor; }
+.tool-cards li:nth-child(7n+1) { background: var(--blue); }
+.tool-cards li:nth-child(7n+2) { background: var(--green); }
+.tool-cards li:nth-child(7n+3) { background: var(--brown); }
+.tool-cards li:nth-child(7n+4) { background: var(--yellow); color: var(--ink); }
+.tool-cards li:nth-child(7n+5) { background: var(--navy); }
+.tool-cards li:nth-child(7n+6) { background: var(--teal); color: var(--ink); }
+.tool-cards li:nth-child(7n+7) { background: var(--slate); }
+
+.cards .i-heating { --icon: url("icons/heat-pump.svg"); }
+.cards .i-hot-water { --icon: url("icons/hot-water.svg"); }
+.cards .i-cooking { --icon: url("icons/hob.svg"); }
+.cards .i-car { --icon: url("icons/car.svg"); }
+.cards .i-solar { --icon: url("icons/sun.svg"); }
+.cards .i-tariffs { --icon: url("icons/meter.svg"); }
+.cards .i-insulation { --icon: url("icons/house.svg"); }
+.cards .i-paying { --icon: url("icons/pound.svg"); }
+.cards .i-installers { --icon: url("icons/badge.svg"); }
+.cards .i-savings-calculator { --icon: url("icons/calculator.svg"); }
+.cards .i-grant-finder { --icon: url("icons/form.svg"); }
+.cards .i-boiler-escape-plan { --icon: url("icons/calendar.svg"); }
+.cards .i-installer-finder { --icon: url("icons/pin.svg"); }
+.cards .i-heat-pump-visualiser { --icon: url("icons/phone-ar.svg"); }
+.cards .i-sound-simulator { --icon: url("icons/speaker.svg"); }
+.cards .i-house-tour { --icon: url("icons/cube.svg"); }
+
+/* ---------- Home page: steps and the two big links ---------- */
+
+.steps {
+  list-style: none;
+  counter-reset: step;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
+  gap: 1.5rem 2rem;
+  margin: 1.5rem 0 2rem;
+}
+.steps li {
+  counter-increment: step;
+  position: relative;
+  padding-left: 3.25rem;
+  margin: 0;
+}
+.steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background: var(--yellow);
+  color: var(--ink);
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+}
+.steps h3 { margin: 0.25rem 0 0.375rem; font-size: 1.125rem; }
+.steps p { margin: 0; }
+
+.split {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1rem;
+  margin: 3rem 0;
+}
+.split a {
+  display: block;
+  padding: 2rem 1.75rem 3.5rem;
+  border-radius: var(--radius);
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  min-height: 12rem;
+}
+.split a:nth-child(1) { background: var(--green); }
+.split a:nth-child(2) { background: var(--brown); }
+.split a::after {
+  content: "\2192";
+  position: absolute;
+  left: 1.75rem;
+  bottom: 1.25rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  transition: transform 120ms ease-out;
+}
+.split a:hover::after { transform: translateX(4px); }
+.split h2 { color: #fff; margin: 0 0 0.5rem; font-size: 1.5rem; }
+.split a:hover h2 { text-decoration: underline; }
+.split p { margin: 0; max-width: 30rem; }
 
 /* ---------- Embedded tools ---------- */
 
@@ -164,12 +454,13 @@ li { margin-bottom: 0.375rem; }
   margin: 2rem 0 2.5rem;
 }
 .tool-frame {
-  background: var(--panel);
+  background: var(--page);
   border: 1px solid var(--rule);
-  border-top: 4px solid var(--neutral);
-  border-radius: 4px;
+  border-top: 5px solid var(--blue);
+  border-radius: var(--radius);
   padding: 0.5rem;
   min-height: 12rem;
+  box-shadow: 0 8px 24px rgba(20, 54, 95, 0.08);
 }
 .tool figcaption {
   margin-top: 0.5rem;
@@ -177,94 +468,46 @@ li { margin-bottom: 0.375rem; }
   color: var(--muted);
   max-width: var(--measure);
 }
-
-/* ---------- Home page: the consumer unit ---------- */
-
-.board {
-  margin: 2rem 0 1rem;
-  background: var(--panel);
-  border: 1px solid var(--rule);
-  border-radius: 6px;
-  padding: 1.25rem 1rem 1rem;
-}
-.board ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(6.5rem, 1fr));
-  gap: 0.75rem;
-}
-.board li { margin: 0; }
-.breaker {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
-  text-decoration: none;
-  color: var(--ink);
-  padding: 0.75rem 0.5rem 0.5rem;
-  border: 1px solid var(--rule);
-  border-radius: 4px;
-  background: var(--plastic);
-}
-.breaker .switch {
-  position: relative;
-  width: 2.25rem;
-  height: 3.5rem;
-  border-radius: 3px;
-  background: var(--panel);
-  border: 1px solid var(--rule);
-}
-/* The dolly sits down (off) and flips up (on) when you point at it. */
-.breaker .switch::after {
-  content: "";
-  position: absolute;
-  left: 0.3rem;
-  right: 0.3rem;
-  top: 1.75rem;
-  height: 1.4rem;
-  border-radius: 2px;
-  background: var(--live);
-  transition: top 120ms ease-out;
-}
-.breaker:hover .switch::after,
-.breaker:focus-visible .switch::after { top: 0.3rem; }
-.breaker .label {
-  font-style: italic;
-  font-size: 0.9375rem;
-  line-height: 1.25;
-  text-align: center;
-  background: var(--panel);
-  border: 1px solid var(--rule);
-  padding: 0.125rem 0.375rem;
-  width: 100%;
-}
-.board-caption {
-  margin: 0.75rem 0 0;
-  font-size: 0.875rem;
-  color: var(--muted);
-}
+.band .tool { margin-bottom: 0.5rem; }
 
 @media (prefers-reduced-motion: reduce) {
-  .breaker .switch::after { transition: none; }
+  .cards li, .cards li::after, .split a::after { transition: none; }
+  .cards li:hover { transform: none; }
 }
 
-/* ---------- Lists of pages and tools ---------- */
+/* ---------- Footer ---------- */
 
-.index-list { list-style: none; padding: 0; }
-.index-list li {
-  padding: 0.75rem 0;
-  border-bottom: 1px solid var(--rule);
-  margin: 0;
+.site-footer {
+  margin-top: 4rem;
+  background: var(--navy);
+  color: var(--navy-ink);
+  font-size: 0.9375rem;
 }
-.index-list a { font-weight: 700; }
-.index-list p { margin: 0.25rem 0 0; color: var(--muted); }
+.site-footer .inner {
+  max-width: var(--wide);
+  margin: 0 auto;
+  padding: 2.5rem 1rem 2rem;
+}
+.footer-cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 1.5rem 2rem;
+  margin-bottom: 2rem;
+}
+.site-footer h2 { font-size: 1rem; color: #fff; margin: 0 0 0.75rem; }
+.site-footer ul { list-style: none; padding: 0; margin: 0; }
+.site-footer li { margin-bottom: 0.375rem; }
+.site-footer p { margin: 0 0 0.5rem; max-width: var(--measure); }
+.site-footer a { color: #fff; }
+.site-footer .small {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 1.25rem;
+}
 
 @media (max-width: 30rem) {
   body { font-size: 1rem; }
   .lede { font-size: 1.125rem; }
-  main { padding-top: 1.75rem; }
+  .page-head { padding: 2rem 0 1.75rem; }
   /* On a phone the widget needs every pixel: run the frame almost to the
      screen edge instead of inside main's 1rem gutter. */
   .tool { margin-left: -0.75rem; margin-right: -0.75rem; }

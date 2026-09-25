@@ -10,6 +10,8 @@ site/                    everything published
   heat-pumps/index.html  one folder per page, so the URL is /heat-pumps/
   tools/<slug>/          one page per KarbonKit widget
   assets/style.css       the only stylesheet
+  assets/icons/          card icons, one SVG each (style.css maps i-NAME to them)
+  assets/electric-home.svg  the picture at the top of the home page
   _headers               response headers on Cloudflare (including the CSP)
   sitemap.xml            written by `npm run fix`
 partials/                header and footer, copied into every page
@@ -30,6 +32,18 @@ Needs Node 20 or later. There are no packages to install.
 4. Preview with `npm run serve` at http://localhost:8080/. The server sends the same headers as Cloudflare, so a widget blocked by the CSP shows up here too.
 
 To add a page, copy an existing one into a new folder, change the title, description, canonical link and content, add it to the nav in `partials/header.html` if it needs to be there, and run `npm run fix`.
+
+Every page but the home page starts with a navy band holding the h1 and lede:
+
+```html
+<div class="page-head">
+<p class="eyebrow">The electric home</p>
+<h1>Heat pumps</h1>
+<p class="lede">...</p>
+</div>
+```
+
+Lists of links become cards with `<ul class="cards">`, one `<li class="i-NAME"><a href="...">Title</a><p>Summary</p></li>` each. Add `tool-cards` for the solid-colour tool cards and `compact` for smaller ones. `i-NAME` picks an icon from `site/assets/icons/`; see the list near the end of the cards section in `style.css`. Put a section on a light background with `<div class="band">`.
 
 ## KarbonKit widgets
 
@@ -60,7 +74,7 @@ node scripts/site.mjs set-id grant-finder <CONFIG_ID>
 
 KarbonKit publishes its shipped widgets at https://www.karbonkit.com/widgets.json. Once a day, `.github/workflows/new-widgets.yml` compares that list with `site/tools/`. For each widget that has no page yet, it:
 
-1. drafts `site/tools/<slug>/index.html` from `templates/tool.html` and lists it on /tools/;
+1. drafts `site/tools/<slug>/index.html` from `templates/tool.html` and lists it on /tools/, the home page and in the footer (`check` fails if a tool page is missing from any of the three);
 2. if the repository has a `CLAUDE_CODE_OAUTH_TOKEN` secret, has Claude write the page text following WRITING.md, and link to it from the most relevant topic page;
 3. opens a pull request.
 

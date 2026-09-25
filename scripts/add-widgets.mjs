@@ -42,11 +42,20 @@ function draft(w) {
   mkdirSync(join(SITE, 'tools', w.slug), { recursive: true });
   writeFileSync(pagePath(w.slug), html);
 
-  const indexFile = join(SITE, 'tools/index.html');
-  const index = readFileSync(indexFile, 'utf8');
-  const item = `  <li><a href="/tools/${w.slug}/">${esc(w.name)}</a><p>${esc(w.summary || '')}</p></li>\n`;
-  if (!index.includes('<!-- tools:end -->')) throw new Error('site/tools/index.html has no <!-- tools:end --> marker');
-  writeFileSync(indexFile, index.replace(/( *)<!-- tools:end -->/, (m, sp) => item + sp + '<!-- tools:end -->'));
+  // Add it to each list of tools: the cards on /tools/ and the home page,
+  // and the plain links in the footer. A new tool's card gets a colour from
+  // its place in the list and a plain icon until style.css names one.
+  const card = `<li class="i-${w.slug}"><a href="/tools/${w.slug}/">${esc(w.name)}</a><p>${esc(w.summary || '')}</p></li>`;
+  const link = `<li><a href="/tools/${w.slug}/">${esc(w.name)}</a></li>`;
+  for (const [file, item] of [
+    [join(SITE, 'tools/index.html'), card],
+    [join(SITE, 'index.html'), card],
+    [join(ROOT, 'partials/footer.html'), link],
+  ]) {
+    const html = readFileSync(file, 'utf8');
+    if (!html.includes('<!-- tools:end -->')) throw new Error(`${file} has no <!-- tools:end --> marker`);
+    writeFileSync(file, html.replace(/( *)<!-- tools:end -->/, (m, sp) => sp + item + '\n' + sp + '<!-- tools:end -->'));
+  }
   fix();
 }
 

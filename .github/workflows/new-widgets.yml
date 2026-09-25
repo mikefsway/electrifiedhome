@@ -66,7 +66,7 @@ jobs:
 
           1. Read WRITING.md and follow it exactly. Also read two finished tool pages, site/tools/grant-finder/index.html and site/tools/heat-pump-visualiser/index.html, and match their length and tone.
           2. Find out what the widget does from https://www.karbonkit.com/tools/$slug/ and https://www.karbonkit.com/docs/integration.md . Describe only what those pages say it does.
-          3. Replace every DRAFT: paragraph, and the HTML comment above the h1 that mentions them. Rewrite the lede, the meta description and this widget's entry in site/tools/index.html for a homeowner if they read as written for a website owner.
+          3. Replace every DRAFT: paragraph, and the HTML comment above the h1 that mentions them. Rewrite the lede, the meta description and this widget's card in site/tools/index.html and site/index.html for a homeowner if they read as written for a website owner. Keep each card's summary to one short sentence, and on the home page card add <p class="needs">Needs ...</p> saying what the tool needs, as the other cards there do.
           4. If one topic page in site/ is clearly where a reader would want this tool, add one sentence there linking to /tools/$slug/. Don't embed the widget anywhere else.
           5. Don't change the embed block (the karbonkit comment, figure, script and data-config-id), the header or the footer.
           6. Run: node scripts/site.mjs fix && node scripts/site.mjs check . Fix everything it reports except YOUR_CONFIG_ID."
@@ -87,7 +87,7 @@ jobs:
               draft_note="The page still has DRAFT: paragraphs to write (the check fails until they're gone). Follow WRITING.md."
             fi
             cat > /tmp/body.md <<BODY
-          KarbonKit now publishes **$name** (\`$type\`), and this site has no page for it. This pull request adds \`site/tools/$slug/\` and lists it on /tools/.
+          KarbonKit now publishes **$name** (\`$type\`), and this site has no page for it. This pull request adds \`site/tools/$slug/\` and lists it on /tools/, the home page and in the footer.
 
           - [ ] Create the widget in the KarbonKit dashboard and copy its config ID.
           - [ ] Put it in: \`node scripts/site.mjs set-id $type <CONFIG_ID>\`, or replace \`YOUR_CONFIG_ID\` in \`site/tools/$slug/index.html\` by hand.

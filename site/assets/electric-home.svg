@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img">
+  <!-- The home page picture: an all-electric house. Solar panels on the
+       roof, a heat pump outside, a battery on the wall, a car charging on
+       the drive, and no chimney. Drawn for the navy band at the top of the
+       home page. -->
+
+  <!-- Sun and a wind turbine in the distance -->
+  <circle cx="62" cy="62" r="24" fill="#f0c63a"/>
+  <g stroke="#f0c63a" stroke-width="4" stroke-linecap="round" opacity="0.6">
+    <path d="M62 22v-8M62 110v-8M22 62h-8M110 62h-8M34 34l-6-6M96 34l6-6M34 90l-6 6"/>
+  </g>
+  <g stroke="#9fb6d3" stroke-width="3" stroke-linecap="round" fill="none">
+    <path d="M430 88v96"/>
+    <path d="M430 88l0-34M430 88l29 17M430 88l-29 17"/>
+  </g>
+  <circle cx="430" cy="88" r="4" fill="#9fb6d3"/>
+
+  <!-- Ground -->
+  <rect x="0" y="318" width="480" height="42" rx="0" fill="#2f7d3a"/>
+  <rect x="0" y="318" width="480" height="5" fill="#3d9a4a"/>
+
+  <!-- House -->
+  <rect x="128" y="168" width="224" height="152" fill="#f5f2ea"/>
+  <polygon points="108,172 172,80 308,80 372,172" fill="#8a4b26"/>
+  <polygon points="108,172 372,172 366,180 114,180" fill="#6d3a1c"/>
+
+  <!-- Solar panels -->
+  <g>
+    <polygon points="196,94 300,94 326,158 172,158" fill="#16325c"/>
+    <g stroke="#6f95c8" stroke-width="1.5">
+      <path d="M184,126 H313"/>
+      <path d="M222,94 L210.5,158 M248,94 L249,158 M274,94 L287.5,158"/>
+    </g>
+    <polygon points="196,94 300,94 326,158 172,158" fill="none" stroke="#6f95c8" stroke-width="2"/>
+  </g>
+
+  <!-- Windows, lit -->
+  <g fill="#ffe29a" stroke="#14365f" stroke-width="4">
+    <rect x="152" y="192" width="52" height="44" rx="2"/>
+    <rect x="276" y="192" width="52" height="44" rx="2"/>
+    <rect x="152" y="252" width="52" height="44" rx="2"/>
+  </g>
+  <path d="M178 192v44M152 214h52M302 192v44M276 214h52M178 252v44M152 274h52" stroke="#14365f" stroke-width="3"/>
+
+  <!-- Door -->
+  <rect x="222" y="250" width="38" height="70" rx="2" fill="#2458a6"/>
+  <circle cx="252" cy="287" r="2.5" fill="#f0c63a"/>
+
+  <!-- Battery on the wall -->
+  <rect x="284" y="262" width="30" height="44" rx="4" fill="#ffffff" stroke="#14365f" stroke-width="3"/>
+  <path d="M301 272l-7 11h8l-6 12" stroke="#2f7d3a" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Heat pump outside, piped into the house -->
+  <path d="M352 292h14" stroke="#c9d2dc" stroke-width="5"/>
+  <rect x="364" y="268" width="72" height="48" rx="4" fill="#e7ecf1" stroke="#14365f" stroke-width="3"/>
+  <circle cx="390" cy="292" r="15" fill="#c9d2dc" stroke="#14365f" stroke-width="3"/>
+  <path d="M390 279v26M377 292h26" stroke="#14365f" stroke-width="2.5"/>
+  <path d="M414 280h14M414 290h14M414 300h14" stroke="#14365f" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M372 316v4M428 316v4" stroke="#14365f" stroke-width="3"/>
+
+  <!-- Charger on the side wall, cable to the car -->
+  <rect x="132" y="258" width="14" height="22" rx="3" fill="#f0c63a" stroke="#14365f" stroke-width="2.5"/>
+  <path d="M139 280c0 16-12 20-30 22" stroke="#14365f" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+  <!-- Car -->
+  <path d="M12 306v-16l12-18a8 8 0 0 1 6.7-3.6h44.6a8 8 0 0 1 6.7 3.6l12 18v16z" fill="#bfe3e6" stroke="#14365f" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M28 288l8-12h18v12zM62 288v-12h14l8 12z" fill="#14365f" opacity="0.75"/>
+  <circle cx="32" cy="308" r="10" fill="#14365f"/>
+  <circle cx="86" cy="308" r="10" fill="#14365f"/>
+  <circle cx="32" cy="308" r="4" fill="#c9d2dc"/>
+  <circle cx="86" cy="308" r="4" fill="#c9d2dc"/>
+</svg>
