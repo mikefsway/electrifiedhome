@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{NAME}} – Electrified Home</title>
+<meta name="description" content="{{SUMMARY}}">
+<link rel="canonical" href="https://electrifiedhome.org/tools/{{SLUG}}/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<!-- header:start -->
+<!-- header:end -->
+
+<main id="main">
+<!-- Drafted by scripts/add-widgets.mjs when KarbonKit published a new widget.
+     Replace every DRAFT: paragraph, following WRITING.md. The check fails
+     until they are all gone. -->
+<h1>{{NAME}}</h1>
+<p class="lede">{{SUMMARY}}</p>
+
+<h2>What you need</h2>
+<p>DRAFT: what the tool asks for (a postcode, a phone, some minutes) and anything the browser will ask permission for.</p>
+
+<!-- karbonkit: {{TYPE}} -->
+<!-- The config ID comes from the KarbonKit dashboard. To change it everywhere: node scripts/site.mjs set-id TYPE NEW_ID -->
+<figure class="tool wide">
+  <div class="tool-frame">
+    <script src="https://widgets.karbonkit.com/embed.js"></script>
+    <div data-karbonkit data-config-id="YOUR_CONFIG_ID"></div>
+  </div>
+  <figcaption>{{NAME}} by KarbonKit.</figcaption>
+</figure>
+
+<h2>What it can't tell you</h2>
+<p>DRAFT: the limits of the answer, and what does give the real answer (usually an installer's survey or an official page).</p>
+
+<h2>What next</h2>
+<p>DRAFT: links to the topic pages and tools a reader would want after this one.</p>
+</main>
+
+<!-- footer:start -->
+<!-- footer:end -->
+</body>
+</html>

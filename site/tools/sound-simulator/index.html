@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sound simulator – Electrified Home</title>
+<meta name="description" content="Play a real heat pump recording where the unit would go and measure it from your windows and garden.">
+<link rel="canonical" href="https://electrifiedhome.org/tools/sound-simulator/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<!-- header:start -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="inner">
+    <a class="site-name" href="/">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="#1d2733"/><circle cx="10.5" cy="12.5" r="4.5" fill="#8a4b26"/><circle cx="21.5" cy="12.5" r="4.5" fill="#2458a6"/><circle cx="16" cy="22" r="4.5" fill="#e2c21a"/><path d="M13.2 18.6l5.6 6.8" stroke="#2f7d3a" stroke-width="2.2"/></svg>
+      Electrified Home
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="/heat-pumps/">Heat pumps</a></li>
+        <li><a href="/insulation/">Insulation</a></li>
+        <li><a href="/solar-and-batteries/">Solar and batteries</a></li>
+        <li><a href="/cooking/">Cooking</a></li>
+        <li><a href="/car-charging/">Car charging</a></li>
+        <li><a href="/paying-for-it/">Paying for it</a></li>
+        <li><a href="/installers/">Installers</a></li>
+        <li><a href="/tools/" aria-current="page">Tools</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<!-- header:end -->
+
+<main id="main">
+<h1>Sound simulator</h1>
+<p class="lede">Play a real heat pump recording where the unit would go, then walk around and measure how loud it is from your windows and garden.</p>
+
+<h2>What you need</h2>
+<p>A speaker or a second phone to play the recording, and a phone whose microphone the tool can use to measure. Your browser will ask for permission.</p>
+
+<!-- karbonkit: sound-simulator -->
+<!-- The config ID comes from the KarbonKit dashboard (Sound Simulator tab). To change it everywhere: node scripts/site.mjs set-id TYPE NEW_ID -->
+<!-- This one is the plain iframe from the dashboard rather than the script tag,
+     so the site also tests what iframe embedders see: a fixed height and a
+     fixed allow list. -->
+<figure class="tool wide">
+  <div class="tool-frame">
+    <iframe
+      src="https://widgets.karbonkit.com/widget-embed?type=sound-simulator&cid=YOUR_CONFIG_ID"
+      width="100%"
+      height="700"
+      frameborder="0"
+      style="border: none; border-radius: 8px;"
+      allow="microphone"
+    ></iframe>
+  </div>
+  <figcaption>Sound simulator by KarbonKit.</figcaption>
+</figure>
+
+<h2>What it can't tell you</h2>
+<p>Phone microphones aren't calibrated sound meters, so treat the readings as approximate. Real units vary with model, size and how hard they are working.</p>
+
+<h2>What next</h2>
+<p>See how big a unit is with the <a href="/tools/heat-pump-visualiser/">AR visualiser</a>, and read about <a href="/heat-pumps/">noise and where the unit goes</a>.</p>
+</main>
+
+<!-- footer:start -->
+<footer class="site-footer">
+  <div class="inner">
+    <p>The tools on this site are made by <a href="https://www.karbonkit.com/">KarbonKit</a>. Any website can embed them for free.</p>
+    <p>This is general information for UK homes, not advice for yours. An installer's survey is what tells you what your home needs.</p>
+    <p><a href="/about/">About this site</a>, including privacy</p>
+  </div>
+</footer>
+<!-- footer:end -->
+</body>
+</html>

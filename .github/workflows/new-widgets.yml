@@ -1,0 +1,101 @@
+name: New KarbonKit widgets
+
+# Once a day, look at the widgets KarbonKit has shipped and open a pull
+# request drafting a page for any this site doesn't have. With the
+# CLAUDE_CODE_OAUTH_TOKEN secret set, Claude writes the page text; without
+# it, the page keeps its DRAFT: paragraphs and the check fails until someone
+# writes them. Either way the pull request needs a config ID before merging.
+
+on:
+  schedule:
+    - cron: '23 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: new-widgets
+  cancel-in-progress: false
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      HAS_CLAUDE: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN != '' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - id: list
+        run: node scripts/add-widgets.mjs --list
+
+      - name: Install Claude Code
+        if: steps.list.outputs.slugs != '' && env.HAS_CLAUDE == 'true'
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: One pull request per new widget
+        if: steps.list.outputs.slugs != ''
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          SLUGS: ${{ steps.list.outputs.slugs }}
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for slug in $SLUGS; do
+            branch="new-widget/$slug"
+            if [ -n "$(gh pr list --head "$branch" --state open --json number --jq '.[].number')" ]; then
+              echo "$slug: pull request already open"
+              continue
+            fi
+            git checkout -q -B "$branch" origin/main
+            node scripts/add-widgets.mjs --slug "$slug" > /tmp/out.txt
+            name=$(node -e "const fs=require('fs');const m=fs.readFileSync('site/tools/$slug/index.html','utf8').match(/<h1>([^<]*)<\/h1>/);console.log(m[1])")
+            type=$(grep -o '<!-- karbonkit: [a-z0-9-]* -->' "site/tools/$slug/index.html" | head -1 | cut -d' ' -f3)
+
+            written="no"
+            if [ "$HAS_CLAUDE" = "true" ]; then
+              prompt="KarbonKit has shipped a new widget: $name (widget type $type).
+          This repository is electrifiedhome.org, a plain-HTML information site for UK homeowners about running a home on electricity. It embeds KarbonKit's widgets.
+          site/tools/$slug/index.html is a draft page for the new widget, with DRAFT: paragraphs.
+
+          1. Read WRITING.md and follow it exactly. Also read two finished tool pages, site/tools/grant-finder/index.html and site/tools/heat-pump-visualiser/index.html, and match their length and tone.
+          2. Find out what the widget does from https://www.karbonkit.com/tools/$slug/ and https://www.karbonkit.com/docs/integration.md . Describe only what those pages say it does.
+          3. Replace every DRAFT: paragraph, and the HTML comment above the h1 that mentions them. Rewrite the lede, the meta description and this widget's entry in site/tools/index.html for a homeowner if they read as written for a website owner.
+          4. If one topic page in site/ is clearly where a reader would want this tool, add one sentence there linking to /tools/$slug/. Don't embed the widget anywhere else.
+          5. Don't change the embed block (the karbonkit comment, figure, script and data-config-id), the header or the footer.
+          6. Run: node scripts/site.mjs fix && node scripts/site.mjs check . Fix everything it reports except YOUR_CONFIG_ID."
+              if claude -p "$prompt" --permission-mode acceptEdits \
+                   --allowedTools "Read,Edit,Write,Glob,Grep,WebFetch,Bash(node scripts/site.mjs:*)"; then
+                written="yes"
+              fi
+              node scripts/site.mjs fix
+            fi
+
+            git add -A
+            git commit -q -m "Add $name, a new KarbonKit widget"
+            git push -q -f origin "$branch"
+
+            if [ "$written" = "yes" ]; then
+              draft_note="Claude wrote the page text. Read it against WRITING.md before merging."
+            else
+              draft_note="The page still has DRAFT: paragraphs to write (the check fails until they're gone). Follow WRITING.md."
+            fi
+            cat > /tmp/body.md <<BODY
+          KarbonKit now publishes **$name** (\`$type\`), and this site has no page for it. This pull request adds \`site/tools/$slug/\` and lists it on /tools/.
+
+          - [ ] Create the widget in the KarbonKit dashboard and copy its config ID.
+          - [ ] Put it in: \`node scripts/site.mjs set-id $type <CONFIG_ID>\`, or replace \`YOUR_CONFIG_ID\` in \`site/tools/$slug/index.html\` by hand.
+          - [ ] $draft_note
+          - [ ] Look at the Cloudflare Pages preview for this branch.
+
+          The **Check** workflow doesn't run on pull requests opened by this bot. It runs as soon as you push a commit to the branch, such as the config ID.
+          BODY
+            gh pr create --head "$branch" --base main --title "Add $name (new KarbonKit widget)" --body-file /tmp/body.md
+            git checkout -q main
+          done

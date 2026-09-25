@@ -1,0 +1,12 @@
+{
+  "name": "electrifiedhome",
+  "private": true,
+  "description": "electrifiedhome.org – plain HTML, no build step. See README.md.",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "check": "node scripts/site.mjs check",
+    "fix": "node scripts/site.mjs fix",
+    "serve": "node scripts/serve.mjs"
+  }
+}
