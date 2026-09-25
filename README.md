@@ -31,7 +31,7 @@ Needs Node 20 or later. There are no packages to install.
 ## Editing
 
 1. Edit the HTML in `site/`. For the header or footer, edit `partials/` instead.
-2. Run `npm run fix`. It copies the header and footer into every page, writes each page's meta block (link previews and schema.org data, from its title, description and h1), and rewrites the sitemap, `llms.txt` and `llms-full.txt`.
+2. Run `npm run fix`. It copies the header and footer into every page, points each page at the current stylesheet (`style.css?v=<hash>`, so no cache serves an old one), writes each page's meta block (link previews and schema.org data, from its title, description and h1), and rewrites the sitemap, `llms.txt` and `llms-full.txt`.
 3. Run `npm run check`. It checks for broken links, missing titles, em-dashes, phrases WRITING.md rules out, and pages out of step with `partials/`.
 4. Preview with `npm run serve` at http://localhost:8080/. The server sends the same headers as Cloudflare, so a widget blocked by the CSP shows up here too.
 
