@@ -14,7 +14,11 @@ site/                    everything published
   assets/electric-home.svg  the picture at the top of the home page
   _headers               response headers on Cloudflare (including the CSP)
   sitemap.xml            written by `npm run fix`
-partials/                header and footer, copied into every page
+  llms.txt, llms-full.txt  an index and the full text of the site for LLMs, written by `npm run fix`
+  assets/og.png          the picture link previews show (1200 × 630)
+  apple-touch-icon.png   the icon for a phone's home screen
+partials/                header and footer, copied into every page, and llms.md,
+                         the introduction to llms.txt
 templates/tool.html      starting point for a new widget's page
 scripts/site.mjs         fix / check / set-id
 scripts/add-widgets.mjs  drafts pages for new KarbonKit widgets
@@ -27,7 +31,7 @@ Needs Node 20 or later. There are no packages to install.
 ## Editing
 
 1. Edit the HTML in `site/`. For the header or footer, edit `partials/` instead.
-2. Run `npm run fix`. It copies the header and footer into every page and rewrites the sitemap.
+2. Run `npm run fix`. It copies the header and footer into every page, writes each page's meta block (link previews and schema.org data, from its title, description and h1), and rewrites the sitemap, `llms.txt` and `llms-full.txt`.
 3. Run `npm run check`. It checks for broken links, missing titles, em-dashes, phrases WRITING.md rules out, and pages out of step with `partials/`.
 4. Preview with `npm run serve` at http://localhost:8080/. The server sends the same headers as Cloudflare, so a widget blocked by the CSP shows up here too.
 

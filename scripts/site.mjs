@@ -3,7 +3,9 @@
 //
 //   node scripts/site.mjs fix              copy partials/header.html and
 //                                          partials/footer.html into every
-//                                          page, and rewrite sitemap.xml
+//                                          page, write each page's meta
+//                                          block, and rewrite sitemap.xml,
+//                                          llms.txt and llms-full.txt
 //   node scripts/site.mjs check            fail if anything is out of step
 //                                          (what CI runs)
 //   node scripts/site.mjs check --ids      also fail on unreplaced
@@ -12,6 +14,8 @@
 //                                          every embed of that widget type
 //
 // The pages are ordinary HTML. The only conventions this script relies on:
+//   <!-- meta:start --> ... <!-- meta:end -->       (replaced by `fix`;
+//                                                    added if missing)
 //   <!-- header:start --> ... <!-- header:end -->   (replaced by `fix`)
 //   <!-- footer:start --> ... <!-- footer:end -->
 //   <!-- karbonkit: TYPE -->                       (just above each embed,
@@ -66,12 +70,217 @@ function renderFooter() {
   return read(join(ROOT, 'partials/footer.html')).trimEnd();
 }
 
+// ---------- What search engines, link previews and LLMs read ----------
+//
+// Each page's <head> ends with a block between <!-- meta:start --> and
+// <!-- meta:end -->, written by `fix` from the page's own <title>, meta
+// description, canonical link and h1: Open Graph tags for link previews, and
+// schema.org JSON-LD. The JSON-LD <script> is data, not code: browsers don't
+// run it and the CSP doesn't apply to it.
+
+const SITE_NAME = 'Electrified Home';
+const PUBLISHER = { '@type': 'Organization', '@id': `${ORIGIN}/#publisher`, name: 'KarbonKit', url: 'https://www.karbonkit.com/' };
+
+const decode = (s) => s
+  .replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&lt;/g, '<')
+  .replace(/&gt;/g, '>').replace(/&amp;/g, '&');
+const attr = (s) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+
+export function pageInfo(html) {
+  const pick = (re) => { const m = html.match(re); return m ? decode(m[1]).trim() : ''; };
+  return {
+    title: pick(/<title>([^<]*)<\/title>/),
+    description: pick(/<meta name="description" content="([^"]*)">/),
+    h1: pick(/<h1>([^<]*)<\/h1>/),
+  };
+}
+
+function jsonLd(path, info) {
+  const url = ORIGIN + path;
+  const website = { '@id': `${ORIGIN}/#website` };
+  if (path === '/') {
+    return {
+      '@context': 'https://schema.org',
+      '@graph': [
+        { '@type': 'WebSite', '@id': `${ORIGIN}/#website`, url, name: SITE_NAME, description: info.description,
+          inLanguage: 'en-GB', publisher: { '@id': PUBLISHER['@id'] } },
+        PUBLISHER,
+      ],
+    };
+  }
+  const crumbs = [{ name: SITE_NAME, url: `${ORIGIN}/` }];
+  if (path.startsWith('/tools/') && path !== '/tools/') crumbs.push({ name: 'Tools', url: `${ORIGIN}/tools/` });
+  crumbs.push({ name: info.h1, url });
+  const page = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': url,
+    url,
+    name: info.h1,
+    description: info.description,
+    inLanguage: 'en-GB',
+    isPartOf: { ...website, '@type': 'WebSite', name: SITE_NAME, url: `${ORIGIN}/` },
+    breadcrumb: {
+      '@type': 'BreadcrumbList',
+      itemListElement: crumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: c.url })),
+    },
+  };
+  // A tool page is about a free web app that runs in the page.
+  if (crumbs.length === 3) {
+    page.mainEntity = {
+      '@type': 'WebApplication',
+      name: info.h1,
+      description: info.description,
+      url,
+      applicationCategory: 'UtilitiesApplication',
+      operatingSystem: 'Any',
+      isAccessibleForFree: true,
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'GBP' },
+      provider: PUBLISHER,
+    };
+  }
+  return page;
+}
+
+function renderMeta(path, html) {
+  const info = pageInfo(html);
+  const lines = [
+    '<meta name="theme-color" content="#14365f">',
+    '<link rel="apple-touch-icon" href="/apple-touch-icon.png">',
+    '<link rel="preload" href="/assets/fonts/atkinson-hyperlegible-next-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>',
+  ];
+  if (!path.endsWith('/')) {
+    // 404.html: nothing to index or preview.
+    lines.push('<meta name="robots" content="noindex">');
+    return lines.join('\n');
+  }
+  const ogTitle = info.title.replace(/ – Electrified Home$/, '');
+  lines.push(
+    '<meta property="og:type" content="website">',
+    `<meta property="og:site_name" content="${SITE_NAME}">`,
+    '<meta property="og:locale" content="en_GB">',
+    `<meta property="og:title" content="${attr(ogTitle)}">`,
+    `<meta property="og:description" content="${attr(info.description)}">`,
+    `<meta property="og:url" content="${ORIGIN}${path}">`,
+    `<meta property="og:image" content="${ORIGIN}/assets/og.png">`,
+    '<meta property="og:image:width" content="1200">',
+    '<meta property="og:image:height" content="630">',
+    '<meta property="og:image:alt" content="Electrified Home: a house with solar panels, a heat pump, a battery and an electric car charging.">',
+    '<meta name="twitter:card" content="summary_large_image">',
+    `<script type="application/ld+json">${JSON.stringify(jsonLd(path, info)).replace(/</g, '\\u003c')}</script>`,
+  );
+  return lines.join('\n');
+}
+
 function withLayout(html, path) {
+  // Pages from before the meta block get its markers just before </head>.
+  if (!html.includes('<!-- meta:start -->')) {
+    html = html.replace('</head>', '<!-- meta:start -->\n<!-- meta:end -->\n</head>');
+  }
   return html
+    .replace(/<!-- meta:start -->[\s\S]*?<!-- meta:end -->/,
+      () => `<!-- meta:start -->\n${renderMeta(path, html)}\n<!-- meta:end -->`)
     .replace(/<!-- header:start -->[\s\S]*?<!-- header:end -->/,
-      `<!-- header:start -->\n${renderHeader(path)}\n<!-- header:end -->`)
+      () => `<!-- header:start -->\n${renderHeader(path)}\n<!-- header:end -->`)
     .replace(/<!-- footer:start -->[\s\S]*?<!-- footer:end -->/,
-      `<!-- footer:start -->\n${renderFooter()}\n<!-- footer:end -->`);
+      () => `<!-- footer:start -->\n${renderFooter()}\n<!-- footer:end -->`);
+}
+
+// ---------- llms.txt and llms-full.txt ----------
+//
+// https://llmstxt.org/: a Markdown index of the site for language models,
+// and the text of every page in one file. Both are written by `fix` from the
+// pages, with the introduction from partials/llms.md.
+
+// Pages in the order a reader would want them: the footer's links first
+// (topics, then tools, then the rest), then anything the footer misses.
+function orderedPages() {
+  const all = pages().filter((f) => urlPath(f).endsWith('/'));
+  const byPath = new Map(all.map((f) => [urlPath(f), f]));
+  const order = ['/'];
+  for (const m of read(join(ROOT, 'partials/footer.html')).matchAll(/href="(\/[^"#]*)"/g)) {
+    if (byPath.has(m[1]) && !order.includes(m[1])) order.push(m[1]);
+  }
+  for (const p of [...byPath.keys()].sort()) if (!order.includes(p)) order.push(p);
+  return order.map((p) => ({ path: p, file: byPath.get(p) }));
+}
+
+const abs = (href, path) =>
+  href.startsWith('/') ? ORIGIN + href : href.startsWith('#') ? ORIGIN + path + href : href;
+
+function inline(html, path) {
+  return decode(html
+    .replace(/<a [^>]*href="([^"]*)"[^>]*>([\s\S]*?)<\/a>/g, (m, href, text) => `[${text.trim()}](${abs(href, path)})`)
+    .replace(/<\/?strong>/g, '**')
+    .replace(/<[^>]+>/g, '')
+    .replace(/\s+/g, ' '))
+    .trim();
+}
+
+// The Markdown of a page's <main>. Handles the handful of tags these pages use.
+export function markdown(html, path) {
+  let s = html.slice(html.indexOf('<main'), html.indexOf('</main>'));
+  s = s
+    .replace(/<!--[\s\S]*?-->/g, '')
+    .replace(/<script[\s\S]*?<\/script>/g, '')
+    .replace(/<p class="(?:eyebrow|hero-actions)">[\s\S]*?<\/p>/g, '')
+    .replace(/<img [^>]*>/g, '')
+    // An embedded tool: say it's there and where to use it.
+    .replace(/<figure[\s\S]*?<figcaption>([\s\S]*?)<\/figcaption>\s*<\/figure>/g, (m, cap) =>
+      `\n\n*Interactive tool: ${inline(cap, path)} Use it at ${ORIGIN}${path}*\n\n`)
+    // Big links with a heading inside (the home page's .split).
+    .replace(/<a href="([^"]*)">\s*<h2>([\s\S]*?)<\/h2>\s*<p>([\s\S]*?)<\/p>\s*<\/a>/g, (m, href, h, p) =>
+      `\n- [${inline(h, path)}](${abs(href, path)}): ${inline(p, path)}`)
+    .replace(/<li[^>]*>([\s\S]*?)<\/li>/g, (m, li) => {
+      li = li
+        .replace(/<h3[^>]*>([\s\S]*?)<\/h3>/g, '<strong>$1</strong> ')
+        .replace(/<p class="needs">([\s\S]*?)<\/p>/g, ' ($1)')
+        .replace(/^\s*(<a [^>]*>[\s\S]*?<\/a>)\s*<p[^>]*>/, '$1: <p>')
+        .replace(/<\/p>\s*<p[^>]*>/g, ' ');
+      return `\n- ${inline(li, path)}`;
+    })
+    .replace(/<\/?(?:ul|ol)[^>]*>/g, '\n\n')
+    .replace(/<h([1-3])[^>]*>([\s\S]*?)<\/h\1>/g, (m, n, h) => `\n\n${'#'.repeat(Number(n))} ${inline(h, path)}\n\n`)
+    .replace(/<p[^>]*>([\s\S]*?)<\/p>/g, (m, p) => `\n\n${inline(p, path)}\n\n`)
+    .replace(/<[^>]+>/g, '');
+  return decode(s)
+    .split('\n').map((l) => l.trim()).join('\n')
+    .replace(/\n{3,}/g, '\n\n')
+    // List items on consecutive lines, not separated by blank ones.
+    .replace(/^(- .*)\n\n(?=- )/gm, '$1\n')
+    .trim();
+}
+
+function llmsTxt() {
+  const intro = read(join(ROOT, 'partials/llms.md')).trim();
+  const sections = { guides: [], tools: [], other: [] };
+  for (const { path, file } of orderedPages()) {
+    if (path === '/') continue;
+    const info = pageInfo(read(file));
+    const line = `- [${info.h1}](${ORIGIN}${path}): ${info.description}`;
+    if (path === '/tools/') sections.tools.unshift(line);
+    else if (path.startsWith('/tools/')) sections.tools.push(line);
+    else if (path === '/about/') sections.other.push(line);
+    else sections.guides.push(line);
+  }
+  sections.other.push(`- [Every page in one file](${ORIGIN}/llms-full.txt): the text of all the pages above, in Markdown`);
+  return `${intro}\n\n## Guides\n\n${sections.guides.join('\n')}\n\n## Tools\n\n${sections.tools.join('\n')}\n\n## Optional\n\n${sections.other.join('\n')}\n`;
+}
+
+function llmsFullTxt() {
+  const intro = read(join(ROOT, 'partials/llms.md')).trim();
+  const parts = orderedPages().map(({ path, file }) =>
+    markdown(read(file), path).replace(/^# (.*)$/m, (m, h) => `# ${h}\n\nSource: ${ORIGIN}${path}`));
+  return `${intro}\n\n${parts.join('\n\n---\n\n')}\n`;
+}
+
+// Everything `fix` writes that isn't a page.
+function generated() {
+  return {
+    'sitemap.xml': sitemap(),
+    'llms.txt': llmsTxt(),
+    'llms-full.txt': llmsFullTxt(),
+  };
 }
 
 function sitemap() {
@@ -88,7 +297,7 @@ export function fix() {
     const next = withLayout(html, urlPath(file));
     if (next !== html) writeFileSync(file, next);
   }
-  writeFileSync(join(SITE, 'sitemap.xml'), sitemap());
+  for (const [name, text] of Object.entries(generated())) writeFileSync(join(SITE, name), text);
 }
 
 // Every KarbonKit embed on the site: { file, type, id }.
@@ -120,8 +329,10 @@ export function check({ ids = false } = {}) {
 
     if (!html.includes('<!-- header:start -->') || !html.includes('<!-- footer:start -->')) {
       say(file, 'missing the header:start or footer:start marker');
+    } else if (!html.includes('<!-- meta:start -->')) {
+      say(file, 'missing the meta block in <head> (run: node scripts/site.mjs fix)');
     } else if (withLayout(html, path) !== html) {
-      say(file, 'header or footer differs from partials/ (run: node scripts/site.mjs fix)');
+      say(file, 'meta block, header or footer out of date (run: node scripts/site.mjs fix)');
     }
     if (!/<title>[^<]+<\/title>/.test(html)) say(file, 'no <title>');
     if ((html.match(/<main[ >]/g) || []).length !== 1) say(file, 'should have exactly one <main>');
@@ -179,8 +390,11 @@ export function check({ ids = false } = {}) {
     if (!read(file).includes('<!-- karbonkit: ')) say(file, 'tool page without a KarbonKit embed');
   }
 
-  if (read(join(SITE, 'sitemap.xml')) !== sitemap()) {
-    problems.push('site/sitemap.xml is out of date (run: node scripts/site.mjs fix)');
+  for (const [name, text] of Object.entries(generated())) {
+    const file = join(SITE, name);
+    if (!existsSync(file) || read(file) !== text) {
+      problems.push(`site/${name} is out of date (run: node scripts/site.mjs fix)`);
+    }
   }
   return problems;
 }

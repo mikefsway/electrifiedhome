@@ -10,7 +10,11 @@ electrifiedhome.org: a plain-HTML information site for UK households about runni
 
 ## Rules
 
-- **Plain HTML, no build step, and no JavaScript of the site's own.** Mike edits it by hand. The only script is KarbonKit's `embed.js`.
+- **Plain HTML, no build step, and no JavaScript of the site's own.** Mike edits it by hand. The only script that runs is KarbonKit's `embed.js`. The JSON-LD `<script type="application/ld+json">` in each page's meta block is data, not code.
+- **`npm run fix` writes what search engines and LLMs read,** from each page's `<title>`, meta description, canonical link and h1. Don't edit these by hand:
+  - the block between `<!-- meta:start -->` and `<!-- meta:end -->` in `<head>` (Open Graph tags, JSON-LD);
+  - `sitemap.xml`, `llms.txt` and `llms-full.txt`. The introduction to the llms files is `partials/llms.md`.
+  - Keep titles under about 60 characters, in words people search for, and descriptions under 160.
 - **Embed KarbonKit widgets only as KarbonKit documents them** (https://www.karbonkit.com/docs/integration.md), with the `<!-- karbonkit: TYPE -->` comment above each one.
   - Never import KarbonKit code.
   - Never add `data-` attributes the loader doesn't read.

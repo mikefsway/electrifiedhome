@@ -12,7 +12,7 @@ import { SITE } from './site.mjs';
 const port = Number(process.argv[2]) || 8080;
 const TYPES = {
   '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.svg': 'image/svg+xml',
-  '.woff2': 'font/woff2', '.xml': 'application/xml', '.txt': 'text/plain', '.js': 'text/javascript',
+  '.woff2': 'font/woff2', '.png': 'image/png', '.xml': 'application/xml', '.txt': 'text/plain', '.js': 'text/javascript',
 };
 
 // Only the global "/*" block of _headers; enough for a preview.
