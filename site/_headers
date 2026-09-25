@@ -8,5 +8,12 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
 
-/assets/*
+# Fonts never change, so they can sit in caches for a day. The stylesheet
+# does change, and its URL has no version in it, so browsers and Cloudflare's
+# edge must check it on every load (a 304 when nothing changed); a day-long
+# cache kept serving the old layout long after a deploy.
+/assets/fonts/*
   Cache-Control: public, max-age=86400
+
+/assets/style.css
+  Cache-Control: no-cache
