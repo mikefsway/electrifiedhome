@@ -20,11 +20,18 @@ electrifiedhome.org: a plain-HTML information site for UK households about runni
 - **Keep the CSP in `site/_headers` strict.** Allow only KarbonKit's host for scripts and frames. If a KarbonKit change needs more, that's a finding about KarbonKit: many customers' sites are this strict.
   - Leave Cloudflare Web Analytics off. The CSP would block it, and the About page says the site has no analytics.
 - **Every KarbonKit widget has a page at `/tools/<slug>/`,** with the slug from https://www.karbonkit.com/widgets.json. Don't rename or remove those pages: KarbonKit's smoke test loads them.
+  - The smoke test uses the first `<iframe>` on each tool page, so don't put any other iframe above the widget.
+  - Each tool is listed in three places: the cards on `/tools/` and on the home page, and the footer. Each list sits between `<!-- tools:start -->` and `<!-- tools:end -->`, and `scripts/add-widgets.mjs` adds new tools to all three.
+- **The site is about electrification.** Lead with heat pumps, cooking, car charging, solar and batteries, and tariffs. Insulation supports those changes; it isn't the first step.
+- **The look loosely follows the Energy Saving Trust's site:** a navy band at the top of each page, then solid-colour cards. README.md has the markup.
+- **The repository is public.** Keep private details out of files, commit messages and pull requests:
+  - no personal email addresses or account logins. Commit as `Mike Fell <79201953+mikefsway@users.noreply.github.com>`;
+  - nothing about the prompts or conversations behind a change: no Claude session links, and no quoting or describing what was asked. Say what changed and why in terms of the site.
 - **After editing, run `npm run fix && npm run check`.** CI runs `check` and `check --ids` on every push.
 
 ## Config IDs
 
-Each widget type has one config ID, used everywhere that widget appears. They live on Mike's KarbonKit account fell.mike@gmail.com, as widget rows named "electrifiedhome.org – <type>":
+Each widget type has one config ID, used everywhere that widget appears. They live on Mike's KarbonKit account, as widget rows named "electrifiedhome.org – <type>":
 
 - brand colour `#2458a6`;
 - company name "Electrified Home";
