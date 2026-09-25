@@ -265,5 +265,9 @@ li { margin-bottom: 0.375rem; }
   body { font-size: 1rem; }
   .lede { font-size: 1.125rem; }
   main { padding-top: 1.75rem; }
-  .tool-frame { padding: 0.25rem; }
+  /* On a phone the widget needs every pixel: run the frame almost to the
+     screen edge instead of inside main's 1rem gutter. */
+  .tool { margin-left: -0.75rem; margin-right: -0.75rem; }
+  .tool-frame { padding: 0; }
+  .tool figcaption { padding: 0 0.75rem; }
 }
