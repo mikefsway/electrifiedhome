@@ -22,6 +22,7 @@
 //                                                    script tag or iframe)
 import { readFileSync, writeFileSync, readdirSync, statSync, existsSync } from 'node:fs';
 import { join, relative, sep } from 'node:path';
+import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 
 export const ROOT = fileURLToPath(new URL('..', import.meta.url));
@@ -172,12 +173,22 @@ function renderMeta(path, html) {
   return lines.join('\n');
 }
 
+// The stylesheet's URL carries a hash of its contents, so a changed
+// stylesheet has a new URL and no cache can serve the old one. Cloudflare's
+// zone settings override the no-cache rule in _headers on the custom domain,
+// so the URL is what makes a change show up straight away.
+function styleHref() {
+  const hash = createHash('sha256').update(read(join(SITE, 'assets/style.css'))).digest('hex').slice(0, 10);
+  return `/assets/style.css?v=${hash}`;
+}
+
 function withLayout(html, path) {
   // Pages from before the meta block get its markers just before </head>.
   if (!html.includes('<!-- meta:start -->')) {
     html = html.replace('</head>', '<!-- meta:start -->\n<!-- meta:end -->\n</head>');
   }
   return html
+    .replace(/href="\/assets\/style\.css(?:\?v=[0-9a-f]*)?"/, () => `href="${styleHref()}"`)
     .replace(/<!-- meta:start -->[\s\S]*?<!-- meta:end -->/,
       () => `<!-- meta:start -->\n${renderMeta(path, html)}\n<!-- meta:end -->`)
     .replace(/<!-- header:start -->[\s\S]*?<!-- header:end -->/,
@@ -332,7 +343,7 @@ export function check({ ids = false } = {}) {
     } else if (!html.includes('<!-- meta:start -->')) {
       say(file, 'missing the meta block in <head> (run: node scripts/site.mjs fix)');
     } else if (withLayout(html, path) !== html) {
-      say(file, 'meta block, header or footer out of date (run: node scripts/site.mjs fix)');
+      say(file, 'stylesheet link, meta block, header or footer out of date (run: node scripts/site.mjs fix)');
     }
     if (!/<title>[^<]+<\/title>/.test(html)) say(file, 'no <title>');
     if ((html.match(/<main[ >]/g) || []).length !== 1) say(file, 'should have exactly one <main>');
