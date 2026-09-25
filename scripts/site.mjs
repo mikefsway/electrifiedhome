@@ -165,12 +165,17 @@ export function check({ ids = false } = {}) {
     if (set.size > 1) problems.push(`${type} uses different config IDs on different pages: ${[...set].join(', ')}`);
   }
 
-  // Every tool page is listed on /tools/ and embeds its widget.
+  // Every tool page is listed on /tools/, the home page and in the footer,
+  // and embeds its widget.
   const toolsIndex = read(join(SITE, 'tools/index.html'));
+  const home = read(join(SITE, 'index.html'));
+  const footer = read(join(ROOT, 'partials/footer.html'));
   for (const file of pages(join(SITE, 'tools'))) {
     const path = urlPath(file);
     if (path === '/tools/') continue;
     if (!toolsIndex.includes(`href="${path}"`)) say(file, 'not listed on /tools/');
+    if (!home.includes(`href="${path}"`)) say(file, 'not listed on the home page');
+    if (!footer.includes(`href="${path}"`)) say(file, 'not listed in partials/footer.html');
     if (!read(file).includes('<!-- karbonkit: ')) say(file, 'tool page without a KarbonKit embed');
   }
 
