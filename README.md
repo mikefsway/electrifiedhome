@@ -74,6 +74,6 @@ Cloudflare Pages builds from `main`: no build command, output directory `site`. 
 
 ## Testing the widgets
 
-KarbonKit's hourly production smoke test (`prod-smoke.yml` in the karbonkit repository) opens every `/tools/<slug>/` page here in a real browser and fails if a widget doesn't render. That is the point of the site being on its own domain: an iframe from here to widgets.karbonkit.com is cross-site, like every real embedder, which pages on karbonkit.com cannot be.
+KarbonKit's production smoke test (`prod-smoke.yml` in the karbonkit repository, every third hour) opens every `/tools/<slug>/` page here in a real browser and fails if a widget doesn't render. That is the point of the site being on its own domain: an iframe from here to widgets.karbonkit.com is cross-site, like every real embedder, which pages on karbonkit.com cannot be.
 
 So if you rename or remove a tool page, KarbonKit's monitoring will notice.
