@@ -37,17 +37,16 @@ Needs Node 20 or later. There are no packages to install.
 
 To add a page, copy an existing one into a new folder, change the title, description, canonical link and content, add it to the nav in `partials/header.html` if it needs to be there, and run `npm run fix`.
 
-Every page but the home page starts with a navy band holding the h1 and lede:
+Every page but the home page starts with a navy band holding the h1 and lede. Tool pages also have a link back to /tools/ above the h1 (`<p class="eyebrow"><a href="/tools/">Tools</a></p>`); other pages have nothing there.
 
 ```html
 <div class="page-head">
-<p class="eyebrow">The electric home</p>
 <h1>Heat pumps</h1>
 <p class="lede">...</p>
 </div>
 ```
 
-Lists of links become cards with `<ul class="cards">`, one `<li class="i-NAME"><a href="...">Title</a><p>Summary</p></li>` each. Add `tool-cards` for the solid-colour tool cards and `compact` for smaller ones. `i-NAME` picks an icon from `site/assets/icons/`; see the list near the end of the cards section in `style.css`. Put a section on a light background with `<div class="band">`.
+Lists of links use `<ul class="cards">`, one `<li class="i-NAME"><a href="...">Title</a><p>Summary</p></li>` each. On their own they are an index: rows between rules. Add `tool-cards` for the tools, which are solid blue blocks, and `compact` for smaller ones. Blue is kept for the tools, so don't use `tool-cards` for anything else. `i-NAME` picks an icon from `site/assets/icons/`; see the list in the "Lists of links" section of `style.css`. Put a section on a light background with `<div class="band">`.
 
 ## KarbonKit widgets
 

@@ -1,14 +1,20 @@
 /* Electrified Home – one stylesheet for every page.
 
    Layout borrows from the Energy Saving Trust's site: a deep blue band at the
-   top of each page, then blocks of solid colour that each lead somewhere.
-   The colours still come from UK wiring: brown is live, blue is neutral,
-   green and yellow is earth.
+   top of each page, and the tools as blocks of solid colour. Colour means
+   something here rather than decorating:
+     navy   the site itself: the top band, headings, the footer
+     blue   the tools, and nothing else (it is also the widgets' brand colour,
+            so a tool card and the tool it opens match)
+     green  the ground the house stands on, at the top of the home page
+     yellow the one button, and keyboard focus
+   Brown, blue, green and yellow are the colours of UK wiring, which is
+   where the logo gets them.
 
    Bands run the full width of the window while their content stays in
-   main's column: a box-shadow paints the colour out to the edges and
-   clip-path trims it top and bottom. Neither affects layout, so there is
-   no sideways scroll. */
+   main's column: a box-shadow (or, on the home page, a border-image) paints
+   the colour out to the edges. Neither affects layout, so there is no
+   sideways scroll. */
 
 @font-face {
   font-family: "Atkinson Hyperlegible Next";
@@ -37,18 +43,16 @@
   --sky: #eef3f9;       /* light bands */
   --ink: #16202b;
   --muted: #4b5866;
-  --rule: #d3dbe4;
-  --navy: #14365f;      /* top of every page, footer */
+  --rule: #cfd7e0;
+  --navy: #14365f;      /* the site: top band, headings, footer */
   --navy-ink: #dfe8f3;  /* text on navy */
-  --blue: #2458a6;      /* neutral: links, buttons, the widgets' brand colour */
-  --brown: #8a4b26;     /* live */
-  --green: #2f7d3a;     /* earth */
-  --yellow: #f0c63a;    /* earth */
-  --slate: #43515c;
-  --teal: #bfe3e6;
+  --blue: #2458a6;      /* the tools, and links */
+  --brown: #8a4b26;
+  --green: #2f7d3a;
+  --yellow: #f0c63a;
   --measure: 42rem;
   --wide: 72rem;
-  --radius: 6px;
+  --ground: 1.5rem;     /* the grass under the house on the home page */
 }
 
 *,
@@ -67,7 +71,7 @@ body {
 }
 
 a { color: var(--blue); text-underline-offset: 0.15em; }
-a:hover { color: var(--ink); }
+a:hover { color: var(--ink); text-decoration-thickness: 2px; }
 
 :focus-visible {
   outline: 3px solid var(--yellow);
@@ -109,7 +113,7 @@ img, svg { max-width: 100%; }
   padding: 0;
   display: flex;
   align-items: center;
-  gap: 0.25rem 1.125rem;
+  gap: 0.25rem 1.25rem;
 }
 .site-nav li { margin: 0; }
 .site-nav a {
@@ -122,18 +126,10 @@ img, svg { max-width: 100%; }
   white-space: nowrap;
 }
 .site-nav a:hover { border-bottom-color: var(--rule); }
-.site-nav a[aria-current="page"] { border-bottom-color: var(--brown); }
-/* The last link, Tools, is a button. */
-.site-nav li:last-child a {
-  background: var(--blue);
-  color: #fff;
-  font-weight: 700;
-  padding: 0.5rem 1rem;
-  border-radius: 999px;
-  border: 0;
-}
-.site-nav li:last-child a:hover { background: var(--navy); }
-.site-nav li:last-child a[aria-current="page"] { background: var(--navy); }
+.site-nav a[aria-current="page"] { border-bottom-color: var(--navy); }
+/* The last link goes to the tools, so it takes the tools' colour. */
+.site-nav li:last-child a { color: var(--blue); font-weight: 700; }
+.site-nav li:last-child a[aria-current="page"] { border-bottom-color: var(--blue); }
 
 /* Narrow screens: the nav becomes a strip under the name that scrolls
    sideways by itself, with a fade to show there's more. */
@@ -149,7 +145,7 @@ img, svg { max-width: 100%; }
   }
   .site-nav::-webkit-scrollbar { display: none; }
   .site-nav ul { padding: 0.25rem 3rem 0.5rem 1rem; width: max-content; }
-  /* Keep the Tools button in view, at the start of the strip. */
+  /* Keep Tools in view, at the start of the strip. */
   .site-nav li:last-child { order: -1; }
 }
 
@@ -167,10 +163,10 @@ main {
   padding: 0 1rem;
 }
 main > * { max-width: var(--measure); }
-main > :is(.wide, .page-head, .hero, .band, .cards, .split, .steps) { max-width: none; }
+main > :is(.wide, .page-head, .hero, .band, .cards) { max-width: none; }
 
 h1, h2, h3 { line-height: 1.2; font-weight: 700; color: var(--navy); }
-h1 { font-size: clamp(2.125rem, 5vw, 3.25rem); margin: 0 0 1rem; letter-spacing: -0.015em; }
+h1 { font-size: clamp(2.125rem, 5vw, 3.25rem); margin: 0 0 1rem; letter-spacing: -0.02em; line-height: 1.1; }
 h2 { font-size: clamp(1.5rem, 3vw, 1.875rem); margin: 3rem 0 0.75rem; letter-spacing: -0.01em; }
 h3 { font-size: 1.1875rem; margin: 2rem 0 0.5rem; }
 p, ul, ol { margin: 0 0 1rem; }
@@ -178,16 +174,15 @@ li { margin-bottom: 0.375rem; }
 
 .lede { font-size: 1.25rem; line-height: 1.5; }
 
+/* Above a tool page's h1: a link back to /tools/. */
 .eyebrow {
   font-size: 0.9375rem;
-  font-weight: 700;
-  margin: 0 0 0.5rem;
-  color: var(--yellow);
+  margin: 0 0 0.75rem;
+  color: var(--navy-ink);
 }
-.page-head .eyebrow a { color: inherit; }
 
 .note {
-  border-left: 4px solid var(--brown);
+  border-left: 4px solid var(--navy);
   padding: 0.25rem 0 0.25rem 1rem;
   color: var(--muted);
 }
@@ -198,7 +193,6 @@ li { margin-bottom: 0.375rem; }
 /* ---------- Bands ---------- */
 
 .page-head,
-.hero,
 .band {
   position: relative;
   box-shadow: 0 0 0 100vmax var(--band);
@@ -223,147 +217,110 @@ li { margin-bottom: 0.375rem; }
   margin: 3rem 0;
 }
 .band > * { max-width: var(--measure); }
-.band > :is(.cards, .split, .wide) { max-width: none; }
+.band > :is(.cards, .wide) { max-width: none; }
 
-/* ---------- Home page ---------- */
+/* ---------- Home page ----------
+   The navy band is the sky and a strip of grass runs along its foot, the
+   full width of the window. The house stands on it: the picture's bottom
+   edge is its ground line. */
 
 .hero {
-  --band: var(--navy);
   color: #fff;
-  padding: 3rem 0 3.5rem;
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-  align-items: center;
-  gap: 2rem 3rem;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 28rem);
+  align-items: end;
+  gap: 1.5rem 4rem;
+  padding: 3.5rem 0 var(--ground);
+  margin-bottom: 3rem;
+  border-image: linear-gradient(var(--navy) calc(100% - var(--ground)), var(--green) 0) fill 0 / 0 / 0 100vmax;
 }
-.hero h1 { color: #fff; font-size: clamp(2.375rem, 6vw, 4rem); }
-.hero .lede { color: var(--navy-ink); }
+.hero > div { padding-bottom: 3.5rem; align-self: center; }
+.hero h1 {
+  color: #fff;
+  font-size: clamp(2.5rem, 6.5vw, 4.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  max-width: 9em;
+}
+.hero .lede { color: var(--navy-ink); max-width: 34rem; }
 .hero-art { width: 100%; height: auto; display: block; }
-.hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.75rem 0 0; }
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.5rem;
+  margin: 2rem 0 0;
+}
+.hero-actions a:not(.button) { color: #fff; font-weight: 700; }
 
 .button {
   display: inline-block;
   font-weight: 700;
   text-decoration: none;
   padding: 0.75rem 1.375rem;
-  border-radius: 999px;
+  border-radius: 3px;
   background: var(--yellow);
   color: var(--ink);
-  border: 2px solid var(--yellow);
 }
-.button:hover { background: #fff; border-color: #fff; color: var(--ink); }
-.button.ghost { background: transparent; color: #fff; border-color: rgba(255, 255, 255, 0.7); }
-.button.ghost:hover { background: #fff; color: var(--ink); }
+.button:hover { background: #fff; color: var(--ink); }
 
 @media (max-width: 48rem) {
-  .hero { grid-template-columns: 1fr; padding: 2rem 0 2.5rem; }
-  .hero-art { max-width: 26rem; margin: 0 auto; }
+  .hero { grid-template-columns: 1fr; padding-top: 2rem; }
+  .hero > div { padding-bottom: 0.5rem; }
+  .hero-art { max-width: 24rem; }
 }
 
-/* ---------- Cards ----------
-   A list of links, each a block: <ul class="cards"><li class="i-NAME">
-   <a href>Title</a><p>Summary</p></li></ul>. The whole block is clickable
-   (the link's ::after covers it). The i- class picks an icon from
-   /assets/icons/; without one, the card gets a plain one. */
+/* ---------- Lists of links ----------
+   <ul class="cards"><li class="i-NAME"><a href>Title</a><p>Summary</p></li></ul>.
+   On their own they are an index: rows between rules, like the contents of
+   a guide. With tool-cards they are the tools' solid blue blocks.
+   The whole row or block is clickable (the link's ::after covers it). The
+   i- class picks an icon from /assets/icons/; without one, the item gets a
+   plain one. */
 
 .cards {
+  --icon: url("icons/tool.svg");
   list-style: none;
   padding: 0;
-  margin: 1.5rem 0 2rem;
+  margin: 1.5rem 0 2.5rem;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(15.5rem, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  column-gap: 3rem;
 }
 .cards li {
-  --icon: url("icons/tool.svg");
   position: relative;
   margin: 0;
-  padding: 1.25rem 1.25rem 3.25rem;
-  border-radius: var(--radius);
-  background: var(--page);
-  border: 1px solid var(--rule);
-  display: flex;
-  flex-direction: column;
-  gap: 0.375rem;
-  transition: transform 120ms ease-out, box-shadow 120ms ease-out;
+  padding: 1rem 0 1.125rem;
+  border-top: 1px solid var(--rule);
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr);
+  column-gap: 1rem;
+  row-gap: 0.25rem;
+  align-content: start;
 }
 .cards li::before {
   content: "";
-  width: 2.5rem;
-  height: 2.5rem;
-  margin-bottom: 0.5rem;
+  grid-row: span 3;
+  width: 2rem;
+  height: 2rem;
+  margin-top: 0.125rem;
   background: currentColor;
   -webkit-mask: var(--icon) center / contain no-repeat;
   mask: var(--icon) center / contain no-repeat;
-  color: var(--blue);
+  color: var(--navy);
 }
-/* An arrow in the bottom corner, as on the Energy Saving Trust's cards. */
-.cards li::after {
-  content: "\2192";
-  position: absolute;
-  left: 1.25rem;
-  bottom: 0.875rem;
-  font-size: 1.375rem;
-  line-height: 1;
-  font-weight: 700;
-  transition: transform 120ms ease-out;
-}
-.cards li:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(20, 54, 95, 0.14); }
-.cards li:hover::after { transform: translateX(4px); }
+.cards li > * { grid-column: 2; }
 .cards a {
   font-weight: 700;
   font-size: 1.1875rem;
-  line-height: 1.25;
-  color: inherit;
-  text-decoration: none;
+  line-height: 1.3;
 }
-.cards a::after { content: ""; position: absolute; inset: 0; border-radius: var(--radius); }
-.cards a:hover { text-decoration: underline; }
+.cards a::after { content: ""; position: absolute; inset: 0; }
 .cards a:focus-visible { outline: none; box-shadow: none; }
 .cards li:focus-within { outline: 3px solid var(--yellow); outline-offset: 2px; }
-.cards p { margin: 0; font-size: 0.9375rem; line-height: 1.5; }
-.cards .needs { margin-top: auto; padding-top: 0.625rem; font-size: 0.875rem; font-weight: 700; }
-
-.cards.compact { grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr)); }
-.cards.compact li { padding: 1rem 1rem 2.75rem; }
-.cards.compact li::before { width: 2rem; height: 2rem; margin-bottom: 0.25rem; }
-.cards.compact li::after { left: 1rem; bottom: 0.75rem; }
-.cards.compact a { font-size: 1.0625rem; }
-
-/* On a phone, cards are rows: icon on the left, text beside it. */
-@media (max-width: 40rem) {
-  .cards, .cards.compact { grid-template-columns: 1fr; gap: 0.625rem; }
-  .cards li, .cards.compact li {
-    display: grid;
-    grid-template-columns: 2rem 1fr;
-    column-gap: 0.875rem;
-    row-gap: 0.25rem;
-    align-content: start;
-    padding: 1rem;
-  }
-  .cards li::before, .cards.compact li::before {
-    grid-row: span 2;
-    width: 2rem;
-    height: 2rem;
-    margin: 0;
-  }
-  .cards li::after { display: none; }
-  .cards li > * { grid-column: 2; }
-  .cards a, .cards.compact a { font-size: 1.0625rem; }
-  .cards .needs { padding-top: 0.25rem; }
-}
-
-/* Tool cards are solid colour, taking the next colour in turn, so a new
-   tool gets one without anyone choosing it. */
-.tool-cards li { border: 0; color: #fff; }
-.tool-cards li::before { color: currentColor; }
-.tool-cards li:nth-child(7n+1) { background: var(--blue); }
-.tool-cards li:nth-child(7n+2) { background: var(--green); }
-.tool-cards li:nth-child(7n+3) { background: var(--brown); }
-.tool-cards li:nth-child(7n+4) { background: var(--yellow); color: var(--ink); }
-.tool-cards li:nth-child(7n+5) { background: var(--navy); }
-.tool-cards li:nth-child(7n+6) { background: var(--teal); color: var(--ink); }
-.tool-cards li:nth-child(7n+7) { background: var(--slate); }
+.cards li:hover a { color: var(--ink); text-decoration-thickness: 2px; }
+.cards p { margin: 0; font-size: 0.9375rem; line-height: 1.5; color: var(--muted); }
+.cards .needs { margin-top: 0.25rem; font-size: 0.875rem; font-weight: 700; }
 
 .cards .i-heating { --icon: url("icons/heat-pump.svg"); }
 .cards .i-hot-water { --icon: url("icons/hot-water.svg"); }
@@ -382,70 +339,102 @@ li { margin-bottom: 0.375rem; }
 .cards .i-sound-simulator { --icon: url("icons/speaker.svg"); }
 .cards .i-house-tour { --icon: url("icons/cube.svg"); }
 
-/* ---------- Home page: steps and the two big links ---------- */
+/* Tools: solid blue blocks, all the same colour, so a new tool needs no
+   choosing. The line saying what a tool needs sits at the foot. */
+.cards.tool-cards {
+  grid-template-columns: repeat(auto-fill, minmax(15.5rem, 1fr));
+  gap: 1rem;
+}
+.cards.tool-cards li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  padding: 1.25rem;
+  border: 0;
+  border-radius: 4px;
+  background: var(--blue);
+  color: #fff;
+}
+/* The name leads; the icon sits in the corner. */
+.cards.tool-cards li::before {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  margin: 0;
+  color: #fff;
+}
+.cards.tool-cards a { padding-right: 3rem; min-height: 2.25rem; }
+.cards.tool-cards li:hover { background: var(--navy); }
+.cards.tool-cards a { color: #fff; text-decoration: none; }
+.cards.tool-cards li:hover a { color: #fff; text-decoration: underline; }
+.cards.tool-cards a::after { border-radius: 4px; }
+.cards.tool-cards p { color: #fff; }
+.cards.tool-cards .needs {
+  margin-top: auto;
+  padding-top: 0.75rem;
+  font-weight: 400;
+  color: var(--navy-ink);
+}
+.cards.tool-cards li:has(.needs) > p:not(.needs) { margin-bottom: 0.75rem; }
+
+.cards.tool-cards.compact { grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr)); }
+.cards.tool-cards.compact li { padding: 1rem; }
+.cards.tool-cards.compact li::before { top: 1rem; right: 1rem; width: 1.75rem; height: 1.75rem; }
+.cards.compact a { font-size: 1.0625rem; }
+
+/* On a phone, everything is a row: icon on the left, text beside it. */
+@media (max-width: 40rem) {
+  .cards, .cards.tool-cards, .cards.tool-cards.compact { grid-template-columns: 1fr; gap: 0; }
+  .cards.tool-cards { gap: 0.5rem; }
+  .cards.tool-cards li, .cards.tool-cards.compact li {
+    display: grid;
+    grid-template-columns: 2rem minmax(0, 1fr);
+    column-gap: 0.875rem;
+    row-gap: 0.25rem;
+    padding: 1rem;
+  }
+  .cards.tool-cards li::before, .cards.tool-cards.compact li::before {
+    position: static;
+    width: 2rem;
+    height: 2rem;
+    margin: 0;
+  }
+  .cards a, .cards.compact a { font-size: 1.0625rem; }
+  .cards.tool-cards a { padding-right: 0; min-height: 0; }
+  .cards.tool-cards .needs { padding-top: 0.25rem; }
+  .cards.tool-cards li:has(.needs) > p:not(.needs) { margin-bottom: 0; }
+}
+
+/* ---------- Home page: where to start ----------
+   An ordered list, one column, the number hanging in the margin. */
 
 .steps {
   list-style: none;
   counter-reset: step;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
-  gap: 1.5rem 2rem;
   margin: 1.5rem 0 2rem;
 }
 .steps li {
   counter-increment: step;
   position: relative;
-  padding-left: 3.25rem;
+  padding: 1rem 0 0.5rem 3rem;
   margin: 0;
+  border-top: 1px solid var(--rule);
 }
 .steps li::before {
   content: counter(step);
   position: absolute;
   left: 0;
-  top: 0;
-  width: 2.25rem;
-  height: 2.25rem;
-  border-radius: 50%;
-  background: var(--yellow);
-  color: var(--ink);
+  top: 0.8rem;
+  font-size: 1.75rem;
+  line-height: 1;
   font-weight: 700;
-  display: grid;
-  place-items: center;
+  color: var(--navy);
 }
-.steps h3 { margin: 0.25rem 0 0.375rem; font-size: 1.125rem; }
-.steps p { margin: 0; }
-
-.split {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-  gap: 1rem;
-  margin: 3rem 0;
-}
-.split a {
-  display: block;
-  padding: 2rem 1.75rem 3.5rem;
-  border-radius: var(--radius);
-  color: #fff;
-  text-decoration: none;
-  position: relative;
-  min-height: 12rem;
-}
-.split a:nth-child(1) { background: var(--green); }
-.split a:nth-child(2) { background: var(--brown); }
-.split a::after {
-  content: "\2192";
-  position: absolute;
-  left: 1.75rem;
-  bottom: 1.25rem;
-  font-size: 1.5rem;
-  font-weight: 700;
-  transition: transform 120ms ease-out;
-}
-.split a:hover::after { transform: translateX(4px); }
-.split h2 { color: #fff; margin: 0 0 0.5rem; font-size: 1.5rem; }
-.split a:hover h2 { text-decoration: underline; }
-.split p { margin: 0; max-width: 30rem; }
+.steps h3 { margin: 0 0 0.25rem; font-size: 1.1875rem; }
+.steps p { margin: 0 0 0.5rem; }
 
 /* ---------- Embedded tools ---------- */
 
@@ -456,11 +445,9 @@ li { margin-bottom: 0.375rem; }
 .tool-frame {
   background: var(--page);
   border: 1px solid var(--rule);
-  border-top: 5px solid var(--blue);
-  border-radius: var(--radius);
+  border-radius: 4px;
   padding: 0.5rem;
   min-height: 12rem;
-  box-shadow: 0 8px 24px rgba(20, 54, 95, 0.08);
 }
 .tool figcaption {
   margin-top: 0.5rem;
@@ -469,11 +456,6 @@ li { margin-bottom: 0.375rem; }
   max-width: var(--measure);
 }
 .band .tool { margin-bottom: 0.5rem; }
-
-@media (prefers-reduced-motion: reduce) {
-  .cards li, .cards li::after, .split a::after { transition: none; }
-  .cards li:hover { transform: none; }
-}
 
 /* ---------- Footer ---------- */
 

@@ -1,8 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" role="img">
   <!-- The home page picture: an all-electric house. Solar panels on the
        roof, a heat pump outside, a battery on the wall, a car charging on
        the drive, and no chimney. Drawn for the navy band at the top of the
-       home page. -->
+       home page. The bottom edge is the ground line: style.css draws the
+       grass under it, full width. -->
 
   <!-- Sun and a wind turbine in the distance -->
   <circle cx="62" cy="62" r="24" fill="#f0c63a"/>
@@ -15,9 +16,6 @@
   </g>
   <circle cx="430" cy="88" r="4" fill="#9fb6d3"/>
 
-  <!-- Ground -->
-  <rect x="0" y="318" width="480" height="42" rx="0" fill="#2f7d3a"/>
-  <rect x="0" y="318" width="480" height="5" fill="#3d9a4a"/>
 
   <!-- House -->
   <rect x="128" y="168" width="224" height="152" fill="#f5f2ea"/>
