@@ -7,7 +7,7 @@
 <meta name="description" content="How heat pumps work, whether one suits an older home, radiators, hot water cylinders, noise, planning permission and running costs.">
 <link rel="canonical" href="https://electrifiedhome.org/heat-pumps/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/assets/style.css?v=6c259deb17">
+<link rel="stylesheet" href="/assets/style.css?v=2f8a9379fd">
 <!-- meta:start -->
 <meta name="theme-color" content="#14365f">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -52,9 +52,18 @@
 <!-- header:end -->
 
 <main id="main">
-<div class="page-head">
+<div class="page-head has-tools">
 <h1>Heat pumps</h1>
 <p class="lede">A heat pump heats your home and hot water with electricity by moving heat from the outside air or the ground into the house. It replaces a gas, oil or LPG boiler.</p>
+<aside class="page-tools" aria-labelledby="page-tools-h">
+<h2 id="page-tools-h">Try it on your home</h2>
+<ul>
+<li><a href="/tools/sound-simulator/">Hear a real one<span>Sound simulator</span></a></li>
+<li><a href="/tools/heat-pump-visualiser/">See one at true size<span>Heat pump visualiser</span></a></li>
+<li><a href="/tools/savings-calculator/">What it would cost to run<span>Savings calculator</span></a></li>
+<li><a href="/tools/boiler-escape-plan/">When to switch<span>Boiler escape plan</span></a></li>
+</ul>
+</aside>
 </div>
 
 <h2>How it works</h2>
@@ -63,12 +72,12 @@
 
 <!-- karbonkit: house-tour -->
 <!-- The config ID comes from the KarbonKit dashboard (3D House Tour tab). To change it everywhere: node scripts/site.mjs set-id TYPE NEW_ID -->
-<figure class="tool wide">
+<figure class="tool wide" data-tool="3D house tour">
 <div class="tool-frame">
   <script src="https://widgets.karbonkit.com/embed.js"></script>
   <div data-karbonkit data-config-id="S066drY8RWEet9pIIt9C5Q"></div>
 </div>
-<figcaption>3D house tour by KarbonKit. Follow the numbered stops, or drag to look around. Switch to night to see the battery run the heat pump.</figcaption>
+<figcaption>Follow the numbered stops, or drag to look around. Switch to night to see the battery run the heat pump. <a class="embed-this" href="/for-website-owners/#house-tour">Put this tool on your website</a></figcaption>
 </figure>
 
 <h2>Older and colder homes</h2>
@@ -79,9 +88,11 @@
 <p>An installer works this out with a room-by-room heat loss calculation, which also sets the size of the heat pump. Underfloor heating suits heat pumps well. Insulating first means a smaller heat pump, but you don't have to <a href="/insulation/">finish insulating</a> before switching.</p>
 
 <h2 id="hot-water">Hot water</h2>
+<aside class="launch i-heat-pump-visualiser"><p class="launch-tool">Heat pump visualiser</p><a href="/tools/heat-pump-visualiser/">See a true-size cylinder in your cupboard</a><p>Through your phone's camera. It can put an outdoor unit in your garden too.</p><p class="needs">Needs a phone camera</p></aside>
 <p>A heat pump heats a hot water cylinder, a tank usually kept in an airing cupboard or utility room. If you have a combi boiler you have no cylinder now, so you'll need room for one, roughly the footprint of a small fridge and taller. Compact heat batteries are an alternative for homes with no space. The <a href="/tools/heat-pump-visualiser/">AR visualiser</a> can place a true-size cylinder in the cupboard you have in mind.</p>
 
-<h2>Noise and where the unit goes</h2>
+<h2 id="noise">Noise and where the unit goes</h2>
+<aside class="launch i-sound-simulator"><p class="launch-tool">Sound simulator</p><a href="/tools/sound-simulator/">Hear a real heat pump from your window</a><p>Play a recording where the unit would go, then measure it with your phone.</p><p class="needs">Needs a phone and a speaker</p></aside>
 <p>The outdoor unit has a fan and a compressor. Modern units are quiet a few metres away, but where it goes matters: away from bedroom windows, and not in a narrow gap or enclosed corner where sound bounces around. Installers have to show the unit will meet a noise limit at your neighbours' nearest window.</p>
 <p>You can hear a real one with the <a href="/tools/sound-simulator/">sound simulator</a> and see how big it is in your garden with the <a href="/tools/heat-pump-visualiser/">AR visualiser</a>.</p>
 
@@ -89,19 +100,17 @@
 <p>In England most air source and ground source heat pumps are permitted development and don't need planning permission, provided they meet conditions on size, position and noise. Listed buildings and conservation areas have extra rules, and Scotland, Wales and Northern Ireland each have their own. Your installer should check, and your council's planning team can confirm. The <a href="https://www.planningportal.co.uk/permission/common-projects/heat-pumps">Planning Portal</a> has the rules for England.</p>
 
 <h2>Running costs</h2>
+<aside class="launch i-savings-calculator"><p class="launch-tool">Savings calculator</p><a href="/tools/savings-calculator/">Estimate the running cost for your home</a><p>At current prices, from your home's energy certificate if it can find it.</p><p class="needs">Needs your postcode</p></aside>
 <p>Whether a heat pump costs more or less to run than your boiler depends mainly on how well it is designed and set up, and on the price of electricity compared with gas or oil. A <a href="/tariffs/">tariff</a> made for heat pumps, or one with cheaper hours, makes a large difference. If you disconnect the gas entirely you also stop paying the gas standing charge.</p>
 <p>The <a href="/tools/savings-calculator/">savings calculator</a> estimates the running cost for your home at current prices, and <a href="/paying-for-it/">paying for it</a> covers the grants.</p>
 
 <h2>When to switch</h2>
+<aside class="launch i-boiler-escape-plan"><p class="launch-tool">Boiler escape plan</p><a href="/tools/boiler-escape-plan/">Work out when to switch</a><p>From your boiler's age: what waiting costs in carbon, and a plan with reminders.</p><p class="needs">Needs your boiler's age</p></aside>
 <p>The easiest time is while your boiler still works, so there is time to get quotes and fit it properly. The <a href="/tools/boiler-escape-plan/">boiler escape plan</a> works out a sensible time for your home and what to do before then.</p>
 
 <div class="band">
-<h2>Try these on your home</h2>
+<h2>Before getting quotes</h2>
 <ul class="cards compact tool-cards">
-  <li class="i-boiler-escape-plan"><a href="/tools/boiler-escape-plan/">Boiler escape plan</a><p>When to replace a working boiler, and what to do before then.</p></li>
-  <li class="i-savings-calculator"><a href="/tools/savings-calculator/">Savings calculator</a><p>What a heat pump, solar panels or a battery would cost and save in your home.</p></li>
-  <li class="i-sound-simulator"><a href="/tools/sound-simulator/">Sound simulator</a><p>Hear a real heat pump and measure it from your windows.</p></li>
-  <li class="i-heat-pump-visualiser"><a href="/tools/heat-pump-visualiser/">Heat pump visualiser</a><p>A true-size heat pump or cylinder, through your phone camera.</p></li>
   <li class="i-grant-finder"><a href="/tools/grant-finder/">Grant finder</a><p>Which UK grants you might get, from your postcode.</p></li>
   <li class="i-installer-finder"><a href="/tools/installer-finder/">Installer finder</a><p>Installers near you, with a link to the MCS register.</p></li>
 </ul>
@@ -153,6 +162,7 @@
           <li><a href="/paying-for-it/">Paying for it</a></li>
           <li><a href="/installers/">Choosing an installer</a></li>
           <li><a href="/about/">About this site, including privacy</a></li>
+          <li><a href="/for-website-owners/">Put these tools on your website</a></li>
         </ul>
       </nav>
     </div>

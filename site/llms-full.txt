@@ -12,6 +12,14 @@ Source: https://electrifiedhome.org/
 
 What's involved in moving your heating, cooking and car off gas, oil and petrol, and what can go wrong. The tools work out what it would mean for your own home.
 
+## Start from where you are
+
+- [My boiler is getting old](https://electrifiedhome.org/tools/boiler-escape-plan/): Plan the switch before it breaks
+- [I want to know about grants](https://electrifiedhome.org/tools/grant-finder/): Which schemes you might get, from your postcode
+- [I'm wondering what a heat pump is like](https://electrifiedhome.org/heat-pumps/): How it works, what it sounds like, where it goes
+- [I'm getting an electric car](https://electrifiedhome.org/car-charging/): Charging at home, and the tariff to charge on
+- [I want lower bills this winter](https://electrifiedhome.org/insulation/): The cheap jobs that help whatever heats the home
+
 ## One part of the house at a time
 
 Each of these can switch from gas, oil or petrol to electricity on its own, in any order. Most homes do it over several years. Heating uses most of the energy in a typical home, so it is the biggest change.
@@ -23,6 +31,17 @@ Each of these can switch from gas, oil or petrol to electricity on its own, in a
 - [Solar and batteries](https://electrifiedhome.org/solar-and-batteries/): Panels make some of your own electricity, and a battery stores it, or cheap overnight electricity, for later.
 - [Tariffs, meters and your supply](https://electrifiedhome.org/tariffs/): Tariffs with cheaper hours, smart meters, your main fuse and closing the gas account.
 - [Insulation and draughts](https://electrifiedhome.org/insulation/): The cheap jobs help whatever heats the house. You don't have to finish them first.
+
+## Where to start
+
+- **Plan the heating before the boiler fails** A heat pump takes a few weeks to survey, design and fit. A boiler that breaks in January is usually replaced with another boiler that week. The [boiler escape plan](https://electrifiedhome.org/tools/boiler-escape-plan/) works out when to switch.
+- **Check which grants you could get** Grants cover some or all of the cost for many households, depending on where you live, your income and whether you own your home. The [grant finder](https://electrifiedhome.org/tools/grant-finder/) shows which you might get today.
+- **Look at your meter and tariff** Once the heating or car runs on electricity, a [tariff with cheaper hours](https://electrifiedhome.org/tariffs/) makes the biggest difference to running costs. Most need a smart meter.
+- **Change the hob when it suits you** It doesn't depend on anything else, and a plug-in ring lets you [try induction](https://electrifiedhome.org/cooking/) first.
+- **Add solar panels and a battery** If your roof gets sun, [panels and a battery](https://electrifiedhome.org/solar-and-batteries/) cut the electricity you buy, which matters more once the heating runs on it.
+- **Charge the car at home** When you next change car, [charging on the drive](https://electrifiedhome.org/car-charging/) is usually the cheapest way to run it.
+
+Your home's energy performance certificate (EPC) records the heating and insulation an assessor found. Search the register for [England and Wales](https://www.gov.uk/find-energy-certificate), [Scotland](https://www.scottishepcregister.org.uk/) or [Northern Ireland](https://www.epbniregister.com/). Draught-proofing and topping up the loft help whatever heats the home, and you don't need to [finish insulating](https://electrifiedhome.org/insulation/) before anything else.
 
 ## Tools to try on your home
 
@@ -36,23 +55,6 @@ You don't need an account for any of them.
 - [Sound simulator](https://electrifiedhome.org/tools/sound-simulator/): Play a real heat pump recording and measure it from your windows and garden. (Needs a phone and a speaker)
 - [3D house tour](https://electrifiedhome.org/tools/house-tour/): A cutaway house showing every part of a heat pump system, with solar panels and a battery. (Needs nothing)
 
-## Estimate costs and savings for your home
-
-Enter your postcode and the calculator suggests a heat pump, solar panels and a battery sized for your home, with what each would cost to fit and save to run at current prices. [Its own page](https://electrifiedhome.org/tools/savings-calculator/) explains what it can't tell you.
-
-*Interactive tool: Savings calculator by KarbonKit. Its estimate is a starting point for talking to installers. Use it at https://electrifiedhome.org/*
-
-## Where to start
-
-- **Plan the heating before the boiler fails** A heat pump takes a few weeks to survey, design and fit. A boiler that breaks in January is usually replaced with another boiler that week. The [boiler escape plan](https://electrifiedhome.org/tools/boiler-escape-plan/) works out when to switch.
-- **Check which grants you could get** Grants cover some or all of the cost for many households, depending on where you live, your income and whether you own your home. The [grant finder](https://electrifiedhome.org/tools/grant-finder/) shows which you might get today.
-- **Look at your meter and tariff** Once the heating or car runs on electricity, a [tariff with cheaper hours](https://electrifiedhome.org/tariffs/) makes the biggest difference to running costs. Most need a smart meter.
-- **Change the hob when it suits you** It doesn't depend on anything else, and a plug-in ring lets you [try induction](https://electrifiedhome.org/cooking/) first.
-- **Add solar panels and a battery** If your roof gets sun, [panels and a battery](https://electrifiedhome.org/solar-and-batteries/) cut the electricity you buy, which matters more once the heating runs on it.
-- **Charge the car at home** When you next change car, [charging on the drive](https://electrifiedhome.org/car-charging/) is usually the cheapest way to run it.
-
-Your home's energy performance certificate (EPC) records the heating and insulation an assessor found. Search the register for [England and Wales](https://www.gov.uk/find-energy-certificate), [Scotland](https://www.scottishepcregister.org.uk/) or [Northern Ireland](https://www.epbniregister.com/). Draught-proofing and topping up the loft help whatever heats the home, and you don't need to [finish insulating](https://electrifiedhome.org/insulation/) before anything else.
-
 ## Before you pay anyone
 
 - [Paying for it](https://electrifiedhome.org/paying-for-it/): Grant schemes in England, Scotland, Wales and Northern Ireland, and offers to avoid.
@@ -60,7 +62,7 @@ Your home's energy performance certificate (EPC) records the heating and insulat
 
 ## About the tools
 
-The tools are made by [KarbonKit](https://www.karbonkit.com/), and councils, installers and community energy groups put the same tools on their own websites for free. This site embeds them the same way, and KarbonKit uses it to test them.
+The tools are made by [KarbonKit](https://www.karbonkit.com/), and councils, installers and community energy groups put the same tools on their own websites for free. This site embeds them the same way, and KarbonKit uses it to test them. If you run a website, [here is how to put them on yours](https://electrifiedhome.org/for-website-owners/).
 
 ---
 
@@ -90,9 +92,13 @@ An installer works this out with a room-by-room heat loss calculation, which als
 
 ## Hot water
 
+*Heat pump visualiser: [See a true-size cylinder in your cupboard](https://electrifiedhome.org/tools/heat-pump-visualiser/). Through your phone's camera. It can put an outdoor unit in your garden too. (Needs a phone camera)*
+
 A heat pump heats a hot water cylinder, a tank usually kept in an airing cupboard or utility room. If you have a combi boiler you have no cylinder now, so you'll need room for one, roughly the footprint of a small fridge and taller. Compact heat batteries are an alternative for homes with no space. The [AR visualiser](https://electrifiedhome.org/tools/heat-pump-visualiser/) can place a true-size cylinder in the cupboard you have in mind.
 
 ## Noise and where the unit goes
+
+*Sound simulator: [Hear a real heat pump from your window](https://electrifiedhome.org/tools/sound-simulator/). Play a recording where the unit would go, then measure it with your phone. (Needs a phone and a speaker)*
 
 The outdoor unit has a fan and a compressor. Modern units are quiet a few metres away, but where it goes matters: away from bedroom windows, and not in a narrow gap or enclosed corner where sound bounces around. Installers have to show the unit will meet a noise limit at your neighbours' nearest window.
 
@@ -104,20 +110,20 @@ In England most air source and ground source heat pumps are permitted developmen
 
 ## Running costs
 
+*Savings calculator: [Estimate the running cost for your home](https://electrifiedhome.org/tools/savings-calculator/). At current prices, from your home's energy certificate if it can find it. (Needs your postcode)*
+
 Whether a heat pump costs more or less to run than your boiler depends mainly on how well it is designed and set up, and on the price of electricity compared with gas or oil. A [tariff](https://electrifiedhome.org/tariffs/) made for heat pumps, or one with cheaper hours, makes a large difference. If you disconnect the gas entirely you also stop paying the gas standing charge.
 
 The [savings calculator](https://electrifiedhome.org/tools/savings-calculator/) estimates the running cost for your home at current prices, and [paying for it](https://electrifiedhome.org/paying-for-it/) covers the grants.
 
 ## When to switch
 
+*Boiler escape plan: [Work out when to switch](https://electrifiedhome.org/tools/boiler-escape-plan/). From your boiler's age: what waiting costs in carbon, and a plan with reminders. (Needs your boiler's age)*
+
 The easiest time is while your boiler still works, so there is time to get quotes and fit it properly. The [boiler escape plan](https://electrifiedhome.org/tools/boiler-escape-plan/) works out a sensible time for your home and what to do before then.
 
-## Try these on your home
+## Before getting quotes
 
-- [Boiler escape plan](https://electrifiedhome.org/tools/boiler-escape-plan/): When to replace a working boiler, and what to do before then.
-- [Savings calculator](https://electrifiedhome.org/tools/savings-calculator/): What a heat pump, solar panels or a battery would cost and save in your home.
-- [Sound simulator](https://electrifiedhome.org/tools/sound-simulator/): Hear a real heat pump and measure it from your windows.
-- [Heat pump visualiser](https://electrifiedhome.org/tools/heat-pump-visualiser/): A true-size heat pump or cylinder, through your phone camera.
 - [Grant finder](https://electrifiedhome.org/tools/grant-finder/): Which UK grants you might get, from your postcode.
 - [Installer finder](https://electrifiedhome.org/tools/installer-finder/): Installers near you, with a link to the MCS register.
 
@@ -148,6 +154,8 @@ In England most roof-mounted panels are permitted development. Listed buildings,
 A heat pump uses most electricity in winter, when panels make least. Over a year the two still work well together, mostly by covering hot water and the rest of the house in the lighter months. Don't expect panels to run the heating in January.
 
 ## Batteries
+
+*3D house tour: [Watch a battery run the house at night](https://electrifiedhome.org/tools/house-tour/). In the 3D house tour, switch to night and follow the electricity. (Works on a computer or a phone)*
 
 A battery moves electricity from when it is made or cheap to when you need it: midday solar to the evening, or cheap overnight grid electricity to the next day. It pays back best on a [tariff with cheaper hours](https://electrifiedhome.org/tariffs/), and helps less if you are at home using electricity during the day anyway.
 
@@ -236,6 +244,8 @@ Northern Ireland has its own electricity market, with fewer tariffs to choose fr
 
 ## Kinds of tariff
 
+*Savings calculator: [Estimate running costs for your home](https://electrifiedhome.org/tools/savings-calculator/). For a heat pump, solar panels or a battery, at current prices. (Needs your postcode)*
+
 - **One rate all day.** The same price at every hour. Simple, but it gives you nothing for using electricity when it's cheap to make.
 - **Cheaper hours overnight.** Several hours of cheaper electricity each night, and a higher rate for the rest of the day. They suit charging a car or a battery, and heating the hot water cylinder overnight. Economy 7 is the older version.
 - **Heat pump tariffs.** Some suppliers have a lower rate for homes with a heat pump, all day or at set hours.
@@ -301,6 +311,8 @@ Sealing gaps also cuts the fresh air coming in. Keep window trickle vents open, 
 
 ## Help with the cost
 
+*Grant finder: [See which insulation grants you might get](https://electrifiedhome.org/tools/grant-finder/). Your postcode and four questions, checked against the official scheme pages. (Needs your postcode)*
+
 Free or discounted insulation is available to many lower-income households, and in some areas to anyone in a home with a low EPC rating. [Paying for it](https://electrifiedhome.org/paying-for-it/) lists the schemes and checks which you might get.
 
 ## Sources
@@ -332,6 +344,10 @@ The calculator can't see your radiators, pipework, roof shading or anything that
 
 ## Grants and quotes
 
+*Grant finder: [See which grants could bring the cost down](https://electrifiedhome.org/tools/grant-finder/). Your postcode and four questions. (Needs your postcode)*
+
+*Installer finder: [Find installers near you](https://electrifiedhome.org/tools/installer-finder/). Each with a link to the MCS register to check them. (Needs a postcode)*
+
 See which [grants](https://electrifiedhome.org/paying-for-it/) could bring the cost down, and read about [choosing an installer](https://electrifiedhome.org/installers/).
 
 ---
@@ -354,6 +370,8 @@ The scheme itself decides whether you qualify, often after a survey. Each result
 
 ## Applying
 
+*Installer finder: [Find installers near you](https://electrifiedhome.org/tools/installer-finder/). For the Boiler Upgrade Scheme, the installer applies for you. (Needs a postcode)*
+
 Apply through each scheme's official link. For the Boiler Upgrade Scheme, your [installer](https://electrifiedhome.org/installers/) applies and takes the grant off the price. [Paying for it](https://electrifiedhome.org/paying-for-it/) describes each scheme.
 
 ---
@@ -375,6 +393,8 @@ Your boiler's age and fuel (gas, oil or LPG), and optionally your postcode and f
 The plan can't see what state your boiler is in. If it breaks down often, get quotes now.
 
 ## Before getting quotes
+
+*Grant finder: [See which grants you might get](https://electrifiedhome.org/tools/grant-finder/). Your postcode and four questions. (Needs your postcode)*
 
 Read about [heat pumps](https://electrifiedhome.org/heat-pumps/) and check which [grants](https://electrifiedhome.org/tools/grant-finder/) you might get. [Choosing an installer](https://electrifiedhome.org/installers/) says what a quote should include.
 
@@ -418,6 +438,8 @@ The unit your installer specifies may be a different size, and it needs space ar
 
 ## What it sounds like
 
+*Sound simulator: [Hear a real heat pump from your window](https://electrifiedhome.org/tools/sound-simulator/). Play a recording where the unit would go, then measure it. (Needs a phone and a speaker)*
+
 Hear one with the [sound simulator](https://electrifiedhome.org/tools/sound-simulator/), or read more about [heat pumps](https://electrifiedhome.org/heat-pumps/).
 
 ---
@@ -440,6 +462,8 @@ Phone microphones aren't calibrated sound meters, so treat the readings as appro
 
 ## Size and position
 
+*Heat pump visualiser: [See a true-size unit where it would go](https://electrifiedhome.org/tools/heat-pump-visualiser/). Through your phone's camera, in your garden or against a wall. (Needs a phone camera)*
+
 See how big a unit is with the [AR visualiser](https://electrifiedhome.org/tools/heat-pump-visualiser/), and read about [noise and where the unit goes](https://electrifiedhome.org/heat-pumps/).
 
 ---
@@ -457,6 +481,8 @@ Nothing. It works on a computer or a phone. Follow the numbered stops, or drag t
 *Interactive tool: 3D house tour by KarbonKit. Use it at https://electrifiedhome.org/tools/house-tour/*
 
 ## Your own home
+
+*Savings calculator: [What it would mean for your home](https://electrifiedhome.org/tools/savings-calculator/). Sizes a heat pump, panels and a battery for your address, with costs and savings. (Needs your postcode)*
 
 The tour shows a typical house. Where things go in yours is decided at the installer's survey. For more on each part, read about [heat pumps](https://electrifiedhome.org/heat-pumps/) and [solar and batteries](https://electrifiedhome.org/solar-and-batteries/).
 
@@ -557,6 +583,74 @@ If you spot something wrong, email [hello@karbonkit.com](mailto:hello@karbonkit.
 This site sets no cookies and has no analytics or advertising.
 
 The tools load from widgets.karbonkit.com. What you type into them, such as a postcode, goes to KarbonKit to work out the answer. The tools set no cookies either. If you ask the boiler escape plan to email you a plan, your address is used to send it. KarbonKit's [privacy page](https://www.karbonkit.com/privacy/) has the details.
+
+---
+
+# Put these tools on your website
+
+Source: https://electrifiedhome.org/for-website-owners/
+
+Every tool on this site is embedded from KarbonKit, the same way a council, installer or community energy group puts it on theirs. They are free.
+
+## What it takes
+
+A KarbonKit account, which is free. For each tool you choose its settings in the dashboard, such as your colour and your organisation's name, and copy two lines of HTML. The settings are saved against a config ID, so you can change them later without touching your page.
+
+```html
+<script src="https://widgets.karbonkit.com/embed.js"></script>
+<div data-karbonkit data-config-id="YOUR_CONFIG_ID"></div>
+```
+
+Paste it where the tool should appear. It works in plain HTML, WordPress, and any site builder that lets you add HTML. The tool sizes itself to its content.
+
+[Get a config ID](https://www.karbonkit.com/signup) from the KarbonKit dashboard. The [integration guide](https://www.karbonkit.com/docs/integration/) has every setting, a plain iframe version, and examples for React, Next.js and WordPress.
+
+## The tools
+
+Each has its own page here, so you can see it working on a site that isn't KarbonKit's.
+
+### Savings calculator
+
+Sizes a heat pump, solar panels and a battery for a visitor's home and estimates cost, savings and carbon at current prices. It can collect enquiries and send them to your inbox, which is off until you switch it on. [See it here](https://electrifiedhome.org/tools/savings-calculator/).
+
+### Grant finder
+
+A postcode and four questions show which UK schemes a household might get, each checked against its official page. It can link visitors to their own council, and list local schemes you add. [See it here](https://electrifiedhome.org/tools/grant-finder/).
+
+### Boiler escape plan
+
+What waiting for a working boiler to fail costs in carbon, and a plan for switching before it does, with calendar reminders. It can also collect enquiries. [See it here](https://electrifiedhome.org/tools/boiler-escape-plan/).
+
+### Installer finder
+
+Installers near a postcode, each with a link to the MCS register. You can put your own list of installers first, or show only yours. [See it here](https://electrifiedhome.org/tools/installer-finder/).
+
+### Heat pump visualiser
+
+A true-size heat pump or hot water cylinder through a phone's camera, with a 3D model on a computer. [See it here](https://electrifiedhome.org/tools/heat-pump-visualiser/).
+
+### Sound simulator
+
+A real heat pump recording and a sound meter that uses the phone's microphone. If you use the plain iframe, its allow attribute must include the microphone. [See it here](https://electrifiedhome.org/tools/sound-simulator/).
+
+### 3D house tour
+
+A cutaway house with every part of a heat pump system, solar panels and a battery, and a guided tour. It needs nothing from the visitor. [See it here](https://electrifiedhome.org/tools/house-tour/).
+
+## How this site sets them up
+
+- **Colour**: The site's tool blue, #2458a6, so a tool matches the card that opens it.
+- **Name**: Electrified Home.
+- **Enquiries**: Off. This site collects no contact details, and its [privacy note](https://electrifiedhome.org/about/) says so.
+- **Grant finder**: Links visitors to their council.
+
+The site's content security policy is strict: it allows scripts and frames from widgets.karbonkit.com and nothing else from outside. If the tools work here, they will work behind a similar policy on your site.
+
+The sound simulator page uses the plain iframe instead of the script tag, so both ways of embedding are in use here.
+
+## Visitors' data
+
+The tools set no cookies. What a visitor types, such as a postcode, goes to KarbonKit to work out the answer. If you switch on enquiry collection, the visitor's details go to you, and your own privacy notice needs to say so. KarbonKit's [privacy page](https://www.karbonkit.com/privacy/) has the details.
 
 ---
 

@@ -236,9 +236,24 @@ export function markdown(html, path) {
     .replace(/<script[\s\S]*?<\/script>/g, '')
     .replace(/<p class="(?:eyebrow|hero-actions)">[\s\S]*?<\/p>/g, '')
     .replace(/<img [^>]*>/g, '')
-    // An embedded tool: say it's there and where to use it.
-    .replace(/<figure[\s\S]*?<figcaption>([\s\S]*?)<\/figcaption>\s*<\/figure>/g, (m, cap) =>
-      `\n\n*Interactive tool: ${inline(cap, path)} Use it at ${ORIGIN}${path}*\n\n`)
+    // The top band's list of the page's tools repeats the launchers below.
+    .replace(/<aside class="page-tools"[\s\S]*?<\/aside>/g, '')
+    // A tool beside the text: one line pointing to it.
+    .replace(/<aside class="launch[^"]*"><p class="launch-tool">([\s\S]*?)<\/p>(<a [^>]*>[\s\S]*?<\/a>)<p>([\s\S]*?)<\/p><p class="needs">([\s\S]*?)<\/p><\/aside>/g,
+      (m, tool, link, line, needs) => `\n\n*${inline(tool, path)}: ${inline(link, path)}. ${inline(line, path)} (${inline(needs, path)})*\n\n`)
+    // Code on the page for website owners stays code.
+    .replace(/<pre><code>([\s\S]*?)<\/code><\/pre>/g, (m, code) => `\n\n\`\`\`html\n${code}\n\`\`\`\n\n`)
+    // The home page's situations: a link with a heading and a line in it.
+    .replace(/<a href="([^"]*)"><strong>([\s\S]*?)<\/strong><span>([\s\S]*?)<\/span><\/a>/g, (m, href, h, line) =>
+      `[${inline(h, path)}](${abs(href, path)}): ${inline(line, path)}`)
+    .replace(/<tr><th[^>]*>([\s\S]*?)<\/th><td>([\s\S]*?)<\/td><\/tr>/g, (m, th, td) => `\n- **${inline(th, path)}**: ${inline(td, path)}`)
+    // An embedded tool: say it's there and where to use it. The link for
+    // website owners under it is for people, not for an answer.
+    .replace(/<figure(?:[^>]*?data-tool="([^"]*)")?[^>]*>[\s\S]*?<figcaption>([\s\S]*?)<\/figcaption>\s*<\/figure>/g, (m, tool, cap) => {
+      cap = inline(cap.replace(/<a class="embed-this"[\s\S]*?<\/a>/, ''), path);
+      const name = tool ? `${tool} by KarbonKit.` : '';
+      return `\n\n*Interactive tool: ${[name, cap].filter(Boolean).join(' ')} Use it at ${ORIGIN}${path}*\n\n`;
+    })
     // Big links with a heading inside (the home page's .split).
     .replace(/<a href="([^"]*)">\s*<h2>([\s\S]*?)<\/h2>\s*<p>([\s\S]*?)<\/p>\s*<\/a>/g, (m, href, h, p) =>
       `\n- [${inline(h, path)}](${abs(href, path)}): ${inline(p, path)}`)
