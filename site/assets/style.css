@@ -338,6 +338,7 @@ li { margin-bottom: 0.375rem; }
 .cards .i-heat-pump-visualiser { --icon: url("icons/phone-ar.svg"); }
 .cards .i-sound-simulator { --icon: url("icons/speaker.svg"); }
 .cards .i-house-tour { --icon: url("icons/cube.svg"); }
+.cards .i-radiator-check { --icon: url("icons/radiator.svg"); }
 
 /* Tools: solid blue blocks, all the same colour, so a new tool needs no
    choosing. The line saying what a tool needs sits at the foot. */
@@ -537,6 +538,7 @@ li { margin-bottom: 0.375rem; }
 .launch.i-heat-pump-visualiser { --icon: url("icons/phone-ar.svg"); }
 .launch.i-sound-simulator { --icon: url("icons/speaker.svg"); }
 .launch.i-house-tour { --icon: url("icons/cube.svg"); }
+.launch.i-radiator-check { --icon: url("icons/radiator.svg"); }
 
 /* Wide screens: into the right-hand column, beside its section. main is
    --wide across and the text only --measure, so a float to the right of
