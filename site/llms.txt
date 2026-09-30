@@ -27,7 +27,7 @@ The tools are made by KarbonKit (https://www.karbonkit.com/) and embedded here e
 - [Installer finder](https://electrifiedhome.org/tools/installer-finder/): Find heat pump, solar and battery installers near a postcode, with a link to check each on the MCS register.
 - [Heat pump visualiser](https://electrifiedhome.org/tools/heat-pump-visualiser/): See a true-size heat pump or hot water cylinder where you'd put it, through your phone's camera.
 - [Sound simulator](https://electrifiedhome.org/tools/sound-simulator/): Play a real heat pump recording where the unit would go and measure it from your windows and garden.
-- [3D house tour](https://electrifiedhome.org/tools/house-tour/): A 3D cutaway house showing every part of a heat pump system, with solar panels and a battery.
+- [3D house tour](https://electrifiedhome.org/tools/house-tour/): A 3D cutaway of a 1930s semi that runs on electricity: heat pump, hot water, solar, battery, car charging and cooking, each explained in plain English.
 - [Radiator check](https://electrifiedhome.org/tools/radiator-check/): From the boiler's setting and the type of each radiator, no tape measure, which rooms are likely fine for a heat pump, which need a deeper radiator in the same space and which need more wall space.
 
 ## Optional

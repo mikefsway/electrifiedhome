@@ -85,6 +85,10 @@ A person still merges it, because the page needs a config ID from the dashboard 
 
 You can also run it by hand from the Actions tab (New KarbonKit widgets → Run workflow).
 
+## Unlisted pages
+
+A page with `<!-- unlisted: why -->` in its `<head>` is published but not announced. `fix` marks it `noindex` and leaves it out of `sitemap.xml`, `llms.txt` and `llms-full.txt`; `check` does not require it on /tools/, the home page or the footer, and fails if any page links to it. `/tools/watts-house/` is unlisted: the site features the 3D house tour, the same house without Watt the cat. To list a page, remove the comment, add the links, and run `npm run fix`.
+
 ## Deploying
 
 Cloudflare Pages builds from `main`: no build command, output directory `site`. Every other branch gets a preview URL. Merging to `main` publishes.

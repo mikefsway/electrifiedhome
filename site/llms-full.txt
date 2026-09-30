@@ -16,6 +16,7 @@ What's involved in moving your heating, cooking and car off gas, oil and petrol,
 
 - [My boiler is getting old](https://electrifiedhome.org/tools/boiler-escape-plan/): Plan the switch before it breaks
 - [I want to know about grants](https://electrifiedhome.org/tools/grant-finder/): Which schemes you might get, from your postcode
+- [I want to see what an all-electric home looks like](https://electrifiedhome.org/tools/house-tour/): A 3D house with everything switched over
 - [I'm wondering what a heat pump is like](https://electrifiedhome.org/heat-pumps/): How it works, what it sounds like, where it goes
 - [I'm getting an electric car](https://electrifiedhome.org/car-charging/): Charging at home, and the tariff to charge on
 - [I want lower bills this winter](https://electrifiedhome.org/insulation/): The cheap jobs that help whatever heats the home
@@ -32,6 +33,12 @@ Each of these can switch from gas, oil or petrol to electricity on its own, in a
 - [Tariffs, meters and your supply](https://electrifiedhome.org/tariffs/): Tariffs with cheaper hours, smart meters, your main fuse and closing the gas account.
 - [Insulation and draughts](https://electrifiedhome.org/insulation/): The cheap jobs help whatever heats the house. You don't have to finish them first.
 
+## See it all in one house
+
+The 3D house tour is an ordinary 1930s semi with every one of these changes made. Take the guided tour, or pick a room and look around.
+
+*Interactive tool: 3D house tour by KarbonKit. Switch to evening to see the battery run the house and the car charge overnight. Use it at https://electrifiedhome.org/*
+
 ## Where to start
 
 - **Plan the heating before the boiler fails** A heat pump takes a few weeks to survey, design and fit. A boiler that breaks in January is usually replaced with another boiler that week. The [boiler escape plan](https://electrifiedhome.org/tools/boiler-escape-plan/) works out when to switch.
@@ -47,13 +54,13 @@ Your home's energy performance certificate (EPC) records the heating and insulat
 
 You don't need an account for any of them.
 
+- [3D house tour](https://electrifiedhome.org/tools/house-tour/): A cutaway 1930s semi that runs on electricity: heating, hot water, solar, a battery, the car and cooking. (Works on a computer or a phone)
 - [Savings calculator](https://electrifiedhome.org/tools/savings-calculator/): Estimate what a heat pump, solar panels or a battery would cost and save in your home. (Needs your postcode)
 - [Grant finder](https://electrifiedhome.org/tools/grant-finder/): Your postcode and four questions show which UK grants you might get. (Needs your postcode)
 - [Boiler escape plan](https://electrifiedhome.org/tools/boiler-escape-plan/): Work out when to replace a working gas, oil or LPG boiler, and what to do before then. (Needs your boiler's age)
 - [Installer finder](https://electrifiedhome.org/tools/installer-finder/): Heat pump, solar and battery installers near you, each with a link to the MCS register. (Needs a postcode)
 - [Heat pump visualiser](https://electrifiedhome.org/tools/heat-pump-visualiser/): See a true-size heat pump or hot water cylinder where you'd put it. (Needs a phone camera)
 - [Sound simulator](https://electrifiedhome.org/tools/sound-simulator/): Play a real heat pump recording and measure it from your windows and garden. (Needs a phone and a speaker)
-- [3D house tour](https://electrifiedhome.org/tools/house-tour/): A cutaway house showing every part of a heat pump system, with solar panels and a battery. (Needs nothing)
 - [Radiator check](https://electrifiedhome.org/tools/radiator-check/): Which of your radiators would probably work with a heat pump, from the boiler's setting and a look at each one. (Needs a walk round the house)
 
 ## Before you pay anyone
@@ -79,7 +86,7 @@ It works like a fridge in reverse. A fluid picks up heat from outside, even on a
 
 Most UK installations are air source: a unit outside the house, connected to the heating pipes inside. Ground source heat pumps collect heat through pipes buried in the garden or in a borehole. They cost more to install and need the space. Air-to-air heat pumps blow warm air into rooms like an air conditioner and don't heat water.
 
-*Interactive tool: 3D house tour by KarbonKit. Follow the numbered stops, or drag to look around. Switch to night to see the battery run the heat pump. Use it at https://electrifiedhome.org/heat-pumps/*
+*Interactive tool: 3D house tour by KarbonKit. Take the guided tour, or pick a room. Switch to evening to see the battery run the heat pump. Use it at https://electrifiedhome.org/heat-pumps/*
 
 ## Older and colder homes
 
@@ -158,7 +165,7 @@ A heat pump uses most electricity in winter, when panels make least. Over a year
 
 ## Batteries
 
-*3D house tour: [Watch a battery run the house at night](https://electrifiedhome.org/tools/house-tour/). In the 3D house tour, switch to night and follow the electricity. (Works on a computer or a phone)*
+*3D house tour: [Watch a battery run the house in the evening](https://electrifiedhome.org/tools/house-tour/). In the 3D house tour, switch to evening and follow the electricity. (Works on a computer or a phone)*
 
 A battery moves electricity from when it is made or cheap to when you need it: midday solar to the evening, or cheap overnight grid electricity to the next day. It pays back best on a [tariff with cheaper hours](https://electrifiedhome.org/tariffs/), and helps less if you are at home using electricity during the day anyway.
 
@@ -221,6 +228,8 @@ New home chargers in Great Britain must be able to schedule charging, so the car
 
 ## Tariffs
 
+*3D house tour: [See a charger on a drive](https://electrifiedhome.org/tools/house-tour/). A 3D house with a charger outside and the car on an overnight tariff. (Works on a computer or a phone)*
+
 Some [tariffs](https://electrifiedhome.org/tariffs/) have several hours of much cheaper electricity overnight. The same tariff can suit a battery and, with care, a heat pump. Before switching, check when the cheap hours are and what the rest of the day costs.
 
 ## Your home's supply
@@ -258,6 +267,8 @@ Northern Ireland has its own electricity market, with fewer tariffs to choose fr
 Compare the whole day. A tariff with a very cheap night rate can have a dearer day rate than the one you're on. The [savings calculator](https://electrifiedhome.org/tools/savings-calculator/) estimates running costs for your home at current prices.
 
 ## Using electricity when it's cheaper
+
+*3D house tour: [See a house use the cheap hours](https://electrifiedhome.org/tools/house-tour/). A 3D house where the car, hot water and battery fill up overnight. (Works on a computer or a phone)*
 
 Much of what an all-electric home uses can move to the cheaper hours without anyone noticing. The car charges overnight, the hot water cylinder heats up before morning, and a battery fills overnight and runs the house through the evening. A heat pump can warm the house a little more before a dear period and coast through it. Each of these has controls or an app that can follow a tariff's hours.
 
@@ -475,19 +486,19 @@ See how big a unit is with the [AR visualiser](https://electrifiedhome.org/tools
 
 Source: https://electrifiedhome.org/tools/house-tour/
 
-A 3D cutaway house showing where every part of a heat pump system goes: the outdoor unit, pipework, hot water cylinder and radiators, with solar panels and a home battery.
+An ordinary 1930s semi that runs entirely on electricity, cut open so you can see how the parts fit together: the heat pump, hot water cylinder, radiators and controls, solar panels, a home battery, the car charger and an induction hob. Each is explained in plain English, with its sources.
 
 ## What you need
 
-Nothing. It works on a computer or a phone. Follow the numbered stops, or drag to look around.
+Nothing. It works on a computer or a phone, and the 3D house only loads when you press start. Take the guided tour, or pick a room and look around. If your device can't show it, or you'd rather read, the same topics are there as a plain list.
 
-*Interactive tool: 3D house tour by KarbonKit. Use it at https://electrifiedhome.org/tools/house-tour/*
+*Interactive tool: 3D house tour by KarbonKit. Switch to evening to see the battery run the house and the car charge overnight. Use it at https://electrifiedhome.org/tools/house-tour/*
 
 ## Your own home
 
 *Savings calculator: [What it would mean for your home](https://electrifiedhome.org/tools/savings-calculator/). Sizes a heat pump, panels and a battery for your address, with costs and savings. (Needs your postcode)*
 
-The tour shows a typical house. Where things go in yours is decided at the installer's survey. For more on each part, read about [heat pumps](https://electrifiedhome.org/heat-pumps/) and [solar and batteries](https://electrifiedhome.org/solar-and-batteries/).
+The tour shows a typical house, and its costs are typical ranges, not quotes. Where things go in yours is decided at the installer's survey. For more on each part, read about [heat pumps](https://electrifiedhome.org/heat-pumps/), [solar and batteries](https://electrifiedhome.org/solar-and-batteries/), [cooking](https://electrifiedhome.org/cooking/), [car charging](https://electrifiedhome.org/car-charging/) and [tariffs](https://electrifiedhome.org/tariffs/).
 
 ---
 
@@ -668,7 +679,7 @@ A real heat pump recording and a sound meter that uses the phone's microphone. I
 
 ### 3D house tour
 
-A cutaway house with every part of a heat pump system, solar panels and a battery, and a guided tour. It needs nothing from the visitor. [See it here](https://electrifiedhome.org/tools/house-tour/).
+A 3D cutaway of a house that runs entirely on electricity – heat pump, hot water, radiators, solar panels, a battery, the car charger and an induction hob – with a guided tour and a plain-English note on each part. It needs nothing from the visitor. [See it here](https://electrifiedhome.org/tools/house-tour/).
 
 ## How this site sets them up
 
@@ -693,13 +704,13 @@ Source: https://electrifiedhome.org/tools/
 
 Try these on your own home to see which grants you might get, what a heat pump would cost to run, what one sounds like and whether it fits. You don't need an account for any of them.
 
+- [3D house tour](https://electrifiedhome.org/tools/house-tour/): A cutaway 1930s semi that runs on electricity: heating, hot water, solar, a battery, the car and cooking. (Works on a computer or a phone)
 - [Savings calculator](https://electrifiedhome.org/tools/savings-calculator/): Estimate what a heat pump, solar panels or a battery would cost and save in your home. (Needs your postcode)
 - [Grant finder](https://electrifiedhome.org/tools/grant-finder/): Your postcode and four questions show which UK grants you might get. (Needs your postcode)
 - [Boiler escape plan](https://electrifiedhome.org/tools/boiler-escape-plan/): Work out when to replace a working gas, oil or LPG boiler, and what to do before then. (Needs your boiler's age)
 - [Installer finder](https://electrifiedhome.org/tools/installer-finder/): Heat pump, solar and battery installers near you, each with a link to the MCS register. (Needs a postcode)
 - [Heat pump visualiser](https://electrifiedhome.org/tools/heat-pump-visualiser/): See a true-size heat pump or hot water cylinder where you'd put it. (Needs a phone camera)
 - [Sound simulator](https://electrifiedhome.org/tools/sound-simulator/): Play a real heat pump recording and measure it from your windows and garden. (Needs a phone and a speaker)
-- [3D house tour](https://electrifiedhome.org/tools/house-tour/): A cutaway house showing every part of a heat pump system, with solar panels and a battery. (Needs nothing)
 - [Radiator check](https://electrifiedhome.org/tools/radiator-check/): Which of your radiators would probably work with a heat pump, from the boiler's setting and a look at each one. (Needs a walk round the house)
 
 ## Where they come from
