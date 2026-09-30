@@ -27,6 +27,7 @@ electrifiedhome.org: a plain-HTML information site for UK households about runni
 - **Every KarbonKit widget has a page at `/tools/<slug>/`,** with the slug from https://www.karbonkit.com/widgets.json. Don't rename or remove those pages: KarbonKit's smoke test loads them.
   - The smoke test uses the first `<iframe>` on each tool page, so don't put any other iframe above the widget.
   - Each tool is listed in three places: the cards on `/tools/` and on the home page, and the footer. Each list sits between `<!-- tools:start -->` and `<!-- tools:end -->`, and `scripts/add-widgets.mjs` adds new tools to all three.
+  - Except an unlisted page (`<!-- unlisted: why -->` in its `<head>`; README.md). `/tools/watts-house/` is one: the site features the 3D house tour, and nothing links to Watt's page yet. Don't link to it or list it until that changes.
 - **The site is about electrification.** Lead with heat pumps, cooking, car charging, solar and batteries, and tariffs. Insulation supports those changes; it isn't the first step.
 - **The look loosely follows the Energy Saving Trust's site:** a navy band at the top of each page, then solid-colour cards. README.md has the markup.
 - **The repository is public.** Keep private details out of files, commit messages and pull requests:

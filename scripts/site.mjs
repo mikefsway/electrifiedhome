@@ -20,6 +20,9 @@
 //   <!-- footer:start --> ... <!-- footer:end -->
 //   <!-- karbonkit: TYPE -->                       (just above each embed,
 //                                                    script tag or iframe)
+//   <!-- unlisted: REASON -->                      (in <head>: a page that
+//                                                    exists but that nothing
+//                                                    links to yet; see below)
 import { readFileSync, writeFileSync, readdirSync, statSync, existsSync } from 'node:fs';
 import { join, relative, sep } from 'node:path';
 import { createHash } from 'node:crypto';
@@ -51,6 +54,12 @@ export function pages(dir = SITE) {
   }
   return out.sort();
 }
+
+// An unlisted page is published but not announced: no other page may link to
+// it, and it is left out of sitemap.xml and the llms files and marked noindex.
+// A tool page can be unlisted while its widget is shown elsewhere first.
+// Remove the marker (and add the links) to list it.
+export const isUnlisted = (html) => /<!-- unlisted:[^>]*-->/.test(html);
 
 // /heat-pumps/index.html -> /heat-pumps/ ; /404.html -> /404.html
 export function urlPath(file) {
@@ -155,6 +164,7 @@ function renderMeta(path, html) {
     lines.push('<meta name="robots" content="noindex">');
     return lines.join('\n');
   }
+  if (isUnlisted(html)) lines.push('<meta name="robots" content="noindex">');
   const ogTitle = info.title.replace(/ – Electrified Home$/, '');
   lines.push(
     '<meta property="og:type" content="website">',
@@ -206,7 +216,7 @@ function withLayout(html, path) {
 // Pages in the order a reader would want them: the footer's links first
 // (topics, then tools, then the rest), then anything the footer misses.
 function orderedPages() {
-  const all = pages().filter((f) => urlPath(f).endsWith('/'));
+  const all = pages().filter((f) => urlPath(f).endsWith('/') && !isUnlisted(read(f)));
   const byPath = new Map(all.map((f) => [urlPath(f), f]));
   const order = ['/'];
   for (const m of read(join(ROOT, 'partials/footer.html')).matchAll(/href="(\/[^"#]*)"/g)) {
@@ -311,6 +321,7 @@ function generated() {
 
 function sitemap() {
   const urls = pages()
+    .filter((f) => !isUnlisted(read(f)))
     .map(urlPath)
     .filter((p) => p.endsWith('/'))
     .map((p) => `  <url><loc>${ORIGIN}${p}</loc></url>`);
@@ -410,10 +421,22 @@ export function check({ ids = false } = {}) {
   for (const file of pages(join(SITE, 'tools'))) {
     const path = urlPath(file);
     if (path === '/tools/') continue;
+    if (isUnlisted(read(file))) {
+      if (!read(file).includes('<!-- karbonkit: ')) say(file, 'tool page without a KarbonKit embed');
+      continue;
+    }
     if (!toolsIndex.includes(`href="${path}"`)) say(file, 'not listed on /tools/');
     if (!home.includes(`href="${path}"`)) say(file, 'not listed on the home page');
     if (!footer.includes(`href="${path}"`)) say(file, 'not listed in partials/footer.html');
     if (!read(file).includes('<!-- karbonkit: ')) say(file, 'tool page without a KarbonKit embed');
+  }
+
+  // Nothing links to an unlisted page, footer and header included.
+  const unlisted = new Set(pages().filter((f) => isUnlisted(read(f))).map(urlPath));
+  for (const file of pages()) {
+    for (const m of read(file).matchAll(/href="(\/[^"#?]*)/g)) {
+      if (unlisted.has(m[1]) && m[1] !== urlPath(file)) say(file, `links to ${m[1]}, which is unlisted`);
+    }
   }
 
   for (const [name, text] of Object.entries(generated())) {
