@@ -54,6 +54,7 @@ You don't need an account for any of them.
 - [Heat pump visualiser](https://electrifiedhome.org/tools/heat-pump-visualiser/): See a true-size heat pump or hot water cylinder where you'd put it. (Needs a phone camera)
 - [Sound simulator](https://electrifiedhome.org/tools/sound-simulator/): Play a real heat pump recording and measure it from your windows and garden. (Needs a phone and a speaker)
 - [3D house tour](https://electrifiedhome.org/tools/house-tour/): A cutaway house showing every part of a heat pump system, with solar panels and a battery. (Needs nothing)
+- [Radiator check](https://electrifiedhome.org/tools/radiator-check/): Which of your radiators would probably work with a heat pump, from the boiler's setting and a look at each one. (Needs a walk round the house)
 
 ## Before you pay anyone
 
@@ -86,9 +87,11 @@ The government's [Electrification of Heat](https://es.catapult.org.uk/project/el
 
 ## Radiators and flow temperature
 
+*Radiator check: [See which radiators would probably work](https://electrifiedhome.org/tools/radiator-check/). From your boiler's setting and a look at each radiator. (Needs a walk round the house)*
+
 A heat pump is most efficient when the water in the radiators is cooler than a boiler would make it, so it is set up to run for longer at a lower temperature. Rooms stay at a steady temperature instead of warming up twice a day. Some rooms may need a larger radiator to stay warm at that lower temperature, though often the existing ones are big enough.
 
-An installer works this out with a room-by-room heat loss calculation, which also sets the size of the heat pump. Underfloor heating suits heat pumps well. Insulating first means a smaller heat pump, but you don't have to [finish insulating](https://electrifiedhome.org/insulation/) before switching.
+An installer works this out with a room-by-room heat loss calculation, which also sets the size of the heat pump. The [radiator check](https://electrifiedhome.org/tools/radiator-check/) gives you a first idea before that. Underfloor heating suits heat pumps well. Insulating first means a smaller heat pump, but you don't have to [finish insulating](https://electrifiedhome.org/insulation/) before switching.
 
 ## Hot water
 
@@ -488,6 +491,32 @@ The tour shows a typical house. Where things go in yours is decided at the insta
 
 ---
 
+# Radiator check
+
+Source: https://electrifiedhome.org/tools/radiator-check/
+
+A common worry about heat pumps is having to replace every radiator. Often the ones you have are big enough. This tool says which rooms are likely fine, which might need a deeper radiator in the same space, and which might need a bigger one.
+
+## What you need
+
+About five minutes, starting at your boiler and then going round the house. You'll find the heating temperature on the boiler, and look at how far each radiator sticks out from the wall and how thick its pipes are. There is nothing to measure and no postcode.
+
+*Interactive tool: Radiator check by KarbonKit. Use it at https://electrifiedhome.org/tools/radiator-check/*
+
+## What it can't tell you
+
+It works from how your radiators cope with the boiler today. It doesn't know how much heat each room loses, and it assumes each radiator is only just big enough for its room, so its answer leans cautious.
+
+If the answer rests on guesses, the tool suggests turning the boiler down for a week of cold weather. That tells you more than any calculation: if every room still gets warm, the radiators have capacity to spare. An installer's room-by-room heat loss survey gives the real answer, and a heat pump is designed from it.
+
+## What next
+
+*Installer finder: [Find installers near you](https://electrifiedhome.org/tools/installer-finder/). Each with a link to the MCS register. (Needs a postcode)*
+
+The [heat pumps](https://electrifiedhome.org/heat-pumps/) page explains why a heat pump runs radiators cooler. A room that needs a bigger radiator may not after [insulating](https://electrifiedhome.org/insulation/) it. [Choosing an installer](https://electrifiedhome.org/installers/) says what a survey should include.
+
+---
+
 # Paying for it
 
 Source: https://electrifiedhome.org/paying-for-it/
@@ -621,6 +650,10 @@ A postcode and four questions show which UK schemes a household might get, each 
 
 What waiting for a working boiler to fail costs in carbon, and a plan for switching before it does, with calendar reminders. It can also collect enquiries. [See it here](https://electrifiedhome.org/tools/boiler-escape-plan/).
 
+### Radiator check
+
+Which radiators would probably need changing for a heat pump, from the boiler's setting and the type of each radiator, with no measuring. When the answer rests on guesses it suggests a week with the boiler turned down, with a calendar reminder. It can also collect enquiries. [See it here](https://electrifiedhome.org/tools/radiator-check/).
+
 ### Installer finder
 
 Installers near a postcode, each with a link to the MCS register. You can put your own list of installers first, or show only yours. [See it here](https://electrifiedhome.org/tools/installer-finder/).
@@ -667,6 +700,7 @@ Try these on your own home to see which grants you might get, what a heat pump w
 - [Heat pump visualiser](https://electrifiedhome.org/tools/heat-pump-visualiser/): See a true-size heat pump or hot water cylinder where you'd put it. (Needs a phone camera)
 - [Sound simulator](https://electrifiedhome.org/tools/sound-simulator/): Play a real heat pump recording and measure it from your windows and garden. (Needs a phone and a speaker)
 - [3D house tour](https://electrifiedhome.org/tools/house-tour/): A cutaway house showing every part of a heat pump system, with solar panels and a battery. (Needs nothing)
+- [Radiator check](https://electrifiedhome.org/tools/radiator-check/): Which of your radiators would probably work with a heat pump, from the boiler's setting and a look at each one. (Needs a walk round the house)
 
 ## Where they come from
 
