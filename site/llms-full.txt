@@ -544,6 +544,7 @@ Grants cover some or all of the cost of many of these changes, depending on wher
 - **Home Energy Scotland Grant and Loan** (Scotland). Grants and interest-free loans for heat pumps, insulation and more. [Home Energy Scotland](https://www.homeenergyscotland.org/)
 - **Nest** (Wales). Free improvements for lower-income households. [gov.wales](https://www.gov.wales/get-free-home-energy-efficiency-improvements-nest/eligibility)
 - **NISEP** (Northern Ireland). Schemes for insulation and heating, mostly for lower-income households. [NIHE](https://www.nihe.gov.uk/housing-help/ni-energy-advice/energy-efficiency-grants)
+- **Warm Homes Loan Scheme** (whole UK). Low- and no-interest loans from participating lenders for heat pumps, solar panels and batteries, which you can use alongside the grants above. Lenders run their usual credit checks. [GOV.UK](https://www.gov.uk/government/news/warm-homes-loan-scheme-factsheet)
 - **No VAT** on installing heat pumps, insulation, solar panels and batteries, for now. Your installer's quote should already show it. [GOV.UK](https://www.gov.uk/government/publications/vat-energy-saving-materials-relief/extension-of-vat-energy-saving-materials-relief)
 
 Councils sometimes run their own schemes too. Your council's website will list them.
