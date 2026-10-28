@@ -188,7 +188,9 @@ function renderMeta(path, html) {
 // zone settings override the no-cache rule in _headers on the custom domain,
 // so the URL is what makes a change show up straight away.
 function styleHref() {
-  const hash = createHash('sha256').update(read(join(SITE, 'assets/style.css'))).digest('hex').slice(0, 10);
+  // LF only, so a Windows checkout (CRLF) gets the same hash as CI.
+  const css = read(join(SITE, 'assets/style.css')).replace(/\r\n/g, '\n');
+  const hash = createHash('sha256').update(css).digest('hex').slice(0, 10);
   return `/assets/style.css?v=${hash}`;
 }
 
