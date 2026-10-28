@@ -11,7 +11,8 @@ site/                    everything published
   tools/<slug>/          one page per KarbonKit widget
   assets/style.css       the only stylesheet
   assets/icons/          card icons, one SVG each (style.css maps i-NAME to them)
-  assets/electric-home.svg  the picture at the top of the home page
+  assets/home-hero.svg   the picture at the top of the home page, written by
+                         scripts/hero-art.mjs (see the top of that file)
   _headers               response headers on Cloudflare (including the CSP)
   sitemap.xml            written by `npm run fix`
   llms.txt, llms-full.txt  an index and the full text of the site for LLMs, written by `npm run fix`
@@ -23,6 +24,7 @@ templates/tool.html      starting point for a new widget's page
 scripts/site.mjs         fix / check / set-id
 scripts/add-widgets.mjs  drafts pages for new KarbonKit widgets
 scripts/serve.mjs        local preview
+scripts/hero-art.mjs     draws the home page picture
 WRITING.md               how the pages are written – read before editing
 ```
 
