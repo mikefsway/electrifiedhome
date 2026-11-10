@@ -1,7 +1,7 @@
 <!doctype html>
 <!--
   The link-preview picture, site/assets/og.png (1200 × 630). It mirrors the
-  home page's hero: the navy band, the lawn strip and the hero picture
+  home page's hero: the navy band, the grass strip and the hero picture
   standing on it. To remake it after changing this file or the hero picture,
   serve the repository root (python3 -m http.server 8090), open
   http://localhost:8090/scripts/og.html in a browser at 1200 × 630 and save a
@@ -20,8 +20,9 @@
     background: #14365f; color: #fff;
     font-family: "Atkinson Hyperlegible Next", sans-serif;
   }
-  .lawn { position: absolute; left: 0; right: 0; bottom: 0; height: 48px; background: #629623; }
-  .picture { position: absolute; right: 0; bottom: 24px; width: 580px; height: auto; display: block; }
+  .lawn { position: absolute; left: 0; right: 0; bottom: 0; height: 48px; background: #2f7d3a; }
+  /* The houses stand 2.2% of the picture's width above its foot (the cars are in front): on the strip. */
+  .picture { position: absolute; right: 40px; bottom: 36px; width: 560px; height: auto; display: block; }
   .text { position: absolute; left: 72px; top: 72px; width: 520px; }
   .name { display: flex; align-items: center; gap: 14px; font-size: 32px; font-weight: 700; margin: 0 0 40px; }
   .name svg { width: 52px; height: 52px; }

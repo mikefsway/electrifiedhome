@@ -52,7 +52,6 @@
   --yellow: #f0c63a;
   --measure: 42rem;
   --wide: 72rem;
-  --lawn: #629623;     /* the lawn in the home page picture, which the strip carries on */
   --ground: 1.5rem;     /* the grass under the house on the home page */
 }
 
@@ -228,12 +227,12 @@ li { margin-bottom: 0.375rem; }
 .hero {
   color: #fff;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 28rem);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 32rem);
   align-items: end;
   gap: 1.5rem 4rem;
   padding: 3.5rem 0 var(--ground);
   margin-bottom: 3rem;
-  border-image: linear-gradient(var(--navy) calc(100% - var(--ground)), var(--lawn) 0) fill 0 / 0 / 0 100vmax;
+  border-image: linear-gradient(var(--navy) calc(100% - var(--ground)), var(--green) 0) fill 0 / 0 / 0 100vmax;
 }
 .hero > div { padding-bottom: 3.5rem; align-self: center; }
 .hero h1 {
@@ -244,9 +243,11 @@ li { margin-bottom: 0.375rem; }
   max-width: 9em;
 }
 .hero .lede { color: var(--navy-ink); max-width: 34rem; }
-/* The picture's lawn runs to its bottom edge, about as deep as the strip, so
-   the picture overlaps the strip and the two lawns meet as one. */
-.hero-art { width: 100%; height: auto; display: block; margin-bottom: calc(-1 * var(--ground)); }
+/* The picture has a transparent background, so it sits straight on the band.
+   The cars stand a little in front of the houses, below them in the picture:
+   pulled down by that much (2.2% of its width; a margin's percentage is of
+   the width), the houses stand on the strip and the cars just in front. */
+.hero-art { width: 100%; height: auto; display: block; margin-bottom: -2.2%; }
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -270,7 +271,7 @@ li { margin-bottom: 0.375rem; }
 @media (max-width: 48rem) {
   .hero { grid-template-columns: 1fr; padding-top: 2rem; }
   .hero > div { padding-bottom: 0.5rem; }
-  .hero-art { max-width: 24rem; }
+  .hero-art { max-width: 30rem; }
 }
 
 /* ---------- Lists of links ----------

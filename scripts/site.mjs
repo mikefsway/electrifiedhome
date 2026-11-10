@@ -176,7 +176,7 @@ function renderMeta(path, html) {
     `<meta property="og:image" content="${ORIGIN}/assets/og.png">`,
     '<meta property="og:image:width" content="1200">',
     '<meta property="og:image:height" content="630">',
-    '<meta property="og:image:alt" content="Electrified Home: a brick house at dusk with solar panels, a heat pump and an electric car charging on the drive.">',
+    '<meta property="og:image:alt" content="Electrified Home: a pair of semi-detached houses at dusk. One has solar panels, a heat pump and an electric car charging; next door still has a gas boiler.">',
     '<meta name="twitter:card" content="summary_large_image">',
     `<script type="application/ld+json">${JSON.stringify(jsonLd(path, info)).replace(/</g, '\\u003c')}</script>`,
   );
