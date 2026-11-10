@@ -21,6 +21,7 @@ The tools are made by KarbonKit (https://www.karbonkit.com/) and embedded here e
 ## Tools
 
 - [Tools](https://electrifiedhome.org/tools/): Tools to try on your own home: grants, running costs, installers, noise, size and how a heat pump system fits together.
+- [Home energy helper](https://electrifiedhome.org/tools/ai-assistant/): Answer questions about your home one at a time to see costs and savings, a plan for your boiler, your radiators and grants. Tap, chat or use your own AI.
 - [Savings calculator](https://electrifiedhome.org/tools/savings-calculator/): Estimate what a heat pump, solar panels or a battery would cost and save in your home.
 - [Grant finder](https://electrifiedhome.org/tools/grant-finder/): Your postcode and four questions show which UK grants you might get for heat pumps, insulation and solar.
 - [Boiler escape plan](https://electrifiedhome.org/tools/boiler-escape-plan/): Work out when to replace a working gas, oil or LPG boiler, and what to do before then.

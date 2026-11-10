@@ -12,7 +12,29 @@ Source: https://electrifiedhome.org/
 
 What's involved in moving your heating, cooking and car off gas, oil and petrol, and what can go wrong. The tools work out what it would mean for your own home.
 
-## Start from where you are
+## Work it out for your home
+
+The home energy helper takes you through the checks on this site one question at a time: what a heat pump, solar panels or a battery would cost and save, how ready the house is for a heat pump, whether your radiators would work with one, and which grants you might get. Your answers carry over from one check to the next.
+
+*Interactive tool: Home energy helper by KarbonKit. Start with whichever question fits. [More about the helper](https://electrifiedhome.org/tools/ai-assistant/) Use it at https://electrifiedhome.org/*
+
+### Tap, chat or use your own AI assistant
+
+Tap through the questions here, or switch to a chat if you'd rather type. If you already use ChatGPT, Claude or another assistant, the helper gives you a message to paste into it. All three ask the same questions and give the same figures.
+
+### What it needs
+
+A few minutes for each check. Some ask for your postcode. None ask for your name or email.
+
+### What it can't tell you
+
+The figures are estimates from your answers. An installer's survey is what tells you what your home needs.
+
+### Who sees your answers
+
+They go to KarbonKit, which makes the helper, to work out the figures, and aren't kept. In the chat, what you type also goes to Anthropic, whose AI writes the replies. Electrified Home doesn't see any of it.
+
+## Or start from where you are
 
 - [My boiler is getting old](https://electrifiedhome.org/tools/boiler-escape-plan/): Plan the switch before it breaks
 - [I want to know about grants](https://electrifiedhome.org/tools/grant-finder/): Which schemes you might get, from your postcode
@@ -54,6 +76,7 @@ Your home's energy performance certificate (EPC) records the heating and insulat
 
 You don't need an account for any of them.
 
+- [Home energy helper](https://electrifiedhome.org/tools/ai-assistant/): Takes you through the checks on this site one question at a time: costs and savings, your boiler, your radiators and grants. (Works on a computer or a phone)
 - [3D house tour](https://electrifiedhome.org/tools/house-tour/): A cutaway 1930s semi that runs on electricity: heating, hot water, solar, a battery, the car and cooking. (Works on a computer or a phone)
 - [Savings calculator](https://electrifiedhome.org/tools/savings-calculator/): Estimate what a heat pump, solar panels or a battery would cost and save in your home. (Needs your postcode)
 - [Grant finder](https://electrifiedhome.org/tools/grant-finder/): Your postcode and four questions show which UK grants you might get. (Needs your postcode)
@@ -333,6 +356,44 @@ Free or discounted insulation is available to many lower-income households, and 
 
 - [Find ways to save energy in your home](https://www.gov.uk/improve-energy-efficiency), GOV.UK
 - [Home Energy Scotland](https://www.homeenergyscotland.org/)
+
+---
+
+# Home energy helper
+
+Source: https://electrifiedhome.org/tools/ai-assistant/
+
+It takes you through the checks on this site one question at a time – what a heat pump, solar panels or a battery would cost and save, a plan for replacing your boiler, your radiators and grants – and carries your answers from one check to the next.
+
+## What you need
+
+A few minutes for each check. Some ask for your postcode, and some can look up your home's energy performance certificate if you give them your postcode and house number. None of them ask for your name or email.
+
+*Interactive tool: Home energy helper by KarbonKit. Start with whichever question fits. When a check is done, the helper offers the others, and links to the tools you need to see or hear for yourself. Use it at https://electrifiedhome.org/tools/ai-assistant/*
+
+## Three ways to answer
+
+- Tap through the questions here, choosing from the answers each one offers.
+- Choose "Chat instead" to type your answers. An AI writes the replies, one question at a time, and takes its figures from the same checks.
+- Choose "Use your own AI assistant instead" if you already use ChatGPT, Claude or another assistant. Copy the message it gives you into a new chat there, and your assistant asks the questions. You can read the message before you paste it.
+
+All three ask the same questions and give the same figures.
+
+## Your logbook
+
+When you finish a check, the helper gives you a short message that holds your answers. Keep it, and you can carry on later here or in your own assistant without starting again. "Open your logbook" shows what you have so far, and can remember it on this device.
+
+## What it can't tell you
+
+The figures are estimates from your answers and, if you look it up, your energy certificate. In the chat or your own assistant an AI writes the words, and it can still word things wrongly. If a figure matters to you, check it in the tool itself: the [savings calculator](https://electrifiedhome.org/tools/savings-calculator/), [boiler escape plan](https://electrifiedhome.org/tools/boiler-escape-plan/), [radiator check](https://electrifiedhome.org/tools/radiator-check/) or [grant finder](https://electrifiedhome.org/tools/grant-finder/). None of them can say what your home needs: an installer's survey does that.
+
+## Who sees what
+
+When you tap through the questions, your answers go to KarbonKit, which makes the helper, to work out the figures, and aren't kept. In the chat, what you type goes to KarbonKit and to Anthropic, whose AI writes the replies. The chat's note "What happens to what I type" says what each of them keeps. With your own assistant, what you type goes to that assistant's company, under your own settings there. Electrified Home doesn't see your answers or your conversation either way. The [about page](https://electrifiedhome.org/about/) has more.
+
+## What next
+
+When you know what you want, [choosing an installer](https://electrifiedhome.org/installers/) is the next step. The helper can point you to installers near you.
 
 ---
 
@@ -623,7 +684,7 @@ If you spot something wrong, email [hello@karbonkit.com](mailto:hello@karbonkit.
 
 This site sets no cookies and has no analytics or advertising.
 
-The tools load from widgets.karbonkit.com. What you type into them, such as a postcode, goes to KarbonKit to work out the answer. The tools set no cookies either. If you ask the boiler escape plan to email you a plan, your address is used to send it. KarbonKit's [privacy page](https://www.karbonkit.com/privacy/) has the details.
+The tools load from widgets.karbonkit.com. What you type into them, such as a postcode, goes to KarbonKit to work out the answer. The tools set no cookies either. If you ask the boiler escape plan to email you a plan, your address is used to send it. If you use the chat in the home energy helper, what you type also goes to Anthropic, whose AI writes the replies. The chat's note "What happens to what I type" says what each of them keeps. KarbonKit's [privacy page](https://www.karbonkit.com/privacy/) has the details.
 
 ---
 
@@ -705,6 +766,7 @@ Source: https://electrifiedhome.org/tools/
 
 Try these on your own home to see which grants you might get, what a heat pump would cost to run, what one sounds like and whether it fits. You don't need an account for any of them.
 
+- [Home energy helper](https://electrifiedhome.org/tools/ai-assistant/): Takes you through the checks on this site one question at a time: costs and savings, your boiler, your radiators and grants. (Works on a computer or a phone)
 - [3D house tour](https://electrifiedhome.org/tools/house-tour/): A cutaway 1930s semi that runs on electricity: heating, hot water, solar, a battery, the car and cooking. (Works on a computer or a phone)
 - [Savings calculator](https://electrifiedhome.org/tools/savings-calculator/): Estimate what a heat pump, solar panels or a battery would cost and save in your home. (Needs your postcode)
 - [Grant finder](https://electrifiedhome.org/tools/grant-finder/): Your postcode and four questions show which UK grants you might get. (Needs your postcode)

@@ -7,7 +7,7 @@
 <meta name="description" content="Running a UK home on electricity instead of gas or oil: heat pumps, solar, batteries, induction hobs, car charging and tariffs, with free tools to try on your home.">
 <link rel="canonical" href="https://electrifiedhome.org/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/assets/style.css?v=66384fb577">
+<link rel="stylesheet" href="/assets/style.css?v=833237ea23">
 <!-- meta:start -->
 <meta name="theme-color" content="#14365f">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -56,12 +56,40 @@
   <div>
     <h1>Run your home on electricity</h1>
     <p class="lede">What's involved in moving your heating, cooking and car off gas, oil and petrol, and what can go wrong. The tools work out what it would mean for your own home.</p>
-    <p class="hero-actions"><a class="button" href="/tools/">Try the tools</a> <a href="#start">Where to start</a></p>
+    <p class="hero-actions"><a class="button" href="#your-home">Work it out for your home</a> <a href="#start">Where to start</a></p>
   </div>
   <img class="hero-art" src="/assets/home-hero.svg" width="1500" height="887" alt="A brick house at dusk with lights on inside. It has solar panels on the roof, a heat pump beside it and an electric car charging on the drive. It has no chimney.">
 </div>
 
-<h2>Start from where you are</h2>
+<section class="helper" id="your-home">
+<div class="helper-intro">
+<h2>Work it out for your home</h2>
+<p>The home energy helper takes you through the checks on this site one question at a time: what a heat pump, solar panels or a battery would cost and save, how ready the house is for a heat pump, whether your radiators would work with one, and which grants you might get. Your answers carry over from one check to the next.</p>
+</div>
+
+<!-- karbonkit: ai-assistant -->
+<!-- The config ID comes from the KarbonKit dashboard (Bring your own AI tab). To change it everywhere: node scripts/site.mjs set-id TYPE NEW_ID -->
+<figure class="tool" data-tool="Home energy helper">
+<div class="tool-frame">
+  <script src="https://widgets.karbonkit.com/embed.js"></script>
+  <div data-karbonkit data-config-id="BZEV7_2nUgMZmSFFJoYyoA"></div>
+</div>
+<figcaption>Start with whichever question fits. <a href="/tools/ai-assistant/">More about the helper</a></figcaption>
+</figure>
+
+<div class="helper-more">
+<h3>Tap, chat or use your own AI assistant</h3>
+<p>Tap through the questions here, or switch to a chat if you'd rather type. If you already use ChatGPT, Claude or another assistant, the helper gives you a message to paste into it. All three ask the same questions and give the same figures.</p>
+<h3>What it needs</h3>
+<p>A few minutes for each check. Some ask for your postcode. None ask for your name or email.</p>
+<h3>What it can't tell you</h3>
+<p>The figures are estimates from your answers. An installer's survey is what tells you what your home needs.</p>
+<h3>Who sees your answers</h3>
+<p>They go to KarbonKit, which makes the helper, to work out the figures, and aren't kept. In the chat, what you type also goes to Anthropic, whose AI writes the replies. Electrified Home doesn't see any of it.</p>
+</div>
+</section>
+
+<h2>Or start from where you are</h2>
 <ul class="situations">
   <li><a href="/tools/boiler-escape-plan/"><strong>My boiler is getting old</strong><span>Plan the switch before it breaks</span></a></li>
   <li><a href="/tools/grant-finder/"><strong>I want to know about grants</strong><span>Which schemes you might get, from your postcode</span></a></li>
@@ -112,6 +140,7 @@
 <p>You don't need an account for any of them.</p>
 <ul class="cards tool-cards">
   <!-- tools:start -->
+  <li class="i-ai-assistant"><a href="/tools/ai-assistant/">Home energy helper</a><p>Takes you through the checks on this site one question at a time: costs and savings, your boiler, your radiators and grants.</p><p class="needs">Works on a computer or a phone</p></li>
   <li class="i-house-tour"><a href="/tools/house-tour/">3D house tour</a><p>A cutaway 1930s semi that runs on electricity: heating, hot water, solar, a battery, the car and cooking.</p><p class="needs">Works on a computer or a phone</p></li>
   <li class="i-savings-calculator"><a href="/tools/savings-calculator/">Savings calculator</a><p>Estimate what a heat pump, solar panels or a battery would cost and save in your home.</p><p class="needs">Needs your postcode</p></li>
   <li class="i-grant-finder"><a href="/tools/grant-finder/">Grant finder</a><p>Your postcode and four questions show which UK grants you might get.</p><p class="needs">Needs your postcode</p></li>
@@ -154,6 +183,7 @@
         <h2 id="footer-tools">Tools</h2>
         <ul>
           <!-- tools:start -->
+          <li><a href="/tools/ai-assistant/">Home energy helper</a></li>
           <li><a href="/tools/savings-calculator/">Savings calculator</a></li>
           <li><a href="/tools/grant-finder/">Grant finder</a></li>
           <li><a href="/tools/boiler-escape-plan/">Boiler escape plan</a></li>
