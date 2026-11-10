@@ -11,12 +11,17 @@ site/                    everything published
   tools/<slug>/          one page per KarbonKit widget
   assets/style.css       the only stylesheet
   assets/icons/          card icons, one SVG each (style.css maps i-NAME to them)
-  assets/home-hero.svg   the picture at the top of the home page, written by
-                         scripts/hero-art.mjs (see the top of that file)
+  assets/home-hero.webp  the picture at the top of the home page: its sky is set
+                         to the band's navy (#14365f) and it is cut where the lawn
+                         runs edge to edge, so it overlaps the strip below the band
+                         (--lawn in style.css is that lawn's green)
+  assets/home-hero.svg   the earlier picture, drawn by scripts/hero-art.mjs; not
+                         used by any page
   _headers               response headers on Cloudflare (including the CSP)
   sitemap.xml            written by `npm run fix`
   llms.txt, llms-full.txt  an index and the full text of the site for LLMs, written by `npm run fix`
-  assets/og.png          the picture link previews show (1200 × 630)
+  assets/og.png          the picture link previews show (1200 × 630): a screenshot
+                         of scripts/og.html, which says how to remake it
   apple-touch-icon.png   the icon for a phone's home screen
 partials/                header and footer, copied into every page, and llms.md,
                          the introduction to llms.txt

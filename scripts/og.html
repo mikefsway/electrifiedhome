@@ -1,0 +1,47 @@
+<!doctype html>
+<!--
+  The link-preview picture, site/assets/og.png (1200 × 630). It mirrors the
+  home page's hero: the navy band, the lawn strip and the hero picture
+  standing on it. To remake it after changing this file or the hero picture,
+  serve the repository root (python3 -m http.server 8090), open
+  http://localhost:8090/scripts/og.html in a browser at 1200 × 630 and save a
+  screenshot of the page as site/assets/og.png.
+-->
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>og.png</title>
+<style>
+  @font-face { font-family: "Atkinson Hyperlegible Next"; src: url("../site/assets/fonts/atkinson-hyperlegible-next-latin-400-normal.woff2") format("woff2"); font-weight: 400; }
+  @font-face { font-family: "Atkinson Hyperlegible Next"; src: url("../site/assets/fonts/atkinson-hyperlegible-next-latin-700-normal.woff2") format("woff2"); font-weight: 700; }
+  html, body { margin: 0; }
+  body {
+    width: 1200px; height: 630px; overflow: hidden; position: relative;
+    background: #14365f; color: #fff;
+    font-family: "Atkinson Hyperlegible Next", sans-serif;
+  }
+  .lawn { position: absolute; left: 0; right: 0; bottom: 0; height: 48px; background: #629623; }
+  .picture { position: absolute; right: 0; bottom: 24px; width: 580px; height: auto; display: block; }
+  .text { position: absolute; left: 72px; top: 72px; width: 520px; }
+  .name { display: flex; align-items: center; gap: 14px; font-size: 32px; font-weight: 700; margin: 0 0 40px; }
+  .name svg { width: 52px; height: 52px; }
+  h1 { font-size: 72px; line-height: 1.02; letter-spacing: -0.03em; margin: 0 0 28px; }
+  p { font-size: 27px; line-height: 1.4; color: #dfe8f3; margin: 0 0 30px; }
+  .url { font-size: 28px; font-weight: 700; color: #f0c63a; margin: 0; }
+</style>
+</head>
+<body>
+  <div class="text">
+    <p class="name">
+      <!-- The site's logo without its navy square: on the navy band the house is the mark. -->
+      <svg viewBox="4 4.5 24 23" aria-hidden="true"><path d="M16 4.5L28 14v13.5H4V14z" fill="#fff"/><rect x="14.6" y="11.5" width="2.8" height="6" rx=".6" fill="#14365f"/><rect x="8.5" y="20.5" width="6" height="2.8" rx=".6" fill="#14365f"/><rect x="17.5" y="20.5" width="6" height="2.8" rx=".6" fill="#14365f"/></svg>
+      Electrified Home
+    </p>
+    <h1>Run your home on electricity</h1>
+    <p>Heat pumps, solar, batteries, induction hobs and electric cars, with free tools for UK homes.</p>
+    <p class="url">electrifiedhome.org</p>
+  </div>
+  <div class="lawn"></div>
+  <img class="picture" src="../site/assets/home-hero.webp" alt="">
+</body>
+</html>
