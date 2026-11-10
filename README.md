@@ -20,7 +20,8 @@ site/                    everything published
   _headers               response headers on Cloudflare (including the CSP)
   sitemap.xml            written by `npm run fix`
   llms.txt, llms-full.txt  an index and the full text of the site for LLMs, written by `npm run fix`
-  assets/og.png          the picture link previews show (1200 × 630)
+  assets/og.png          the picture link previews show (1200 × 630): a screenshot
+                         of scripts/og.html, which says how to remake it
   apple-touch-icon.png   the icon for a phone's home screen
 partials/                header and footer, copied into every page, and llms.md,
                          the introduction to llms.txt
