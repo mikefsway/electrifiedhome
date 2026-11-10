@@ -11,10 +11,9 @@ site/                    everything published
   tools/<slug>/          one page per KarbonKit widget
   assets/style.css       the only stylesheet
   assets/icons/          card icons, one SVG each (style.css maps i-NAME to them)
-  assets/home-hero.webp  the picture at the top of the home page: its sky is set
-                         to the band's navy (#14365f) and it is cut where the lawn
-                         runs edge to edge, so it overlaps the strip below the band
-                         (--lawn in style.css is that lawn's green)
+  assets/home-hero.webp  the picture at the top of the home page, on a transparent
+                         background so it sits on the navy band; its houses stand
+                         on the grass strip (see .hero-art in style.css)
   assets/home-hero.svg   the earlier picture, drawn by scripts/hero-art.mjs; not
                          used by any page
   _headers               response headers on Cloudflare (including the CSP)
