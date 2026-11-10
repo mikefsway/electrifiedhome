@@ -10,7 +10,7 @@ The tools are made by KarbonKit (https://www.karbonkit.com/) and embedded here e
 
 Source: https://electrifiedhome.org/
 
-What's involved in moving your heating, cooking and car off gas, oil and petrol, and what can go wrong. The tools work out what it would mean for your own home.
+What's involved in moving your heating, cooking and car off gas, oil and petrol. Our tools help you understand what it would mean for your own home.
 
 ## Work it out for your home
 
