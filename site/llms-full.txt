@@ -82,7 +82,7 @@ You don't need an account for any of them.
 - [Grant finder](https://electrifiedhome.org/tools/grant-finder/): Your postcode and four questions show which UK grants you might get. (Needs your postcode)
 - [Boiler escape plan](https://electrifiedhome.org/tools/boiler-escape-plan/): Work out when to replace a working gas, oil or LPG boiler, and what to do before then. (Needs your boiler's age)
 - [Installer finder](https://electrifiedhome.org/tools/installer-finder/): Heat pump, solar and battery installers near you, each with a link to the MCS register. (Needs a postcode)
-- [Heat pump visualiser](https://electrifiedhome.org/tools/heat-pump-visualiser/): See a true-size heat pump or hot water cylinder where you'd put it. (Needs a phone camera)
+- [Home energy technology visualiser](https://electrifiedhome.org/tools/heat-pump-visualiser/): See a true-size heat pump, hot water cylinder, home battery or solar inverter where you'd put it. (Needs a phone camera)
 - [Sound simulator](https://electrifiedhome.org/tools/sound-simulator/): Play a real heat pump recording and measure it from your windows and garden. (Needs a phone and a speaker)
 - [Radiator check](https://electrifiedhome.org/tools/radiator-check/): Which of your radiators would probably work with a heat pump, from the boiler's setting and a look at each one. (Needs a walk round the house)
 
@@ -125,7 +125,7 @@ An installer works this out with a room-by-room heat loss calculation, which als
 
 ## Hot water
 
-*Heat pump visualiser: [See a true-size cylinder in your cupboard](https://electrifiedhome.org/tools/heat-pump-visualiser/). Through your phone's camera. It can put an outdoor unit in your garden too. (Needs a phone camera)*
+*Home energy technology visualiser: [See a true-size cylinder in your cupboard](https://electrifiedhome.org/tools/heat-pump-visualiser/). Through your phone's camera. It can put an outdoor unit in your garden too. (Needs a phone camera)*
 
 A heat pump heats a hot water cylinder, a tank usually kept in an airing cupboard or utility room. If you have a combi boiler you have no cylinder now, so you'll need room for one, roughly the footprint of a small fridge and taller. Compact heat batteries are an alternative for homes with no space. The [AR visualiser](https://electrifiedhome.org/tools/heat-pump-visualiser/) can place a true-size cylinder in the cupboard you have in mind.
 
@@ -193,6 +193,8 @@ A heat pump uses most electricity in winter, when panels make least. Over a year
 A battery moves electricity from when it is made or cheap to when you need it: midday solar to the evening, or cheap overnight grid electricity to the next day. It pays back best on a [tariff with cheaper hours](https://electrifiedhome.org/tariffs/), and helps less if you are at home using electricity during the day anyway.
 
 Home batteries are sized for an evening or a day, not for storing summer sunshine for winter. Most don't keep the lights on in a power cut unless they are fitted with a backup circuit, so ask if that matters to you.
+
+*Home energy technology visualiser: [See a true-size battery on your wall](https://electrifiedhome.org/tools/heat-pump-visualiser/). Through your phone's camera. It has a small and a large battery, and the inverter that runs them with solar panels. (Needs a phone camera)*
 
 ## What size for your home
 
@@ -493,23 +495,23 @@ The list is built from public records such as Companies House and installers' ow
 
 ---
 
-# Heat pump visualiser
+# Home energy technology visualiser
 
 Source: https://electrifiedhome.org/tools/heat-pump-visualiser/
 
-See a true-size heat pump in your garden, or a hot water cylinder in your cupboard, through your phone's camera.
+See a true-size heat pump in your garden, a hot water cylinder in your cupboard, or a home battery or solar inverter on your wall, through your phone's camera.
 
 ## What you need
 
 A phone with Safari on an iPhone or Chrome on Android, and nothing to install. On a computer you get a 3D model you can turn around instead.
 
-The models are drawn to the measurements of common heat pumps of different sizes, and a 200 litre cylinder. They can't be scaled, so what you see is the real size.
+The models are drawn to the measurements of common heat pumps of different sizes, a 200 litre cylinder, a small and a large home battery, and an inverter of the kind that runs solar panels and a battery. Choose one from the list above the model. They can't be scaled, so what you see is the real size. Heat pumps and the cylinder stand on the floor; the battery and inverter go on a wall.
 
-*Interactive tool: Heat pump visualiser by KarbonKit. Use it at https://electrifiedhome.org/tools/heat-pump-visualiser/*
+*Interactive tool: Home energy technology visualiser by KarbonKit. Use it at https://electrifiedhome.org/tools/heat-pump-visualiser/*
 
 ## Space around the unit
 
-The unit your installer specifies may be a different size, and it needs space around it for air to flow. Ask for the clearances.
+The equipment your installer specifies may be a different size. A heat pump needs space around it for air to flow, and batteries and inverters have clearances and rules about where they can go. Ask your installer for them.
 
 ## What it sounds like
 
@@ -537,7 +539,7 @@ Phone microphones aren't calibrated sound meters, so treat the readings as appro
 
 ## Size and position
 
-*Heat pump visualiser: [See a true-size unit where it would go](https://electrifiedhome.org/tools/heat-pump-visualiser/). Through your phone's camera, in your garden or against a wall. (Needs a phone camera)*
+*Home energy technology visualiser: [See a true-size unit where it would go](https://electrifiedhome.org/tools/heat-pump-visualiser/). Through your phone's camera, in your garden or against a wall. (Needs a phone camera)*
 
 See how big a unit is with the [AR visualiser](https://electrifiedhome.org/tools/heat-pump-visualiser/), and read about [noise and where the unit goes](https://electrifiedhome.org/heat-pumps/).
 
@@ -731,9 +733,9 @@ Which radiators would probably need changing for a heat pump, from the boiler's 
 
 Installers near a postcode, each with a link to the MCS register. You can put your own list of installers first, or show only yours. [See it here](https://electrifiedhome.org/tools/installer-finder/).
 
-### Heat pump visualiser
+### Home energy technology visualiser
 
-A true-size heat pump or hot water cylinder through a phone's camera, with a 3D model on a computer. [See it here](https://electrifiedhome.org/tools/heat-pump-visualiser/).
+A true-size heat pump, hot water cylinder, home battery or solar inverter through a phone's camera, with a 3D model on a computer. In the KarbonKit dashboard you choose which of these it offers. [See it here](https://electrifiedhome.org/tools/heat-pump-visualiser/).
 
 ### Sound simulator
 
@@ -772,7 +774,7 @@ Try these on your own home to see which grants you might get, what a heat pump w
 - [Grant finder](https://electrifiedhome.org/tools/grant-finder/): Your postcode and four questions show which UK grants you might get. (Needs your postcode)
 - [Boiler escape plan](https://electrifiedhome.org/tools/boiler-escape-plan/): Work out when to replace a working gas, oil or LPG boiler, and what to do before then. (Needs your boiler's age)
 - [Installer finder](https://electrifiedhome.org/tools/installer-finder/): Heat pump, solar and battery installers near you, each with a link to the MCS register. (Needs a postcode)
-- [Heat pump visualiser](https://electrifiedhome.org/tools/heat-pump-visualiser/): See a true-size heat pump or hot water cylinder where you'd put it. (Needs a phone camera)
+- [Home energy technology visualiser](https://electrifiedhome.org/tools/heat-pump-visualiser/): See a true-size heat pump, hot water cylinder, home battery or solar inverter where you'd put it. (Needs a phone camera)
 - [Sound simulator](https://electrifiedhome.org/tools/sound-simulator/): Play a real heat pump recording and measure it from your windows and garden. (Needs a phone and a speaker)
 - [Radiator check](https://electrifiedhome.org/tools/radiator-check/): Which of your radiators would probably work with a heat pump, from the boiler's setting and a look at each one. (Needs a walk round the house)
 
