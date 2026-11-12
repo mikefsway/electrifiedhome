@@ -44,6 +44,8 @@ Each widget type has one config ID, used everywhere that widget appears. They li
 - enquiry collection off (the site collects no contact details, and its privacy note says so);
 - council link on for the grant finder.
 
+One exception: the unlisted `/tools/installer-finder-preview/` also embeds a second installer finder widget ("electrifiedhome.org – installer-finder (new data preview)"), labelled `<!-- karbonkit: installer-finder-preview -->` so the one-ID-per-type check still holds. Its searches use KarbonKit's rebuilt installer list. Delete the page when that list replaces the current one.
+
 Change settings in the KarbonKit dashboard: Your saved widgets, Edit. The ID stays the same. To swap an ID on the site, run `node scripts/site.mjs set-id <type> <id>`.
 
 ## New widgets
