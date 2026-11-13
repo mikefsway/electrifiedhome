@@ -7,7 +7,7 @@
 <meta name="description" content="Running a UK home on electricity instead of gas or oil: heat pumps, solar, batteries, induction hobs, car charging and tariffs, with free tools to try on your home.">
 <link rel="canonical" href="https://electrifiedhome.org/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/assets/style.css?v=3a8dcea92e">
+<link rel="stylesheet" href="/assets/style.css?v=6b6057c56f">
 <!-- meta:start -->
 <meta name="theme-color" content="#14365f">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -42,9 +42,9 @@
         <li><a href="/cooking/">Cooking</a></li>
         <li><a href="/car-charging/">Car charging</a></li>
         <li><a href="/tariffs/">Tariffs</a></li>
-        <li><a href="/paying-for-it/">Paying for it</a></li>
+        <li class="nav-group"><a href="/paying-for-it/">Paying for it</a></li>
         <li><a href="/installers/">Installers</a></li>
-        <li><a href="/tools/">Tools</a></li>
+        <li class="nav-group"><a href="/tools/">Tools</a></li>
       </ul>
     </nav>
   </div>
@@ -56,17 +56,16 @@
   <div>
     <h1>Run your home on electricity</h1>
     <p class="lede">What's involved in moving your heating, cooking and car off gas, oil and petrol. Our tools help you understand what it would mean for your own home.</p>
-    <p class="hero-actions"><a class="button" href="#your-home">Work it out for your home</a> <a href="#start">Where to start</a></p>
+    <p class="hero-actions"><a class="button" href="#your-home">Work it out for your home</a> <a href="#start">Where to start</a> <a href="#one-house">See an all-electric home</a></p>
   </div>
   <img class="hero-art" src="/assets/home-hero.webp" width="1400" height="728" alt="A pair of brick semi-detached houses at dusk, with lights on inside. The one on the left runs on electricity: solar panels on the roof, a heat pump at the front and an electric car charging. Next door still has a gas boiler, seen through the front window.">
 </div>
-
 <section class="helper" id="your-home">
 <div class="helper-intro">
 <h2>Work it out for your home</h2>
-<p>The home energy helper takes you through the checks on this site one question at a time: what a heat pump, solar panels or a battery would cost and save, how ready the house is for a heat pump, whether your radiators would work with one, and which grants you might get. Your answers carry over from one check to the next.</p>
+<p>The home energy helper takes you through the checks on this site one question at a time: what a heat pump, solar panels or a battery would cost and save, when to replace your boiler, whether your radiators would work with a heat pump, and which grants you might get. Your answers carry over from one check to the next.</p>
+<p>Each check takes a few minutes, and none ask for your name or email. <a href="/tools/ai-assistant/">How the helper works, and who sees your answers</a></p>
 </div>
-
 <!-- karbonkit: ai-assistant -->
 <!-- The config ID comes from the KarbonKit dashboard (Bring your own AI tab). To change it everywhere: node scripts/site.mjs set-id TYPE NEW_ID -->
 <figure class="tool" data-tool="Home energy helper">
@@ -74,46 +73,25 @@
   <script src="https://widgets.karbonkit.com/embed.js"></script>
   <div data-karbonkit data-config-id="BZEV7_2nUgMZmSFFJoYyoA"></div>
 </div>
-<figcaption>Start with whichever question fits. <a href="/tools/ai-assistant/">More about the helper</a></figcaption>
+<figcaption>Start with whichever question fits. Tap through, chat, or take the questions to your own AI assistant.</figcaption>
 </figure>
-
-<div class="helper-more">
-<h3>Tap, chat or use your own AI assistant</h3>
-<p>Tap through the questions here, or switch to a chat if you'd rather type. If you already use ChatGPT, Claude or another assistant, the helper gives you a message to paste into it. All three ask the same questions and give the same figures.</p>
-<h3>What it needs</h3>
-<p>A few minutes for each check. Some ask for your postcode. None ask for your name or email.</p>
-<h3>What it can't tell you</h3>
-<p>The figures are estimates from your answers. An installer's survey is what tells you what your home needs.</p>
-<h3>Who sees your answers</h3>
-<p>They go to KarbonKit, which makes the helper, to work out the figures, and aren't kept. In the chat, what you type also goes to Anthropic, whose AI writes the replies. Electrified Home doesn't see any of it.</p>
-</div>
 </section>
 
-<h2>Or start from where you are</h2>
-<ul class="situations">
-  <li><a href="/tools/boiler-escape-plan/"><strong>My boiler is getting old</strong><span>Plan the switch before it breaks</span></a></li>
-  <li><a href="/tools/grant-finder/"><strong>I want to know about grants</strong><span>Which schemes you might get, from your postcode</span></a></li>
-  <li><a href="/tools/house-tour/"><strong>I want to see what an all-electric home looks like</strong><span>A 3D house with everything switched over</span></a></li>
-  <li><a href="/heat-pumps/"><strong>I'm wondering what a heat pump is like</strong><span>How it works, what it sounds like, where it goes</span></a></li>
-  <li><a href="/car-charging/"><strong>I'm getting an electric car</strong><span>Charging at home, and the tariff to charge on</span></a></li>
-  <li><a href="/insulation/"><strong>I want lower bills this winter</strong><span>The cheap jobs that help whatever heats the home</span></a></li>
-</ul>
-
-<h2>One part of the house at a time</h2>
-<p>Each of these can switch from gas, oil or petrol to electricity on its own, in any order. Most homes do it over several years. Heating uses most of the energy in a typical home, so it is the biggest change.</p>
-<ul class="cards">
-  <li class="i-heating"><a href="/heat-pumps/">Heating</a><p>A heat pump replaces a gas, oil or LPG boiler and runs your radiators, though some may need to be larger.</p></li>
-  <li class="i-hot-water"><a href="/heat-pumps/#hot-water">Hot water</a><p>A heat pump heats a cylinder. With a combi boiler you'll need room for one, or a heat battery.</p></li>
-  <li class="i-cooking"><a href="/cooking/">Cooking</a><p>An induction hob heats the pan directly. A plug-in single ring lets you try one first.</p></li>
-  <li class="i-car"><a href="/car-charging/">Car charging</a><p>Charging on your own drive overnight is usually the cheapest way to run an electric car.</p></li>
-  <li class="i-solar"><a href="/solar-and-batteries/">Solar and batteries</a><p>Panels make some of your own electricity, and a battery stores it, or cheap overnight electricity, for later.</p></li>
-  <li class="i-tariffs"><a href="/tariffs/">Tariffs, meters and your supply</a><p>Tariffs with cheaper hours, smart meters, your main fuse and closing the gas account.</p></li>
-  <li class="i-insulation"><a href="/insulation/">Insulation and draughts</a><p>The cheap jobs help whatever heats the house. You don't have to finish them first.</p></li>
-</ul>
+<h2 id="start">Where to start</h2>
+<p>Heating, hot water, cooking and the car can each switch to electricity on its own, and most homes do it over several years. The order below suits most homes, but it's a suggestion. Heating comes first because it uses most of the energy in a typical home.</p>
+<ol class="steps">
+  <li><h3>Plan the heating before the boiler fails</h3><p>A <a href="/heat-pumps/">heat pump</a> replaces a gas, oil or LPG boiler and heats your hot water too. It takes a few weeks to survey, design and fit, and a boiler that breaks in January is usually replaced with another boiler that week. The <a href="/tools/boiler-escape-plan/">boiler escape plan</a> works out when to switch.</p></li>
+  <li><h3>Check which grants you could get</h3><p>Grants cover some or all of the cost for many households, depending on where you live, your income and whether you own your home. <a href="/paying-for-it/">Paying for it</a> describes each scheme, and the <a href="/tools/grant-finder/">grant finder</a> shows which you might get today.</p></li>
+  <li><h3>Move to a tariff with cheaper hours</h3><p>Once the heating or car runs on electricity, the <a href="/tariffs/">tariff</a> makes the biggest difference to running costs. Most tariffs with cheaper hours need a smart meter.</p></li>
+  <li><h3>Change the hob when it suits you</h3><p>It doesn't depend on anything else, and a plug-in ring lets you <a href="/cooking/">try induction</a> first.</p></li>
+  <li><h3>Add solar panels and a battery</h3><p>If your roof gets sun, <a href="/solar-and-batteries/">panels and a battery</a> cut the electricity you buy, which matters more once the heating runs on it.</p></li>
+  <li><h3>Charge the car at home</h3><p>When you next change car, <a href="/car-charging/">charging on the drive</a> is usually the cheapest way to run it.</p></li>
+  <li><h3>Choose installers carefully</h3><p>Get at least two quotes for a heat pump, solar panels or a battery. <a href="/installers/">Choosing an installer</a> says what a quote should include and what to ask.</p></li>
+</ol>
+<p>Draught-proofing and topping up the loft help whatever heats the home, and you don't need to <a href="/insulation/">finish insulating</a> before anything else. Your home's energy performance certificate (EPC) records the heating and insulation an assessor found. Search the register for <a href="https://www.gov.uk/find-energy-certificate">England and Wales</a>, <a href="https://www.scottishepcregister.org.uk/">Scotland</a> or <a href="https://www.epbniregister.com/">Northern Ireland</a>.</p>
 
 <h2 id="one-house">See it all in one house</h2>
 <p>The 3D house tour is an ordinary 1930s semi with every one of these changes made. Take the guided tour, or pick a room and look around.</p>
-
 <!-- karbonkit: house-tour -->
 <!-- The config ID comes from the KarbonKit dashboard (3D House Tour tab). To change it everywhere: node scripts/site.mjs set-id TYPE NEW_ID -->
 <figure class="tool wide" data-tool="3D house tour">
@@ -124,43 +102,24 @@
 <figcaption>Switch to evening to see the battery run the house and the car charge overnight. <a class="embed-this" href="/for-website-owners/#house-tour">Put this tool on your website</a></figcaption>
 </figure>
 
-<h2 id="start">Where to start</h2>
-<ol class="steps">
-  <li><h3>Plan the heating before the boiler fails</h3><p>A heat pump takes a few weeks to survey, design and fit. A boiler that breaks in January is usually replaced with another boiler that week. The <a href="/tools/boiler-escape-plan/">boiler escape plan</a> works out when to switch.</p></li>
-  <li><h3>Check which grants you could get</h3><p>Grants cover some or all of the cost for many households, depending on where you live, your income and whether you own your home. The <a href="/tools/grant-finder/">grant finder</a> shows which you might get today.</p></li>
-  <li><h3>Look at your meter and tariff</h3><p>Once the heating or car runs on electricity, a <a href="/tariffs/">tariff with cheaper hours</a> makes the biggest difference to running costs. Most need a smart meter.</p></li>
-  <li><h3>Change the hob when it suits you</h3><p>It doesn't depend on anything else, and a plug-in ring lets you <a href="/cooking/">try induction</a> first.</p></li>
-  <li><h3>Add solar panels and a battery</h3><p>If your roof gets sun, <a href="/solar-and-batteries/">panels and a battery</a> cut the electricity you buy, which matters more once the heating runs on it.</p></li>
-  <li><h3>Charge the car at home</h3><p>When you next change car, <a href="/car-charging/">charging on the drive</a> is usually the cheapest way to run it.</p></li>
-</ol>
-<p>Your home's energy performance certificate (EPC) records the heating and insulation an assessor found. Search the register for <a href="https://www.gov.uk/find-energy-certificate">England and Wales</a>, <a href="https://www.scottishepcregister.org.uk/">Scotland</a> or <a href="https://www.epbniregister.com/">Northern Ireland</a>. Draught-proofing and topping up the loft help whatever heats the home, and you don't need to <a href="/insulation/">finish insulating</a> before anything else.</p>
-
 <div class="band">
 <h2>Tools to try on your home</h2>
 <p>You don't need an account for any of them.</p>
-<ul class="cards tool-cards">
+<ul class="cards compact tool-cards">
   <!-- tools:start -->
-  <li class="i-ai-assistant"><a href="/tools/ai-assistant/">Home energy helper</a><p>Takes you through the checks on this site one question at a time: costs and savings, your boiler, your radiators and grants.</p><p class="needs">Works on a computer or a phone</p></li>
-  <li class="i-house-tour"><a href="/tools/house-tour/">3D house tour</a><p>A cutaway 1930s semi that runs on electricity: heating, hot water, solar, a battery, the car and cooking.</p><p class="needs">Works on a computer or a phone</p></li>
-  <li class="i-savings-calculator"><a href="/tools/savings-calculator/">Savings calculator</a><p>Estimate what a heat pump, solar panels or a battery would cost and save in your home.</p><p class="needs">Needs your postcode</p></li>
-  <li class="i-grant-finder"><a href="/tools/grant-finder/">Grant finder</a><p>Your postcode and four questions show which UK grants you might get.</p><p class="needs">Needs your postcode</p></li>
-  <li class="i-boiler-escape-plan"><a href="/tools/boiler-escape-plan/">Boiler escape plan</a><p>Work out when to replace a working gas, oil or LPG boiler, and what to do before then.</p><p class="needs">Needs your boiler's age</p></li>
-  <li class="i-installer-finder"><a href="/tools/installer-finder/">Installer finder</a><p>Heat pump, solar and battery installers near you, each with a link to the MCS register.</p><p class="needs">Needs a postcode</p></li>
-  <li class="i-heat-pump-visualiser"><a href="/tools/heat-pump-visualiser/">Home energy technology visualiser</a><p>See a true-size heat pump, hot water cylinder, home battery or solar inverter where you'd put it.</p><p class="needs">Needs a phone camera</p></li>
-  <li class="i-sound-simulator"><a href="/tools/sound-simulator/">Sound simulator</a><p>Play a real heat pump recording and measure it from your windows and garden.</p><p class="needs">Needs a phone and a speaker</p></li>
-  <li class="i-radiator-check"><a href="/tools/radiator-check/">Radiator check</a><p>Which of your radiators would probably work with a heat pump, from the boiler's setting and a look at each one.</p><p class="needs">Needs a walk round the house</p></li>
+  <li class="i-ai-assistant"><a href="/tools/ai-assistant/">Home energy helper</a><p>Takes you through the checks one question at a time.</p></li>
+  <li class="i-house-tour"><a href="/tools/house-tour/">3D house tour</a><p>A cutaway 1930s semi that runs on electricity.</p></li>
+  <li class="i-savings-calculator"><a href="/tools/savings-calculator/">Savings calculator</a><p>What a heat pump, solar panels or a battery would cost and save.</p></li>
+  <li class="i-grant-finder"><a href="/tools/grant-finder/">Grant finder</a><p>Which UK grants you might get, from your postcode.</p></li>
+  <li class="i-boiler-escape-plan"><a href="/tools/boiler-escape-plan/">Boiler escape plan</a><p>When to replace a working boiler, and what to do before then.</p></li>
+  <li class="i-installer-finder"><a href="/tools/installer-finder/">Installer finder</a><p>Installers near you, with a link to the MCS register.</p></li>
+  <li class="i-heat-pump-visualiser"><a href="/tools/heat-pump-visualiser/">Home energy technology visualiser</a><p>A true-size heat pump, cylinder or battery, through your phone's camera.</p></li>
+  <li class="i-sound-simulator"><a href="/tools/sound-simulator/">Sound simulator</a><p>Hear a real heat pump from your windows and garden.</p></li>
+  <li class="i-radiator-check"><a href="/tools/radiator-check/">Radiator check</a><p>Which of your radiators would probably work with a heat pump.</p></li>
   <!-- tools:end -->
 </ul>
+<p>The tools are made by <a href="https://www.karbonkit.com/">KarbonKit</a>. Councils, installers and community energy groups put them on their own websites for free, and <a href="/for-website-owners/">you can put them on yours</a>.</p>
 </div>
-
-<h2>Before you pay anyone</h2>
-<ul class="cards">
-  <li class="i-paying"><a href="/paying-for-it/">Paying for it</a><p>Grant schemes in England, Scotland, Wales and Northern Ireland, and offers to avoid.</p></li>
-  <li class="i-installers"><a href="/installers/">Choosing an installer</a><p>What a heat pump quote should include, and what to ask the installer.</p></li>
-</ul>
-
-<h2>About the tools</h2>
-<p>The tools are made by <a href="https://www.karbonkit.com/">KarbonKit</a>, and councils, installers and community energy groups put the same tools on their own websites for free. This site embeds them the same way, and KarbonKit uses it to test them. If you run a website, <a href="/for-website-owners/">here is how to put them on yours</a>.</p>
 </main>
 
 <!-- footer:start -->
@@ -177,6 +136,13 @@
           <li><a href="/car-charging/">Car charging</a></li>
           <li><a href="/tariffs/">Tariffs, meters and your supply</a></li>
           <li><a href="/insulation/">Insulation and draughts</a></li>
+        </ul>
+      </nav>
+      <nav aria-labelledby="footer-paying">
+        <h2 id="footer-paying">Paying and installing</h2>
+        <ul>
+          <li><a href="/paying-for-it/">Paying for it</a></li>
+          <li><a href="/installers/">Choosing an installer</a></li>
         </ul>
       </nav>
       <nav aria-labelledby="footer-tools">
@@ -198,8 +164,6 @@
       <nav aria-labelledby="footer-site">
         <h2 id="footer-site">This site</h2>
         <ul>
-          <li><a href="/paying-for-it/">Paying for it</a></li>
-          <li><a href="/installers/">Choosing an installer</a></li>
           <li><a href="/about/">About this site, including privacy</a></li>
           <li><a href="/for-website-owners/">Put these tools on your website</a></li>
         </ul>
