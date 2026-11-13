@@ -52,6 +52,8 @@ Every page but the home page starts with a navy band holding the h1 and lede. To
 </div>
 ```
 
+Topic pages share one pattern. Each tool appears once in the body, where it helps most: either embedded, or as a card beside the text (`<aside class="launch">`, see `style.css`), without a text link to it in the same section. A page embeds one widget at most. Every topic page ends with the "Grants and installers" band; copy it from `/heat-pumps/`.
+
 Lists of links use `<ul class="cards">`, one `<li class="i-NAME"><a href="...">Title</a><p>Summary</p></li>` each. On their own they are an index: rows between rules. Add `tool-cards` for the tools, which are solid blue blocks, and `compact` for smaller ones. Blue is kept for the tools, so don't use `tool-cards` for anything else. `i-NAME` picks an icon from `site/assets/icons/`; see the list in the "Lists of links" section of `style.css`. Put a section on a light background with `<div class="band">`.
 
 ## KarbonKit widgets

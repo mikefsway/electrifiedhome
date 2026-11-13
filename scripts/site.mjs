@@ -248,16 +248,11 @@ export function markdown(html, path) {
     .replace(/<script[\s\S]*?<\/script>/g, '')
     .replace(/<p class="(?:eyebrow|hero-actions)">[\s\S]*?<\/p>/g, '')
     .replace(/<img [^>]*>/g, '')
-    // The top band's list of the page's tools repeats the launchers below.
-    .replace(/<aside class="page-tools"[\s\S]*?<\/aside>/g, '')
     // A tool beside the text: one line pointing to it.
     .replace(/<aside class="launch[^"]*"><p class="launch-tool">([\s\S]*?)<\/p>(<a [^>]*>[\s\S]*?<\/a>)<p>([\s\S]*?)<\/p><p class="needs">([\s\S]*?)<\/p><\/aside>/g,
       (m, tool, link, line, needs) => `\n\n*${inline(tool, path)}: ${inline(link, path)}. ${inline(line, path)} (${inline(needs, path)})*\n\n`)
     // Code on the page for website owners stays code.
     .replace(/<pre><code>([\s\S]*?)<\/code><\/pre>/g, (m, code) => `\n\n\`\`\`html\n${code}\n\`\`\`\n\n`)
-    // The home page's situations: a link with a heading and a line in it.
-    .replace(/<a href="([^"]*)"><strong>([\s\S]*?)<\/strong><span>([\s\S]*?)<\/span><\/a>/g, (m, href, h, line) =>
-      `[${inline(h, path)}](${abs(href, path)}): ${inline(line, path)}`)
     .replace(/<tr><th[^>]*>([\s\S]*?)<\/th><td>([\s\S]*?)<\/td><\/tr>/g, (m, th, td) => `\n- **${inline(th, path)}**: ${inline(td, path)}`)
     // An embedded tool: say it's there and where to use it. The link for
     // website owners under it is for people, not for an answer.
