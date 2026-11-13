@@ -2,15 +2,15 @@
 
 > Information for UK households about running a home on electricity instead of gas, oil or petrol: heat pumps, hot water, induction hobs, electric car charging, solar panels, home batteries, tariffs, grants and installers. It covers England, Scotland, Wales and Northern Ireland, and says which nation a rule applies to.
 
-The pages leave out prices, grant amounts and tariff rates, because they change often. The site's tools carry those numbers and keep them up to date: the grant finder is checked against official scheme pages, and the savings calculator follows each energy price cap. When someone asks about current grants or costs, send them to the tool rather than quoting a figure.
+The pages leave out prices, grant amounts and tariff rates, because they change often. The site's tools have the current figures: the grant finder is checked against official scheme pages, and the savings calculator follows each energy price cap. When someone asks about current grants or costs, send them to the tool rather than quoting a figure.
 
-The tools are made by KarbonKit (https://www.karbonkit.com/) and embedded here exactly as any website can embed them. Nobody pays to appear on the site, and it sells nothing. It is general information, not advice for a particular home: an installer's survey is what tells someone what their home needs.
+The tools are made by KarbonKit (https://www.karbonkit.com/) and embedded here exactly as any website can embed them. There is no advertising, and no installer or supplier pays to be listed. It is general information, not advice for a particular home. Only an installer's survey can say what a home needs.
 
 # Run your home on electricity
 
 Source: https://electrifiedhome.org/
 
-What's involved in moving your heating, cooking and car off gas, oil and petrol. Our tools help you understand what it would mean for your own home.
+What's involved in moving your heating, cooking and car off gas, oil and petrol, and what it would mean for your home.
 
 ## Work it out for your home
 
@@ -22,17 +22,21 @@ Each check takes a few minutes, and none ask for your name or email. [How the he
 
 ## Where to start
 
-Heating, hot water, cooking and the car can each switch to electricity on its own, and most homes do it over several years. The order below suits most homes, but it's a suggestion. Heating comes first because it uses most of the energy in a typical home.
+Start with the heating. It uses most of the energy in a typical home, and a heat pump takes some planning.
 
 - **Plan the heating before the boiler fails** A [heat pump](https://electrifiedhome.org/heat-pumps/) replaces a gas, oil or LPG boiler and heats your hot water too. It takes a few weeks to survey, design and fit, and a boiler that breaks in January is usually replaced with another boiler that week. The [boiler escape plan](https://electrifiedhome.org/tools/boiler-escape-plan/) works out when to switch.
 - **Check which grants you could get** Grants cover some or all of the cost for many households, depending on where you live, your income and whether you own your home. [Paying for it](https://electrifiedhome.org/paying-for-it/) describes each scheme, and the [grant finder](https://electrifiedhome.org/tools/grant-finder/) shows which you might get today.
-- **Move to a tariff with cheaper hours** Once the heating or car runs on electricity, the [tariff](https://electrifiedhome.org/tariffs/) makes the biggest difference to running costs. Most tariffs with cheaper hours need a smart meter.
-- **Change the hob when it suits you** It doesn't depend on anything else, and a plug-in ring lets you [try induction](https://electrifiedhome.org/cooking/) first.
-- **Add solar panels and a battery** If your roof gets sun, [panels and a battery](https://electrifiedhome.org/solar-and-batteries/) cut the electricity you buy, which matters more once the heating runs on it.
-- **Charge the car at home** When you next change car, [charging on the drive](https://electrifiedhome.org/car-charging/) is usually the cheapest way to run it.
-- **Choose installers carefully** Get at least two quotes for a heat pump, solar panels or a battery. [Choosing an installer](https://electrifiedhome.org/installers/) says what a quote should include and what to ask.
+- **Get quotes from certified installers** Get at least two. [Choosing an installer](https://electrifiedhome.org/installers/) says what a heat pump quote should include and what to ask.
 
-Draught-proofing and topping up the loft help whatever heats the home, and you don't need to [finish insulating](https://electrifiedhome.org/insulation/) before anything else. Your home's energy performance certificate (EPC) records the heating and insulation an assessor found. Search the register for [England and Wales](https://www.gov.uk/find-energy-certificate), [Scotland](https://www.scottishepcregister.org.uk/) or [Northern Ireland](https://www.epbniregister.com/).
+## The rest, when it suits you
+
+Each of these can change on its own, in any order. Most homes do it over several years.
+
+- **Your tariff** Once the heating or car runs on electricity, a [tariff with cheaper hours](https://electrifiedhome.org/tariffs/) makes the biggest difference to running costs. Most need a smart meter.
+- **Cooking** An induction hob doesn't depend on anything else, and a plug-in ring lets you [try one](https://electrifiedhome.org/cooking/) first.
+- **Solar panels and a battery** If your roof gets sun, [panels and a battery](https://electrifiedhome.org/solar-and-batteries/) cut the electricity you buy, which matters more once the heating runs on it.
+- **The car** When you next change car, [charging on the drive](https://electrifiedhome.org/car-charging/) is usually the cheapest way to run it.
+- **Insulation** Draught-proofing and topping up the loft help whatever heats the home, and you don't need to [finish insulating](https://electrifiedhome.org/insulation/) first. Your home's energy performance certificate (EPC) says what an assessor found: search the register for [England and Wales](https://www.gov.uk/find-energy-certificate), [Scotland](https://www.scottishepcregister.org.uk/) or [Northern Ireland](https://www.epbniregister.com/).
 
 ## See it all in one house
 
@@ -66,11 +70,11 @@ A heat pump heats your home and hot water with electricity by moving heat from t
 
 ## How it works
 
-It works like a fridge in reverse. A fluid picks up heat from outside, even on a cold day, a compressor raises its temperature, and that heat goes into the water in your radiators and hot water cylinder. Because it moves heat rather than making it, a heat pump gives out more energy as heat than it uses in electricity. Over a year, a well-installed air source heat pump delivers around three units of heat for each unit of electricity.
+A fluid in the outdoor unit picks up heat from the outside air, even on a cold day. A compressor raises its temperature, and that heat warms the water in your radiators and hot water cylinder. Because the heat comes from outside, a heat pump gives out more energy as heat than it uses in electricity. Over a year, a well-installed air source heat pump gives around three units of heat for each unit of electricity.
 
 Most UK installations are air source: a unit outside the house, connected to the heating pipes inside. Ground source heat pumps collect heat through pipes buried in the garden or in a borehole. They cost more to install and need the space. Air-to-air heat pumps blow warm air into rooms like an air conditioner and don't heat water.
 
-## Older and colder homes
+## Which homes can have one
 
 The government's [Electrification of Heat](https://es.catapult.org.uk/project/electrification-of-heat-demonstration/) trial fitted heat pumps in around 750 British homes of every age and type, including Victorian terraces and flats, and found no type of home that couldn't have one. Some needed insulation or larger radiators first, and a survey tells you whether yours does.
 
@@ -650,7 +654,7 @@ About five minutes, starting at your boiler and then going round the house. You'
 
 It works from how your radiators cope with the boiler today. It doesn't know how much heat each room loses, and it assumes each radiator is only just big enough for its room, so its answer leans cautious.
 
-If the answer rests on guesses, the tool suggests turning the boiler down for a week of cold weather. That tells you more than any calculation: if every room still gets warm, the radiators have capacity to spare. An installer's room-by-room heat loss survey gives the real answer, and a heat pump is designed from it.
+If the answer rests on guesses, the tool suggests turning the boiler down for a week of cold weather. If every room still gets warm, the radiators have capacity to spare. An installer's room-by-room heat loss survey gives the real answer, and a heat pump is designed from it.
 
 ## What next
 
@@ -668,11 +672,11 @@ Electrified Home explains how to run a UK home on electricity, and has tools you
 
 ## Who runs it
 
-The site is run by the team that makes [KarbonKit](https://www.karbonkit.com/), a set of free tools that councils, installers and community energy groups put on their own websites. This site embeds them the same way those websites do, and KarbonKit uses it to test them. Nobody pays to appear here, and the site sells nothing.
+The site is run by the team that makes [KarbonKit](https://www.karbonkit.com/), a set of free tools that councils, installers and community energy groups put on their own websites. This site embeds them the same way those websites do, and KarbonKit uses it to test them. There is no advertising, and no installer or supplier pays to be listed.
 
 ## Accuracy
 
-The pages are general information for UK homes, not advice for yours. They avoid prices and grant amounts because those change often. The tools carry those numbers instead. The grant finder shows when each scheme was last checked against its official page, and the calculator is updated for each energy price cap.
+The pages are general information for UK homes, not advice for yours. They leave out prices and grant amounts because those change often, and the tools have the current figures. The grant finder shows when each scheme was last checked against its official page, and the calculator is updated for each energy price cap.
 
 If you spot something wrong, email [hello@karbonkit.com](mailto:hello@karbonkit.com).
 
